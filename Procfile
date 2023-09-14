@@ -1,1 +1,1 @@
-web: gunicorn habitize.wigi
+web: gunicorn habitize.wsgi
