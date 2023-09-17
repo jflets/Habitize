@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def landingPage(request):
-    return render(request, 'index.html')
+    return render(request, 'landing_page/index.html')
