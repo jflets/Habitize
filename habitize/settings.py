@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'habitize.wsgi.application'
 #     }
 # }
 DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -145,6 +145,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
