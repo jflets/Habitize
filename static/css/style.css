@@ -195,6 +195,7 @@ form label {
 
 form input {
     text-align: center;
+    color: #dedede;
     background: rgba(92, 92, 92, 0.55);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
