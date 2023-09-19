@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'authentication',
     'landingpage',
+    'dashboard',
 ]
 
 SITE_ID = 1
