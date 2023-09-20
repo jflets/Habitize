@@ -1,17 +1,54 @@
-{% extends "dashboard/base.html" %} {% block content %}
-
+{% extends "dashboard/base.html" %}
+{% block content %}
 <h2>Your habits</h2>
 <table>
+    <tr>
+        <th>Habits</th>
+    </tr>
     {% for habit in habits %}
     <tr>
-        <td>{{ habit.name }}</td>
-        <td>{{ habit.complete }}</td>
         <td>
-            <a href="{% url 'edit' habit.id %}">
-                <button>Edit</button>
-            </a>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        {% if habit.progress == 0 %}
+                        <div class="progress container">
+                            <div class="progress-bar row" role="progressbar" data-progress="{{ habit.progress }}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        {% else %}
+                            <div class="progress container progress-container">
+                                <div class="progress-bar row" role="progressbar" data-progress="{{ habit.progress }}" aria-valuenow="{{ habit.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-cd">
+                                    <div class="habit-name">{{ habit.name }}</div>
+                                    <div>
+                                        <a class="options-btn" href="{% url 'edit' habit.id %}">
+                                            <button>Edit</button>
+                                        </a>
+                                        <a class="options-btn" href="{% url 'toggle' habit.id %}">
+                                            <button>Toggle</button>
+                                        </a>
+                                        <a class="options-btn" href="{% url 'delete' habit.id %}">
+                                            <button>Delete</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </td>
     </tr>
     {% endfor %}
 </table>
-{%endblock%}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const progressBars = document.querySelectorAll(".progress-bar");
+        progressBars.forEach(function (progressBar) {
+            const progress = progressBar.getAttribute("data-progress");
+            progressBar.style.width = progress + "%";
+        });
+    });
+</script>
+{% endblock %}

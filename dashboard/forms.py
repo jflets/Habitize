@@ -5,4 +5,4 @@ from .models import Habit
 class HabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name', 'completed']
+        fields = ['name', 'completed', 'value', 'max_value']

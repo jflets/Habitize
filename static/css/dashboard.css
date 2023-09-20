@@ -64,6 +64,14 @@ h3 {
 .dark-bg {
     background-color: rgba(28, 28, 28, 60%);
 }
+
+/* ------------------------------ habit text styling  ---------------------------------- */
+.habit-name {
+    color: #1C1C1C;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 /* ------------------------------ nav styling  ---------------------------------- */
 .navbar-toggler {
     color: #dedede;
@@ -162,6 +170,10 @@ h3 {
     color: #dedede;
 }
 
+.options-btn {
+    text-decoration: none;
+}
+
 /* ------------------------------ link styling  ---------------------------------- */
 #profile {
     color: #dedede;
@@ -217,4 +229,39 @@ form input {
 
 form input:focus {
     outline: 1px solid #dedede;
+}
+
+/* ------------------------------ habit progressbar styling  ---------------------------------- */
+.progress {
+    min-width: 250px;
+    min-height: 50px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 100px; 
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+    font-size: 14px;
+}
+
+.progress-container{
+    display: flex;
+    align-items: center;
+    background-color: #dedede;
+}
+
+.progress-cd {
+    min-width: 200px;
+    min-height: 30px;
+    background-color: #dedede;
+    border-radius: 4px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
