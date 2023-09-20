@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html" %} {% block content %}
+<div class="container">
+    <div class="row card3">
+        <h2>Add a habit</h2>
+        <form method="POST" action="add">
+            {% csrf_token %}
+            {{ form }}
+            <div>
+                <p>
+                    <button type="submit" class="btn-submit">Add Habit</button>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}
