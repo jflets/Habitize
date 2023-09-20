@@ -123,6 +123,20 @@ h3 {
     padding-bottom: 1rem;
 }
 
+.card4 {
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 300px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(92, 92, 92, 0.55);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
     background-color: #2b2b2b;
@@ -170,8 +184,31 @@ h3 {
     color: #dedede;
 }
 
-.options-btn {
+.options {
     text-decoration: none;
+    color: #1C1C1C;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+}
+
+.options:hover,
+.options:active {
+    color: #dedede;
+    background-color: #1C1C1C;
+}
+
+.option-btn {
+    min-width: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #1C1C1C;
+    padding: 0 0.2rem;
+}
+
+.option-btn:hover,
+.option-btn:active {
+    color: #dedede;
+    background-color: #1C1C1C;
 }
 
 /* ------------------------------ link styling  ---------------------------------- */
@@ -231,15 +268,26 @@ form input:focus {
     outline: 1px solid #dedede;
 }
 
+.main-container {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+
 /* ------------------------------ habit progressbar styling  ---------------------------------- */
+.habit-con {
+    margin: 0.5rem 0;
+}
+
 .progress {
-    min-width: 250px;
-    min-height: 50px;
+    min-width: 300px;
+    min-height: 60px;
 }
 
 .progress-bar {
-    width: 200px;
-    height: 100px; 
+    min-height: 100px; 
     background-color: #2b2b2b;
     border-radius: 5px;
     transition: width 0.5s ease-in-out;
@@ -253,15 +301,19 @@ form input:focus {
     display: flex;
     align-items: center;
     background-color: #dedede;
+    padding: 0;
 }
 
 .progress-cd {
-    min-width: 200px;
+    min-width: 350px;
     min-height: 30px;
+    padding: 0.1rem;
+    margin-left: 3%;
     background-color: #dedede;
     border-radius: 4px;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
