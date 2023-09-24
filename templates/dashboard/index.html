@@ -1,4 +1,5 @@
-{% extends "dashboard/base.html" %} {% block content %}
+{% extends "dashboard/base.html" %}
+{% block content %}
 <div class="container main-container">
     <div class="row ms-auto">
         <div class="container text-center">
@@ -22,6 +23,9 @@
                               aria-valuemax="100"
                             ></div>
                             <div class="progress-cd">
+                                <div class="habit-value">
+                                  {{ habit.value }}
+                                </div>
                                 <div class="habit-name">{{ habit.name }}</div>
                                 <div class="dropdown">
                                   <a
@@ -64,36 +68,39 @@
                               aria-valuemax="100"
                             ></div>
                             <div class="progress-cd">
-                              <div class="habit-name">{{ habit.name }}</div>
-                              <div class="dropdown">
-                                <a
-                                  class="option-btn"
-                                  role="button"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                >
-                                  * * *
-                                </a>
-          
-                                <ul class="dropdown-menu">
-                                  <li>
-                                    <a class="options" href="{% url 'edit' habit.id %}"
-                                      >Edit</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a class="options" href="{% url 'toggle' habit.id %}"
-                                      >Complete Habit</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a class="options" href="{% url 'delete' habit.id %}"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
+                                <div class="habit-value">
+                                  {{ habit.value }}
+                                </div>
+                                <div class="habit-name mx-5">{{ habit.name }}</div>
+                                <div class="dropdown">
+                                  <a
+                                    class="option-btn"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    * * *
+                                  </a>
+            
+                                  <ul class="dropdown-menu">
+                                    <li>
+                                      <a class="options" href="{% url 'edit' habit.id %}"
+                                        >Edit</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="options" href="{% url 'toggle' habit.id %}"
+                                        >Complete Habit</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="options" href="{% url 'delete' habit.id %}"
+                                        >Delete</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
                               </div>
-                            </div>
                           </div>
                           {% endif %}
                         </div>
@@ -110,13 +117,6 @@
           </div>
     </div>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const progressBars = document.querySelectorAll(".progress-bar");
-    progressBars.forEach(function (progressBar) {
-      const progress = progressBar.getAttribute("data-progress");
-      progressBar.style.width = progress + "%";
-    });
-  });
-</script>
+{% load static %}
+<script src="{% static 'js/index.js' %}"></script>
 {% endblock %}
