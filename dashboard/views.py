@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from .models import Habit
 from .forms import HabitForm
 
@@ -10,8 +11,8 @@ def get_dashboard(request):
 
     # Calculate progress for each habit
     for habit in habits:
-        habit.progress = (habit.value / habit.max_value) * \
-            100 if habit.max_value > 0 else 0
+        habit.progress = (habit.value / habit.goal_amount) * \
+            100 if habit.goal_amount > 0 else 0
 
     context = {
         'habits': habits,
@@ -51,7 +52,7 @@ def edit_habit(request, habit_id):
 
     context = {
         'form': form,
-        'progress_percentage': (habit.value / habit.max_value) * 100,
+        'progress_percentage': (habit.value / habit.goal_amount) * 100,
     }
     return render(request, 'dashboard/edit_habit.html', context)
 

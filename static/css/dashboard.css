@@ -317,3 +317,37 @@ form input:focus {
     align-items: center;
     gap: 1rem;
 }
+
+/* ------------------------------ edit habit button styling  ---------------------------------- */
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+  }
+/* Custom styling for the decrement and increment buttons */
+
+.goal-input {
+    text-align: center; /* Center the text */
+    width: 50px; /* Adjust the width as needed */
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+}
+
+.completed-field {
+    display: inline;
+}
+
+form p {
+    margin-top: 0.5rem;
+}
+
+.habit-value {
+    color: #1C1C1C;
+}

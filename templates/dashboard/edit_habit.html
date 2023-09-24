@@ -1,10 +1,49 @@
-{% extends "dashboard/base.html" %} {% block content %}
+{% extends "dashboard/base.html" %}
+{% block content %}
 <div class="container">
     <div class="row card3">
         <h2>Edit a habit</h2>
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            
+            <!-- Container for the other fields -->
+            <div class="other-fields">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+
+            <div class="completed-field">
+                {{ form.completed.label_tag }}
+                {{ form.completed }}
+            </div>
+
+            <!-- Separate div for the "value" field -->
+            <div class="value-field">
+                {{ form.value.label_tag }}
+                <div class="input-group custom-input">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit decrement-value-button">-</button>
+                    </span>
+                {{ form.value }}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit increment-value-button">+</button>
+                    </span>
+                </div>
+            </div>
+
+            <dv class="goal-amount-field">
+                {{ form.goal_amount.label_tag }}
+                <div class="input-group custom-input">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit decrement-button">-</button>
+                    </span>
+                {{ form.goal_amount }}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit increment-button">+</button>
+                    </span>
+                </div>
+            </dv>
+            
             <div>
                 <p>
                     <button type="submit" class="btn-submit">Update Habit</button>
@@ -13,5 +52,6 @@
         </form>
     </div>
 </div>
-
-{%endblock%}
+{% load static %}
+<script src="{% static 'js/edit.js' %}"></script>
+{% endblock %}

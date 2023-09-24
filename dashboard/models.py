@@ -7,7 +7,7 @@ class Habit(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(null=False, blank=False, default=False)
     value = models.PositiveIntegerField(default=0)  # Current value
-    max_value = models.PositiveIntegerField(default=100)  # Maximum value
+    goal_amount = models.PositiveIntegerField(default=100)  # Maximum value
 
     user = models.ForeignKey(
         User, max_length=10, on_delete=models.CASCADE, null=True, blank=True)
