@@ -31,7 +31,12 @@
                 </div>
             </div>
 
-            <dv class="goal-amount-field">
+            <div class="frequency-field">
+                {{ form.frequency.label_tag }}
+                {{ form.frequency }}
+            </div>
+
+            <div class="goal-amount-field">
                 {{ form.goal_amount.label_tag }}
                 <div class="input-group custom-input">
                     <span class="input-group-btn">
@@ -42,7 +47,7 @@
                         <button type="button" class="btn-submit increment-button">+</button>
                     </span>
                 </div>
-            </dv>
+            </div>
             
             <div>
                 <p>

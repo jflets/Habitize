@@ -1,17 +1,17 @@
-{% extends "dashboard/base.html" %} {% block content %}
+{% extends "dashboard/base.html" %}
+
+{% block content %}
 <div class="container">
     <div class="row card3">
         <h2>Add a habit</h2>
         <form method="POST" action="add">
             {% csrf_token %}
             {{ form.as_p }}
-            <div>
-                <p>
-                    <button type="submit" class="btn-submit">Add Habit</button>
-                </p>
+            <div class="form-group">
+                <button type="submit" class="btn btn-submit">Add Habit</button>
+                <a href="{% url 'dashboard' %}" class="btn btn-submit">Cancel</a>
             </div>
         </form>
     </div>
 </div>
-
-{%endblock%}
+{% endblock %}

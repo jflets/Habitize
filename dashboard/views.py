@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from .models import Habit
-from .forms import HabitForm
+from .forms import AddHabitForm, EditHabitForm
 
 
 @login_required(login_url="/accounts/login")
@@ -23,14 +23,14 @@ def get_dashboard(request):
 @login_required(login_url="/accounts/login")
 def add_habit(request):
     if request.method == 'POST':
-        form = HabitForm(request.POST)
+        form = AddHabitForm(request.POST)
         if form.is_valid():
             habit = form.save(commit=False)
             habit.user = request.user
             habit.save()
             return redirect('dashboard')
     else:
-        form = HabitForm()
+        form = AddHabitForm()
 
     context = {
         'form': form
@@ -43,12 +43,12 @@ def edit_habit(request, habit_id):
     habit = get_object_or_404(Habit, id=habit_id, user=request.user)
 
     if request.method == 'POST':
-        form = HabitForm(request.POST, instance=habit)
+        form = EditHabitForm(request.POST, instance=habit)
         if form.is_valid():
             habit = form.save()
             return redirect('dashboard')
     else:
-        form = HabitForm(instance=habit)
+        form = EditHabitForm(instance=habit)
 
     context = {
         'form': form,
