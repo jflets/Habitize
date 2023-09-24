@@ -68,5 +68,15 @@ def toggle_habit(request, habit_id):
 @login_required(login_url="/accounts/login")
 def delete_habit(request, habit_id):
     habit = get_object_or_404(Habit, id=habit_id)
-    habit.delete()
-    return redirect('dashboard')
+
+    if request.method == 'POST':
+        # Check if the user confirmed the deletion
+        if 'confirm_delete' in request.POST:
+            habit.delete()
+            return redirect('dashboard')
+        else:
+            # If not confirmed, redirect back to the habit list
+            return redirect('dashboard')
+
+    context = {'habit': habit}
+    return render(request, 'dashboard/delete_confirmation.html', context)
