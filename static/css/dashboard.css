@@ -370,3 +370,11 @@ form p {
     gap: 0.5rem;
     color: #1C1C1C;
 }
+
+.completed-field {
+    display: inline;
+}
+
+.completed {
+    background-color: green;
+}

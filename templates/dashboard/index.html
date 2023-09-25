@@ -49,10 +49,13 @@
                                     >
                                   </li>
                                   <li>
-                                    <a class="options" href="{% url 'toggle' habit.id %}"
-                                      >Complete Habit</a
-                                    >
-                                  </li>
+                                    {% if not habit.completed %}
+                                    <li>
+                                      <a class="options" href="{% url 'toggle' habit.id %}"
+                                        >Complete Habit</a
+                                      >
+                                    </li>
+                                    {% endif %}
                                   <li>
                                     <a class="options" href="{% url 'delete' habit.id %}">Delete</a>
                                   </li>
@@ -63,14 +66,14 @@
                           {% else %}
                           <div class="progress container progress-container">
                             <div
-                              class="progress-bar"
+                              class="progress-bar {% if habit.completed %}completed{% endif %}"
                               role="progressbar"
                               data-progress="{{ habit.progress }}"
                               aria-valuenow="{{ habit.progress }}"
                               aria-valuemin="0"
                               aria-valuemax="100"
                             ></div>
-                            <div class="progress-cd">
+                            <div class="progress-cd {% if habit.completed %}completed{% endif %}">
                               <div class="unit-value col-3">
                                 <div class="habit-value">
                                   {{ habit.value }}
