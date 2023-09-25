@@ -23,11 +23,16 @@
                               aria-valuemax="100"
                             ></div>
                             <div class="progress-cd">
-                              <div class="habit-value col-4">
-                                {{ habit.value }}
+                              <div class="unit-value col-3">
+                                <div class="habit-value">
+                                  {{ habit.value }}
+                                </div>
+                                <div class="units">
+                                  {{ habit.units }}
+                                </div>
                               </div>
-                              <div class="habit-name col-6 mx-auto">{{ habit.name }}</div>
-                              <div class="dropdown col-2" aria-label="options dropdown menu">
+                              <div class="habit-name col-5 mx-auto">{{ habit.name }}</div>
+                              <div class="dropdown col-3" aria-label="options dropdown menu">
                                 <a
                                   class="option-btn"
                                   role="button"
@@ -66,11 +71,16 @@
                               aria-valuemax="100"
                             ></div>
                             <div class="progress-cd">
-                                <div class="habit-value col-4">
+                              <div class="unit-value col-3">
+                                <div class="habit-value">
                                   {{ habit.value }}
                                 </div>
-                                <div class="habit-name col-6 mx-auto">{{ habit.name }}</div>
-                                <div class="dropdown col-2" aria-label="options dropdown menu">
+                                <div class="units">
+                                  {{ habit.units }}
+                                </div>
+                              </div>
+                                <div class="habit-name col-5 mx-auto">{{ habit.name }}</div>
+                                <div class="dropdown col-3" aria-label="options dropdown menu">
                                   <a
                                     class="option-btn"
                                     role="button"
@@ -86,11 +96,13 @@
                                         >Edit</a
                                       >
                                     </li>
+                                    {% if not habit.completed %}
                                     <li>
                                       <a class="options" href="{% url 'toggle' habit.id %}"
                                         >Complete Habit</a
                                       >
                                     </li>
+                                    {% endif %}
                                     <li>
                                       <a class="options" href="{% url 'delete' habit.id %}"
                                         >Delete</a

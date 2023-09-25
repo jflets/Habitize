@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
 from .models import Habit
 from .forms import AddHabitForm, EditHabitForm
 
@@ -11,8 +10,13 @@ def get_dashboard(request):
 
     # Calculate progress for each habit
     for habit in habits:
-        habit.progress = (habit.value / habit.goal_amount) * \
-            100 if habit.goal_amount > 0 else 0
+        if habit.completed:
+            # If the habit is completed, set progress to 100%
+            habit.progress = 100
+        else:
+            # Calculate progress based on value and goal_amount
+            habit.progress = (habit.value / habit.goal_amount) * \
+                100 if habit.goal_amount > 0 else 0
 
     context = {
         'habits': habits,
@@ -60,8 +64,20 @@ def edit_habit(request, habit_id):
 @login_required(login_url="/accounts/login")
 def toggle_habit(request, habit_id):
     habit = get_object_or_404(Habit, id=habit_id)
-    habit.completed = not habit.completed
+
+    if habit.completed:
+        # If the habit is already completed, redirect back to the dashboard
+        return redirect('dashboard')
+
+    # If the habit is not completed, mark it as completed
+    habit.completed = True
+    habit.progress = 100
+
+    # Set the value equal to the goal_amount when completed
+    habit.value = habit.goal_amount
+
     habit.save()
+
     return redirect('dashboard')
 
 

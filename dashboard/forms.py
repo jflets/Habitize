@@ -5,8 +5,7 @@ from .models import Habit
 class AddHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name',
-                  'units', 'frequency', 'goal_amount', 'completed']
+        fields = ['name', 'goal_amount', 'units', 'frequency', 'completed']
         labels = {
             'name': 'Habit Name',
             'completed': 'Completed',
@@ -22,13 +21,13 @@ class AddHabitForm(forms.ModelForm):
 class EditHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name', 'value',
-                  'units', 'frequency', 'goal_amount', 'completed']
+        fields = ['name', 'units', 'value',
+                  'frequency', 'goal_amount', 'completed']
         labels = {
             'name': 'Habit Name',
-            'completed': 'Completed',
-            'value': 'Value',
+            'value': 'Amount',
             'goal_amount': 'Goal',
+            'completed': 'Completed',
         }
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Enter the habit name'}),
