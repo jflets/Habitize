@@ -7,6 +7,8 @@ from .forms import AddHabitForm, EditHabitForm
 @login_required(login_url="/accounts/login")
 def get_dashboard(request):
     habits = Habit.objects.filter(user=request.user)
+    total_habits = habits.count()
+    completed_habits = habits.filter(completed=True).count()
 
     # Calculate progress for each habit
     for habit in habits:
@@ -18,8 +20,15 @@ def get_dashboard(request):
             habit.progress = (habit.value / habit.goal_amount) * \
                 100 if habit.goal_amount > 0 else 0
 
+    # Calculate progress for total completed habits
+    total_completed_progress = (
+        completed_habits / total_habits) * 100 if total_habits > 0 else 0
+
     context = {
         'habits': habits,
+        'total_habits': total_habits,
+        'completed_habits': completed_habits,
+        'total_completed_progress': total_completed_progress,
     }
     return render(request, 'dashboard/index.html', context)
 

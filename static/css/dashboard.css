@@ -124,7 +124,7 @@ h3 {
 }
 
 .card4 {
-    max-width: 400px;
+    max-width: 500px;
     min-width: 300px;
     min-height: 300px;
     text-align: center;
@@ -271,7 +271,7 @@ form input:focus {
 .main-container {
     min-width: 100vw;
     min-height: 100vh;
-    display: flex;
+    display: inline;
     padding: 3rem;
 }
 
@@ -286,7 +286,8 @@ form input:focus {
 }
 
 .progress-bar {
-    min-height: 100px; 
+    width: auto;
+    min-height: 60px; 
     background-color: #2b2b2b;
     border-radius: 5px;
     transition: width 0.5s ease-in-out;
@@ -297,6 +298,15 @@ form input:focus {
 }
 
 .progress-container{
+    min-width: 340px;
+    display: flex;
+    align-items: center;
+    background-color: #dedede;
+    padding: 0;
+}
+
+.progress-container2{
+    min-width: 340px;
     display: flex;
     align-items: center;
     background-color: #dedede;
@@ -304,7 +314,7 @@ form input:focus {
 }
 
 .progress-cd {
-    min-width: 350px;
+    min-width: 300px;
     min-height: 30px;
     padding: 0.1rem;
     margin-left: 3%;
@@ -315,6 +325,18 @@ form input:focus {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.total-prog {
+    min-width: 340px;
+    min-height: 30px;
+    position: absolute;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-fill-color: #dedede;
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: #1C1C1C;
 }
 
 /* ------------------------------ edit habit button styling  ---------------------------------- */
@@ -352,6 +374,9 @@ form p {
     height: 30px;
     font-size: 15px;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.2rem;
     color: #1C1C1C;
     border: 2px solid #1C1C1C;
@@ -377,4 +402,8 @@ form p {
 
 .completed {
     background-color: green;
+}
+
+.index-container {
+    max-width: 400px;
 }
