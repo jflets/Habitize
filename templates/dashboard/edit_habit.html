@@ -12,11 +12,6 @@
                 {{ form.name }}
             </div>
 
-            <div class="completed-field">
-                {{ form.completed.label_tag }}
-                {{ form.completed }}
-            </div>
-
             <!-- Separate div for the "value" field -->
             <div class="value-field">
                 {{ form.value.label_tag }}
@@ -36,6 +31,11 @@
                 {{ form.units }}
             </div>
 
+            <div class="frequency-field">
+                {{ form.frequency.label_tag }}
+                {{ form.frequency }}
+            </div>
+
             <div class="goal-amount-field">
                 {{ form.goal_amount.label_tag }}
                 <div class="input-group custom-input">
@@ -49,9 +49,9 @@
                 </div>
             </div>
 
-            <div class="frequency-field">
-                {{ form.frequency.label_tag }}
-                {{ form.frequency }}
+            <div class="completed-field">
+                {{ form.completed.label_tag }}
+                {{ form.completed }}
             </div>
             
             <div>

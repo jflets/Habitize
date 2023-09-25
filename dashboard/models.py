@@ -14,9 +14,9 @@ class Habit(models.Model):
     frequency = models.CharField(
         max_length=10,
         choices=[
-            ('day', 'Per Day'),
-            ('month', 'Per Month'),
-            ('year', 'Per Year'),
+            ('day', 'Daily'),
+            ('week', 'Weekly'),
+            ('month', 'Monthly'),
         ],
         default='day',
         null=False,

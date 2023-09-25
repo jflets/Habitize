@@ -25,7 +25,7 @@ class EditHabitForm(forms.ModelForm):
                   'frequency', 'goal_amount', 'completed']
         labels = {
             'name': 'Habit Name',
-            'value': 'Amount',
+            'value': 'Current Amount',
             'goal_amount': 'Goal',
             'completed': 'Completed',
         }
