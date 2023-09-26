@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'authentication',
     'landingpage',
     'dashboard',
+    'user_profile',
 ]
 
 SITE_ID = 1

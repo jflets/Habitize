@@ -5,7 +5,7 @@
 
 <head>
     <title>Habitize</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,10 +22,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar bg-dark">
         <div class="container-fluid bg-dark justify-content-center">
-            <a href="#" class="nav-brand" id="profile">
-                <img src="#" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <a href="{% url 'view_profile' %}" class="nav-brand" id="profile">
+                {% if user.userprofile.profile_image %}
+                    <img src="{{ user.userprofile.profile_image.url }}" alt="Profile Image" width="30" height="30" class="d-inline-block align-text-top rounded-circle">
+                {% else %}
+                    <img src="#" alt="Logo" width="30" height="30" class="d-inline-block align-text-top rounded-circle">
+                {% endif %}
                 Hello, {{ user.username }}
-            </a>
+            </a>            
             <span class="navbar-text brand mx-auto">
                 Habitize
             </span>
