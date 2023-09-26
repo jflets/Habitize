@@ -137,6 +137,12 @@ h3 {
     -webkit-backdrop-filter: blur(9px);
 }
 
+.habit-card-container {
+    position: relative;
+    max-height: 240px; /* Adjust the maximum height as needed */
+    overflow-y: auto; 
+}
+
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
     background-color: #2b2b2b;
