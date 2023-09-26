@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 from .models import Habit
 from .forms import AddHabitForm, EditHabitForm
 
@@ -126,9 +127,10 @@ def toggle_habit(request, habit_id):
     # If the habit is not completed, mark it as completed
     habit.completed = True
     habit.progress = 100
-
-    # Set the value equal to the goal_amount when completed
     habit.value = habit.goal_amount
+
+    # Set the completion date to the current date and time
+    habit.date_completed = timezone.now().date()
 
     habit.save()
 

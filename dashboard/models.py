@@ -29,6 +29,8 @@ class Habit(models.Model):
         blank=True,
     )
 
+    date_completed = models.DateField(null=True, blank=True)
+
     user = models.ForeignKey(
         User, max_length=10, on_delete=models.CASCADE, null=True, blank=True)
 

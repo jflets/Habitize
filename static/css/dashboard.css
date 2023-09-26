@@ -338,7 +338,7 @@ form input:focus {
     min-width: 300px;
     min-height: 30px;
     padding: 0.1rem;
-    margin-left: 3%;
+    margin: 0 5%;
     background-color: #dedede;
     border-radius: 4px;
     position: absolute;
@@ -425,4 +425,8 @@ form p {
 
 .index-container {
     max-width: 400px;
+}
+
+h6 {
+    font-size: 12px;
 }

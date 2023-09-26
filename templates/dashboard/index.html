@@ -161,6 +161,9 @@
                           </div>
                           <div class="habit-name col-5 mx-auto">
                             {{ habit.name }}
+                            {% if habit.completed %}
+                            <h6>{{ habit.date_completed|date:"F d, Y" }}</h6>
+                            {% endif %}
                           </div>
                           <div
                             class="dropdown col-3"
