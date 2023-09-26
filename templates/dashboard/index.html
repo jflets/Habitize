@@ -1,151 +1,223 @@
-{% extends "dashboard/base.html" %}
-{% block content %}
+{% extends "dashboard/base.html" %} {% block content %}
 <div class="container main-container">
-    <div class="row justify-content-center">
-        <div class="col index-container">
-          <div class="card4 justify-content-center">
-            <h2 class="card-title">Completed Habits</h2>
-            <p class="card-text">You have {{ total_habits }} habits.</p>
-            <div class="container">
-              <div class="progress progress-container2">
-                <div class="progress-bar" role="progressbar" data-progress="{{ total_completed_progress }}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <div class="total-prog">
-                      <h4>{{ total_completed_progress }}%</h4>
-                      <h7>completed</h7>
-                    </div>
-                </div>
+  <div class="row justify-content-center">
+    <div class="col index-container">
+      <div class="card4 justify-content-center">
+        <h2 class="card-title mb-4">Completed Habits</h2>
+        <div class="container mb-3">
+          <div class="progress progress-container2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              data-progress="{{ completed_progress_day }}"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="total-prog">
+                <h4>Daily: {{ completed_habits_day }}/{{ total_habits_day }}</h4>
               </div>
             </div>
           </div>
         </div>
-        <div class="col index-container">
-            <div class="card4 justify-content-center">
-              <h2>Your habits</h2>
-              <table>
-                {% for habit in habits %}
-                <tr>
-                  <td>
-                    <div class="container habit-con">
-                      <div class="row">
-                        <div>
-                          {% if habit.progress == 0 %}
-                          <div class="progress container progress-container">
-                            <div
-                              class="progress-bar row"
-                              role="progressbar"
-                              data-progress="{{ habit.progress }}"
-                              aria-valuenow="0"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            ></div>
-                            <div class="progress-cd">
-                              <div class="unit-value col-3">
-                                <div class="habit-value">
-                                  {{ habit.value }}
-                                </div>
-                                <div class="units">
-                                  {{ habit.units }}
-                                </div>
-                              </div>
-                              <div class="habit-name col-5 mx-auto">{{ habit.name }}</div>
-                              <div class="dropdown col-3" aria-label="options dropdown menu">
-                                <a
-                                  class="option-btn"
-                                  role="button"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                >
-                                  * * *
-                                </a>
-          
-                                <ul class="dropdown-menu">
-                                  <li>
-                                    <a class="options" title="Edit your task" href="{% url 'edit' habit.id %}"
-                                      >Edit</a
-                                    >
-                                  </li>
-                                  {% if not habit.completed %}
-                                  <li>
-                                    <a class="options" title="Complete your task" href="{% url 'toggle' habit.id %}"
-                                      >Complete Habit</a
-                                    >
-                                  </li>
-                                  {% endif %}
-                                  <li>
-                                    <a class="options" title="Delete your task" href="{% url 'delete' habit.id %}"
-                                      >Delete</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          {% else %}
-                          <div class="progress container progress-container">
-                            <div
-                              class="progress-bar {% if habit.completed %}completed{% endif %}"
-                              role="progressbar"
-                              data-progress="{{ habit.progress }}"
-                              aria-valuenow="{{ habit.progress }}"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            ></div>
-                            <div class="progress-cd {% if habit.completed %}completed{% endif %}">
-                              <div class="unit-value col-3">
-                                <div class="habit-value">
-                                  {{ habit.value }}
-                                </div>
-                                <div class="units">
-                                  {{ habit.units }}
-                                </div>
-                              </div>
-                                <div class="habit-name col-5 mx-auto">{{ habit.name }}</div>
-                                <div class="dropdown col-3" title="options" aria-label="options dropdown menu">
-                                  <a
-                                    class="option-btn"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                  >
-                                    * * *
-                                  </a>
-            
-                                  <ul class="dropdown-menu">
-                                    <li>
-                                      <a class="options" title="Edit your task" href="{% url 'edit' habit.id %}"
-                                        >Edit</a
-                                      >
-                                    </li>
-                                    {% if not habit.completed %}
-                                    <li>
-                                      <a class="options" title="Complete your task" href="{% url 'toggle' habit.id %}"
-                                        >Complete Habit</a
-                                      >
-                                    </li>
-                                    {% endif %}
-                                    <li>
-                                      <a class="options" title="Delete your task" href="{% url 'delete' habit.id %}"
-                                        >Delete</a
-                                      >
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                          </div>
-                          {% endif %}
+        <div class="container mb-3">
+          <div class="progress progress-container2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              data-progress="{{ completed_progress_week }}"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="total-prog">
+                <h4>Weekly: {{ completed_habits_week }}/{{ total_habits_week }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mb-3">
+          <div class="progress progress-container2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              data-progress="{{ completed_progress_month }}"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="total-prog">
+                <h4>Monthly: {{ completed_habits_month }}/{{ total_habits_month }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col index-container">
+      <div class="card4 justify-content-center">
+        <h2>Your habits</h2>
+        <!-- Add a filter dropdown to select frequency -->
+        <div class="filter-dropdown">
+          <form method="get">
+              <label for="frequency-filter">Filter by Frequency:</label>
+              <select class="btn-filter" id="frequency-filter" name="frequency">
+                  <option value="">All</option>
+                  <option value="day" {% if selected_frequency == 'day' %}selected{% endif %}>Daily</option>
+                  <option value="week" {% if selected_frequency == 'week' %}selected{% endif %}>Weekly</option>
+                  <option value="month" {% if selected_frequency == 'month' %}selected{% endif %}>Monthly</option>
+              </select>
+              <button class="btn-filter" type="submit">Apply Filter</button>
+          </form>
+        </div>
+        <table>
+          {% for habit in habits %}
+          <tr>
+            <td>
+              <div class="container habit-con">
+                <div class="row">
+                  <div>
+                    {% if habit.progress == 0 %}
+                    <div class="progress container progress-container">
+                      <div
+                        class="progress-bar row"
+                        role="progressbar"
+                        data-progress="{{ habit.progress }}"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                      <div class="progress-cd">
+                        <div class="unit-value col-3">
+                          <div class="habit-value">{{ habit.value }}</div>
+                          <div class="units">{{ habit.units }}</div>
+                        </div>
+                        <div class="habit-name col-5 mx-auto">
+                          {{ habit.name }}
+                        </div>
+                        <div
+                          class="dropdown col-3"
+                          aria-label="options dropdown menu"
+                        >
+                          <a
+                            class="option-btn"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            * * *
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a
+                                class="options"
+                                title="Edit your task"
+                                href="{% url 'edit' habit.id %}"
+                                >Edit</a
+                              >
+                            </li>
+                            {% if not habit.completed %}
+                            <li>
+                              <a
+                                class="options"
+                                title="Complete your task"
+                                href="{% url 'toggle' habit.id %}"
+                                >Complete Habit</a
+                              >
+                            </li>
+                            {% endif %}
+                            <li>
+                              <a
+                                class="options"
+                                title="Delete your task"
+                                href="{% url 'delete' habit.id %}"
+                                >Delete</a
+                              >
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
-                  </td>
-                </tr>
-                {% endfor %}
-              </table>
-              <a aria-current="page" href="{% url 'add' %}">
-                <button class="btn-submit">Add</button>
-              </a>
-            </div>
-          </div>
+                    {% else %}
+                    <div class="progress container progress-container">
+                      <div
+                        class="progress-bar {% if habit.completed %}completed{% endif %}"
+                        role="progressbar"
+                        data-progress="{{ habit.progress }}"
+                        aria-valuenow="{{ habit.progress }}"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                      <div
+                        class="progress-cd {% if habit.completed %}completed{% endif %}"
+                      >
+                        <div class="unit-value col-3">
+                          <div class="habit-value">{{ habit.value }}</div>
+                          <div class="units">{{ habit.units }}</div>
+                        </div>
+                        <div class="habit-name col-5 mx-auto">
+                          {{ habit.name }}
+                        </div>
+                        <div
+                          class="dropdown col-3"
+                          title="options"
+                          aria-label="options dropdown menu"
+                        >
+                          <a
+                            class="option-btn"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            * * *
+                          </a>
+
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a
+                                class="options"
+                                title="Edit your task"
+                                href="{% url 'edit' habit.id %}"
+                                >Edit</a
+                              >
+                            </li>
+                            {% if not habit.completed %}
+                            <li>
+                              <a
+                                class="options"
+                                title="Complete your task"
+                                href="{% url 'toggle' habit.id %}"
+                                >Complete Habit</a
+                              >
+                            </li>
+                            {% endif %}
+                            <li>
+                              <a
+                                class="options"
+                                title="Delete your task"
+                                href="{% url 'delete' habit.id %}"
+                                >Delete</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+        <a aria-current="page" href="{% url 'add' %}">
+          <button class="btn-submit">Add</button>
+        </a>
+      </div>
     </div>
+  </div>
 </div>
 {% load static %}
 <script src="{% static 'js/index.js' %}"></script>
