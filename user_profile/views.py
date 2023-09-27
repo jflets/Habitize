@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
-from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
-from cloudinary.forms import CloudinaryFileField
+from django.views.generic.edit import UpdateView
+from cloudinary import uploader
 from .models import UserProfile
 from .forms import UserProfileForm
 
@@ -25,17 +25,22 @@ class EditProfileView(UpdateView):
         return UserProfile.objects.get(user=self.request.user)
 
     def form_valid(self, form):
-        # Handle username change
-        new_username = form.cleaned_data['username']
-        if self.request.user.username != new_username:
+        new_username = form.cleaned_data.get('username')
+
+        if new_username and self.request.user.username != new_username:
             self.request.user.username = new_username
             self.request.user.save()
 
-        # Handle profile image upload to Cloudinary
         profile_image = form.cleaned_data['profile_image']
+
         if profile_image:
-            # Get the Cloudinary public ID of the uploaded image
-            public_id = profile_image.public_id
+            # Upload the profile image to Cloudinary
+            response = uploader.upload(profile_image)
+
+            # Get the public_id from the Cloudinary response
+            public_id = response['public_id']
+
+            # Save the public_id to the user's profile
             self.request.user.userprofile.profile_image_public_id = public_id
             self.request.user.userprofile.save()
 

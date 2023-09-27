@@ -5,17 +5,12 @@
     <div class="row card2">
         <h2>Edit Profile</h2>
         <p>Username: {{ user_profile.user.username }}</p>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-
-            <!-- Add a field for editing the username -->
-            <label for="{{ form.username.id_for_label }}">Username:</label>
-            {{ form.username }}
-            <br><br>
-
+        
             <input type="submit" value="Update">
-        </form>
+        </form>        
         <p><a href="{% url 'view_profile' %}">View Profile</a></p>
     </div>
   </div>
