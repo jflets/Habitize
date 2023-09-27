@@ -1,12 +1,14 @@
+/* ------------------------------ Body Styling ------------------------------ */
+
 body {
     width: 100%;
     height: 100%;
+    position: relative;
+    background-color: #2B2B2B;
     background-image: url('/static/images/topo-1.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #2B2B2B;
-    position: relative;
     font-family: 'Playfair Display', serif;
     color: #dedede;
 }
@@ -15,7 +17,8 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* ------------------------------ default text weight  ---------------------------------- */
+/* ------------------------------ Default Text Styling ------------------------------ */
+
 .thin {
     font-weight: 400;
 }
@@ -32,7 +35,8 @@ body::-webkit-scrollbar {
     font-weight: 700;
 }
 
-/* ------------------------------ default text size  ---------------------------------- */
+/* ------------------------------ Default Text Size ------------------------------ */
+
 p {
     font-size: 20px;
 }
@@ -41,11 +45,12 @@ h3 {
     font-size: 30px;
 }
 
-/* ------------------------------ area text styling  ---------------------------------- */
-.body-title-text{
-    color: #dedede;
+/* ------------------------------ Area Text Styling ------------------------------ */
+
+.body-title-text {
     font-size: 4rem;
     font-weight: 600;
+    color: #dedede;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -64,7 +69,9 @@ h3 {
 .dark-bg {
     background-color: rgba(28, 28, 28, 60%);
 }
-/* ------------------------------ nav styling  ---------------------------------- */
+
+/* ------------------------------ Nav Styling ------------------------------ */
+
 .navbar-toggler {
     color: #dedede;
     background-color: #dedede;
@@ -80,16 +87,17 @@ h3 {
 }
 
 .nav-link:hover {
+    color: #1C1C1C;
     background: rgba(255, 255, 255, 0.53);
     border-radius: 3px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.3px);
     -webkit-backdrop-filter: blur(6.3px);
     border: 1px solid rgba(255, 255, 255, 0.07);
-    color: #1C1C1C;
 }
 
-/* ------------------------------ card styling  ---------------------------------- */
+/* ------------------------------ Card Styling ------------------------------ */
+
 .card {
     min-height: 400px;
     background: rgba(92, 92, 92, 0.55);
@@ -100,7 +108,7 @@ h3 {
     margin-bottom: 3rem;
 }
 
-.card2 {
+.card2, .card3 {
     min-height: 300px;
     text-align: center;
     margin-bottom: 2rem;
@@ -108,31 +116,9 @@ h3 {
     padding-bottom: 1rem;
 }
 
-.card3 {
-    min-height: 300px;
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
+/* ------------------------------ Button Styling ------------------------------ */
 
-/* ------------------------------ button styling  ---------------------------------- */
-.btn-signup {
-    background-color: #2b2b2b;
-    color: #dedede;
-    font-size: 18px;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #dedede;
-    color: #2b2b2b;
-}
-
-.btn-hero {
-    padding-bottom: 1rem;
-}
-
-.btn-submit { 
+.btn-signup, .btn-hero, .btn-signin {
     font-size: 18px;
     font-weight: 500;
     border-radius: 4px;
@@ -141,51 +127,53 @@ h3 {
     padding: 0.4rem;
 }
 
-.btn-submit:hover,
-.btn-submit:active {
+.btn-signup, .btn-hero {
+    background-color: #2b2b2b;
+    color: #dedede;
+}
+
+.btn-signup:hover, .btn-signup:active,
+.btn-signin:hover, .btn-signin:active {
     background-color: #5c5c5c;
     color: #dedede;
 }
 
-.btn-signin { 
-    font-size: 16px;
+.btn-hero {
+    padding-bottom: 1rem;
+}
+
+.btn-submit {
+    font-size: 18px;
     font-weight: 500;
     border-radius: 4px;
     border: none;
     background-color: #fff;
-    padding: 0.2rem;
+    padding: 0.4rem;
 }
 
-.btn-signin:hover,
-.btn-signin:active {
+.btn-submit:hover, .btn-submit:active {
     background-color: #5c5c5c;
     color: #dedede;
 }
 
-/* ------------------------------ link styling  ---------------------------------- */
-.link {
+/* ------------------------------ Link Styling ------------------------------ */
+
+.link, a {
     color: #fff;
     text-decoration: none;
 }
 
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-a {
-    color: #fff;
-}
-
-a:hover,
-a:active {
+.link:hover, .link:active,
+a:hover, a:active {
     color: #1C1C1C;
+    text-decoration: underline;
 }
 
 .f-title {
     margin-bottom: 2rem;
 }
+
+/* ------------------------------ Form Styling ------------------------------ */
 
 form label {
     display: flex;

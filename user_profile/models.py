@@ -3,11 +3,15 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
-# Define choices for color themes
+# color themes
 COLOR_CHOICES = [
-    ('light', 'Light Theme'),
-    ('dark', 'Dark Theme'),
-    # Add more choices as needed
+    ('default', 'Default Theme'),
+    ('blue', 'Blue Theme'),
+    ('turquoise', 'Turquoise Theme'),
+    ('green', 'Green Theme'),
+    ('pink', 'Pink Theme'),
+    ('purple', 'Purple Theme'),
+    ('brown', 'Brown Theme'),
 ]
 
 
