@@ -23,7 +23,7 @@ class EditProfileView(UpdateView):
         return UserProfile.objects.get(user=self.request.user)
 
     def form_valid(self, form):
-        # Check if any changes were made to the form data
+    # Check if any changes were made to the form data
         if form.has_changed():
             new_username = form.cleaned_data.get('username')
 
@@ -51,7 +51,17 @@ class EditProfileView(UpdateView):
                 # No new profile image provided, retain the existing public_id
                 public_id = self.request.user.userprofile.profile_image_public_id
 
-            self.request.user.userprofile.color_theme = form.cleaned_data['color_theme']
-            self.request.user.userprofile.save()
+            # Update the user's selected color theme
+            new_color_theme = form.cleaned_data['color_theme']
+            old_color_theme = self.request.user.userprofile.color_theme
+
+            if new_color_theme != old_color_theme:
+                # Only update the session and re-render if the theme has changed
+                self.request.user.userprofile.color_theme = new_color_theme
+                self.request.user.userprofile.save()
+
+                # Apply the selected color theme to the user's session
+                self.request.session['selected_color_theme'] = new_color_theme
 
         return super().form_valid(form)
+
