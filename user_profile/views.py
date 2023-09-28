@@ -1,10 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth.signals import user_logged_in
+from django.dispatch import receiver
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from cloudinary import uploader
-from .models import UserProfile
+from .models import UserProfile, COLOR_CHOICES
 from .forms import UserProfileForm
 
 @login_required(login_url="/accounts/login")
@@ -19,11 +21,8 @@ class EditProfileView(UpdateView):
     template_name = 'user_profile/edit_profile.html'
     success_url = reverse_lazy('view_profile')
 
-    def get_object(self, queryset=None):
-        return UserProfile.objects.get(user=self.request.user)
-
     def form_valid(self, form):
-    # Check if any changes were made to the form data
+        # Check if any changes were made to the form data
         if form.has_changed():
             new_username = form.cleaned_data.get('username')
 
@@ -65,3 +64,13 @@ class EditProfileView(UpdateView):
 
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['color_choices'] = COLOR_CHOICES
+        return context
+    
+    @receiver(user_logged_in)
+    def set_color_theme_session(sender, request, user, **kwargs):
+        # Check if the user has a color theme in their profile
+        if hasattr(user, 'userprofile') and user.userprofile.color_theme:
+            request.session['selected_color_theme'] = user.userprofile.color_theme

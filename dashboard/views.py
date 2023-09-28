@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.utils import timezone
 from .models import Habit
 from .forms import AddHabitForm, EditHabitForm
+from user_profile.models import UserProfile
 
 
 @login_required(login_url="/accounts/login")
@@ -152,3 +154,26 @@ def delete_habit(request, habit_id):
 
     context = {'habit': habit}
     return render(request, 'dashboard/delete_confirmation.html', context)
+
+@login_required(login_url="/accounts/login")
+def set_selected_color_theme(request, color_theme):
+    # Check if the selected color theme is valid
+    valid_color_themes = ['default', 'blue', 'turquoise', 'green', 'pink', 'purple', 'brown']
+
+    if color_theme not in valid_color_themes:
+        messages.error(request, 'Invalid color theme selected.')
+        return redirect('dashboard')
+
+    # Get the user's UserProfile instance
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+    # Set the selected color theme in the user's profile
+    user_profile.selected_color_theme = color_theme
+    user_profile.save()
+
+    # Set the selected color theme in the session
+    request.session['selected_color_theme'] = color_theme
+
+    messages.success(request, f'Color theme set to {color_theme.capitalize()}.')
+
+    return redirect('dashboard')
