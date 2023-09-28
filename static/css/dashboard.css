@@ -436,3 +436,24 @@ form p {
 .index-container {
     max-width: 400px;
 }
+
+
+.btn-color {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-circle.default {
+    background-color: #333; /* Default Theme Color */
+}
+
+.color-circle.blue {
+    background-color: #3498db; /* Blue Theme Color */
+}
