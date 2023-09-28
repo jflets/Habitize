@@ -1,11 +1,11 @@
 /* ------------------------------ Root colors ------------------------------ */
 :root {
-    --primary-color: #5C5C5C;
-    --secondary-color: #2B2B2B;
+    --primary-color: #5b4278;
+    --secondary-color: #2d1b3b;
     --text-color1: #dedede;
-    --text-color2: #1c1c1c;
-    --accent-color: #8F8F8F;
-    --card-background-color: rgba(92, 92, 92, 0.55);
+    --text-color2: #1a0d29;
+    --accent-color: #8f76a8;
+    --card-background-color: rgba(143, 118, 168, 0.4);
 }
 
 /* ------------------------------ Body Styling ------------------------------ */
@@ -225,7 +225,7 @@ h6 {
     font-size: 14px;
     font-weight: 400;
     border-radius: 4px;
-    background-color: var(--primary-color);
+    background-color: #5C5C5C;
     color: var(--text-color1);
     padding: 0.2rem;
 }

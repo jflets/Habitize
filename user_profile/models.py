@@ -18,7 +18,8 @@ COLOR_CHOICES = [
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     color_theme = models.CharField(
-        max_length=20, choices=COLOR_CHOICES, default='light')
+        max_length=20, choices=COLOR_CHOICES, default='default')
+    selected_color_theme = models.CharField(max_length=50, default='default')
     profile_image = CloudinaryField('image', null=True, blank=True)
     profile_image_public_id = models.CharField(max_length=100, blank=True)
 
