@@ -1,11 +1,12 @@
 from django import forms
-from .models import Habit
+from django.forms import TimeInput
+from .models import Habit, Category
 
 
 class AddHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name', 'goal_amount', 'units', 'frequency', 'completed']
+        fields = ['name', 'goal_amount', 'units', 'frequency', 'completed', 'category']
         labels = {
             'name': 'Habit Name',
             'completed': 'Completed',
@@ -21,8 +22,7 @@ class AddHabitForm(forms.ModelForm):
 class EditHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name', 'units', 'value',
-                  'frequency', 'goal_amount', 'completed']
+        fields = ['name', 'units', 'value', 'frequency', 'goal_amount', 'completed', 'category']
         labels = {
             'name': 'Habit Name',
             'value': 'Current Amount',

@@ -12,6 +12,12 @@
                 {{ form.name }}
             </div>
 
+            <!-- Add Category Field -->
+            <div class="form-group">
+                <label for="{{ form.category.id_for_label }}">Category:</label>
+                {{ form.category }}
+            </div>
+
             <!-- Separate div for the "value" field -->
             <div class="value-field">
                 {{ form.value.label_tag }}
