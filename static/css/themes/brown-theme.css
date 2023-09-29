@@ -48,8 +48,15 @@
     outline: none;
 }
 
-.btn-group {
-    gap: 1rem;
+.btn-group-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-color {
+    font-size: 14px;
 }
 
 /* ------------------------------ Body Styling ------------------------------ */
