@@ -8,6 +8,50 @@
     --card-background-color: rgba(118, 168, 165, 0.4);
 }
 
+/* ------------------------------ Color Theme Buttons------------------------------ */
+#color-default {
+    accent-color: #5C5C5C;
+}
+
+#color-blue {
+    accent-color: #415a77;
+}
+
+#color-turquoise {
+    accent-color: #427872;
+}
+
+#color-green {
+    accent-color: #5b7842;
+}
+
+#color-purple {
+    accent-color: #5b4278;
+}
+
+#color-pink {
+    accent-color: #833569;
+}
+
+#color-brown {
+    accent-color: #784f42;
+}
+
+.radio-btn {
+    width: 50px;
+    height: 50px;
+    outline: none;
+}
+
+.radio-btn:active,
+.radio-btn:focus {
+    outline: none;
+}
+
+.btn-group {
+    gap: 1rem;
+}
+
 /* ------------------------------ Body Styling ------------------------------ */
 body {
     width: 100%;
