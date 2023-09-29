@@ -152,6 +152,10 @@ h6 {
     color: var(--text-color1);
 }
 
+.navbar-text {
+    margin-left: 5rem;
+}
+
 /* ------------------------------ card styling  ---------------------------------- */
 .card {
     min-height: 400px;
@@ -276,7 +280,7 @@ h6 {
     font-size: 14px;
     font-weight: 400;
     border-radius: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--card-background-color);
     color: var(--text-color1);
     padding: 0.2rem;
 }
@@ -335,7 +339,7 @@ form label {
 form input {
     text-align: center;
     color: var(--text-color1);
-    background: rgba(92, 92, 92, 0.55);
+    background: var(--card-background-color);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.1px);
