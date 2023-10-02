@@ -287,6 +287,21 @@ h6 {
     color: var(--text-color2);
 }
 
+#id_category {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: var(--card-background-color);
+    color: var(--text-color1);
+    padding: 0.2rem;
+}
+
+#id_category:hover,
+#id_category:active {
+    background-color: var(--accent-color);
+    color: var(--text-color2);
+}
+
 select:focus {
     outline: none;
 }

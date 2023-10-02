@@ -198,7 +198,10 @@ h6 {
 
 .habit-card-container {
     position: relative;
-    max-height: 240px; /* Adjust the maximum height as needed */
+    padding: 0 1rem;
+    display: flexbox;
+    justify-content: center;
+    max-height: 240px;
     overflow-y: auto; 
 }
 
@@ -287,6 +290,21 @@ h6 {
 
 #id_frequency:hover,
 #id_frequency:active {
+    background-color: var(--accent-color);
+    color: var(--text-color2);
+}
+
+#id_category {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: var(--card-background-color);
+    color: var(--text-color1);
+    padding: 0.2rem;
+}
+
+#id_category:hover,
+#id_category:active {
     background-color: var(--accent-color);
     color: var(--text-color2);
 }
