@@ -21,6 +21,11 @@ class EditProfileView(UpdateView):
     template_name = 'user_profile/edit_profile.html'
     success_url = reverse_lazy('view_profile')
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['username'] = self.request.user.username  # Set the initial username to the current user's username
+        return initial
+
     def form_valid(self, form):
         # Check if any changes were made to the form data
         if form.has_changed():

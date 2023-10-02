@@ -312,7 +312,6 @@ h6 {
 select:focus {
     outline: none;
 }
-
 /* ------------------------------ link styling  ---------------------------------- */
 #profile {
     color: var(--text-color1);

@@ -194,7 +194,10 @@ h6 {
 
 .habit-card-container {
     position: relative;
-    max-height: 240px; /* Adjust the maximum height as needed */
+    padding: 0 1rem;
+    display: flexbox;
+    justify-content: center;
+    max-height: 240px;
     overflow-y: auto; 
 }
 
