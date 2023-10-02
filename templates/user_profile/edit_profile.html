@@ -39,10 +39,9 @@
                   {% endfor %}
               </div>
             </div>
-          
-            <input type="submit" value="Update">
-        </form>        
-        <p><a href="{% url 'view_profile' %}">View Profile</a></p>
+            <input type="submit" value="Update" class="btn btn-submit">
+            <a href="{% url 'view_profile' %}" class="btn btn-submit">Cancel</a>
+        </form>
     </div>
   </div>
 {% endblock %}

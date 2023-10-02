@@ -16,6 +16,7 @@
                             aria-valuenow="0"
                             aria-valuemin="0"
                             aria-valuemax="100"
+                            aria-label="daily completed habit progressbar"
                         >
                             <div class="total-prog">
                                 <h4>Daily: {{ completed_habits_day }}/{{ total_habits_day }}</h4>
@@ -32,6 +33,7 @@
                             aria-valuenow="0"
                             aria-valuemin="0"
                             aria-valuemax="100"
+                            aria-label="weekly completed habit progressbar"
                         >
                             <div class="total-prog">
                                 <h4>Weekly: {{ completed_habits_week }}/{{ total_habits_week }}</h4>
@@ -48,6 +50,7 @@
                             aria-valuenow="0"
                             aria-valuemin="0"
                             aria-valuemax="100"
+                            aria-label="monthly completed habit progressbar"
                         >
                             <div class="total-prog">
                                 <h4>Monthly: {{ completed_habits_month }}/{{ total_habits_month }}</h4>
@@ -94,6 +97,7 @@
                                                 aria-valuenow="0"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
+                                                aria-label="habit progressbar"
                                             ></div>
                                             <div class="progress-cd">
                                                 <div class="unit-value col-3">
@@ -155,6 +159,7 @@
                                                 aria-valuenow="{{ habit.progress }}"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
+                                                aria-label="habit progressbar"
                                             ></div>
                                             <div
                                                 class="progress-cd {% if habit.completed %}completed{% endif %}"
