@@ -1,39 +1,142 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Habitize
 
-Welcome,
+![Project Screenshot]()
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**Habitize** is a web-based habit tracking and goal management application designed to help users build and maintain positive habits. With Habitize, you can create a personalized dashboard to track your habits, set achievable goals, and measure your progress over time. The application offers a user-friendly interface and a range of features to empower users in their journey to form lasting habits.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Key Features
 
-## Codeanywhere Reminders
+- **User-Friendly Dashboard:** Create and customize your dashboard to display the habits that matter most to you.
+- **Goal Setting:** Set specific goals for each habit and track your progress towards achieving them.
+- **Habit Tracking:** Log your habits with ease and view your streaks and completion rates.
+- **Visual Analytics:** Gain insights into your habits with visual statistics.
+- **Account Management:** Securely manage your account and personal habit data.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+Habitize is built using modern web technologies, making it accessible across various devices and platforms. Start your habit-building journey today with Habitize!
 
-`python3 -m http.server`
+## Demo
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+[Provide a link to a live demo or hosted version of your project if applicable.]
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## Table Of Contents
 
-`http_server`
+- [How to Use](#how-to-use)
+- [Target Audience](#target-audience)
+  - [User Stories](#user-stories)
+- [Data Models](#data-model)
+  - [Logic Map](#logic-map)
+- [Features](#features)
+  - [Feature 1](#feature-1)
+  - [Feature 2](#feature-2)
+- [Technologies Used](#technologies-used)
+- [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
+- [Testing](#testing)
+  - [Validator Testing](#validator-testing)
+  - [Solved Bugs](#solved-bugs)
+  - [Bugs](#bugs)
+  - [Testing User Stories](#testing-user-stories)
+- [Deployment](#deployment)
+  - [Local Development](#local-development)
+- [Credits](#credits)
+  - [Inspiration](#inspiration)
+  - [Code References](#code-references)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# How to Use
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+[Explain how to use your project, including setup instructions and any necessary prerequisites.]
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Target Audience
 
-To log into the Heroku toolbelt CLI:
+### User Stories
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1. [User Story 1]
+   - As a [type of user], I want to [perform an action] so that [benefit or reason].
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+2. [User Story 2]
+   - As a [type of user], I want to [perform an action] so that [benefit or reason].
 
----
+[Add more user stories if needed.]
 
-Happy coding!
+## Data Models
+
+[Describe the data model of your project, including key entities and their relationships.]
+
+### Logic Map
+
+[Provide a logic map or flowchart that illustrates the main logic or flow of your project.]
+
+![Logic Map]()
+
+# Features
+
+## Feature 1
+
+- [Describe feature 1 and how to use it.]
+
+## Feature 2
+
+- [Describe feature 2 and how to use it.]
+
+[Add more features if needed.]
+
+# Technologies Used
+
+[List the main programming languages and technologies used in your project.]
+
+- [Technology 1]
+- [Technology 2]
+- [Technology 3]
+
+# Frameworks, Libraries, and Tools Used
+
+[List any frameworks, libraries, or tools that were used in your project.]
+
+- [Framework/Library/Tool 1]
+- [Framework/Library/Tool 2]
+- [Framework/Library/Tool 3]
+
+# Testing
+
+## Validator Testing
+
+- [Describe any validation tools used and the results.]
+
+## Solved Bugs
+
+1. [Bug description and how it was resolved.]
+
+2. [Bug description and how it was resolved.]
+
+[Add more resolved bugs if needed.]
+
+## Bugs
+
+[Describe any known bugs or issues in your project.]
+
+## Testing User Stories
+
+1. [User Story 1 Testing]
+   - [Describe the test scenario and the result.]
+
+2. [User Story 2 Testing]
+   - [Describe the test scenario and the result.]
+
+[Add more testing scenarios for user stories if needed.]
+
+# Deployment
+
+[Explain how your project can be deployed or hosted.]
+
+## Local Development
+
+[Provide instructions for local development, including how to clone the repository and set up the development environment.]
+
+# Credits
+
+## Inspiration
+
+[Credit any sources or inspirations that influenced your project.]
+
+## Code References
+
+[List any code references or tutorials that were helpful in developing your project.]
