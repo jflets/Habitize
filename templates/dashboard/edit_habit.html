@@ -1,0 +1,73 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row card3">
+        <h2>Edit a habit</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Container for the other fields -->
+            <div class="other-fields">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+
+            <!-- Add Category Field -->
+            <div class="form-group">
+                <label for="{{ form.category.id_for_label }}">Category:</label>
+                {{ form.category }}
+            </div>
+
+            <!-- Separate div for the "value" field -->
+            <div class="value-field">
+                {{ form.value.label_tag }}
+                <div class="input-group custom-input">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit decrement-value-button">-</button>
+                    </span>
+                {{ form.value }}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit increment-value-button">+</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="units-field">
+                {{ form.units.label_tag }}
+                {{ form.units }}
+            </div>
+
+            <div class="frequency-field">
+                {{ form.frequency.label_tag }}
+                {{ form.frequency }}
+            </div>
+
+            <div class="goal-amount-field">
+                {{ form.goal_amount.label_tag }}
+                <div class="input-group custom-input">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit decrement-button">-</button>
+                    </span>
+                {{ form.goal_amount }}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn-submit increment-button">+</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="completed-field">
+                {{ form.completed.label_tag }}
+                {{ form.completed }}
+            </div>
+            
+            <div>
+                <p>
+                    <button type="submit" class="btn-submit">Update Habit</button>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+{% load static %}
+<script src="{% static 'js/edit.js' %}"></script>
+{% endblock %}

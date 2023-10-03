@@ -1,3 +1,14 @@
+/* ------------------------------ Root colors ------------------------------ */
+:root {
+    --primary-color: #5C5C5C;
+    --secondary-color: #2B2B2B;
+    --text-color1: #dedede;
+    --text-color2: #1c1c1c;
+    --accent-color: #8F8F8F;
+    --card-background-color: rgba(92, 92, 92, 0.55);
+}
+
+/* ------------------------------ Body Styling ------------------------------ */
 body {
     width: 100%;
     height: 100%;
@@ -5,10 +16,10 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #2B2B2B;
+    background-color: var(--secondary-color);
     position: relative;
     font-family: 'Playfair Display', serif;
-    color: #dedede;
+    color: var(--text-color1);
 }
 
 body::-webkit-scrollbar {
@@ -43,7 +54,7 @@ h3 {
 
 /* ------------------------------ area text styling  ---------------------------------- */
 .body-title-text{
-    color: #dedede;
+    color: var(--text-color1);
     font-size: 4rem;
     font-weight: 600;
     padding-top: 2rem;
@@ -54,25 +65,21 @@ h3 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #dedede;
-}
-
-.light-bg {
-    background-color: #fff;
+    color: var(--text-color1);
 }
 
 .dark-bg {
-    background-color: rgba(28, 28, 28, 60%);
+    background-color: var(--secondary-color);
 }
 /* ------------------------------ nav styling  ---------------------------------- */
 .navbar-toggler {
-    color: #dedede;
-    background-color: #dedede;
+    color: var(--text-color1);
+    background-color: var(--text-color1);
 }
 
 .nav-link {
     font-size: 20px;
-    color: #dedede;
+    color: var(--text-color1);
 }
 
 .nav-link:focus {
@@ -80,19 +87,15 @@ h3 {
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.53);
+    background: var(--primary-color);
     border-radius: 3px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.3px);
-    -webkit-backdrop-filter: blur(6.3px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    color: #1C1C1C;
+    color: var(--text-color1);
 }
 
 /* ------------------------------ card styling  ---------------------------------- */
 .card {
     min-height: 400px;
-    background: rgba(92, 92, 92, 0.55);
+    background: var(--card-background-color);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9px);
@@ -117,15 +120,15 @@ h3 {
 
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
-    background-color: #2b2b2b;
-    color: #dedede;
+    background-color: var(--secondary-color);
+    color: var(--text-color1);
     font-size: 18px;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #dedede;
-    color: #2b2b2b;
+    background-color: var(--text-color1);
+    color: var(--secondary-color);
 }
 
 .btn-hero {
@@ -144,7 +147,7 @@ h3 {
 .btn-submit:hover,
 .btn-submit:active {
     background-color: #5c5c5c;
-    color: #dedede;
+    color: var(--text-color1);
 }
 
 .btn-signin { 
@@ -159,7 +162,7 @@ h3 {
 .btn-signin:hover,
 .btn-signin:active {
     background-color: #5c5c5c;
-    color: #dedede;
+    color: var(--text-color1);
 }
 
 /* ------------------------------ link styling  ---------------------------------- */
@@ -180,7 +183,7 @@ a {
 
 a:hover,
 a:active {
-    color: #1C1C1C;
+    color: var(--text-color2);
 }
 
 .f-title {
@@ -195,8 +198,8 @@ form label {
 
 form input {
     text-align: center;
-    color: #dedede;
-    background: rgba(92, 92, 92, 0.55);
+    color: var(--text-color1);
+    background: var(--card-background-color);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.1px);
@@ -206,5 +209,5 @@ form input {
 }
 
 form input:focus {
-    outline: 1px solid #dedede;
+    outline: 1px solid var(--text-color1);
 }

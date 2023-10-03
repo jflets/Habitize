@@ -1,0 +1,16 @@
+{% extends 'user_profile/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="card2">
+    <h2>View Profile</h2>
+    {% if user_profile.profile_image %}
+    <img src="{{ user_profile.profile_image.url }}" width="300" height="300" alt="Profile Image" class="rounded-circle">
+    {% else %}
+    <img src="#" alt="Placeholder Image" class="rounded-circle">
+    {% endif %}
+    <p>Username: {{ user.username }}</p>
+      <a href="{% url 'edit_profile' user_profile.pk %}" class="btn btn-submit">Edit Profile</a>
+  </div>
+</div>
+{% endblock %}

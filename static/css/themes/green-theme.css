@@ -1,0 +1,507 @@
+/* ------------------------------ Root colors ------------------------------ */
+:root {
+    --primary-color: #5b7842;
+    --secondary-color: #273b1b;
+    --text-color1: #dedede;
+    --text-color2: #1a290d;
+    --accent-color: #8ca876;
+    --card-background-color: rgba(140, 168, 118, 0.4);
+}
+
+/* ------------------------------ Color Theme Buttons------------------------------ */
+#color-default {
+    accent-color: #5C5C5C;
+}
+
+#color-blue {
+    accent-color: #415a77;
+}
+
+#color-turquoise {
+    accent-color: #427872;
+}
+
+#color-green {
+    accent-color: #5b7842;
+}
+
+#color-purple {
+    accent-color: #5b4278;
+}
+
+#color-pink {
+    accent-color: #833569;
+}
+
+#color-brown {
+    accent-color: #784f42;
+}
+
+.radio-btn {
+    width: 50px;
+    height: 50px;
+    outline: none;
+}
+
+.radio-btn:active,
+.radio-btn:focus {
+    outline: none;
+}
+
+.btn-group-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-color {
+    font-size: 14px;
+}
+
+/* ------------------------------ Body Styling ------------------------------ */
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/images/topo-1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--secondary-color);
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color1);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ------------------------------ default text weight  ---------------------------------- */
+.thin {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* ------------------------------ default text size  ---------------------------------- */
+p {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+/* ------------------------------ area text styling  ---------------------------------- */
+.body-title-text{
+    color: var(--text-color1);
+    font-size: 4rem;
+    font-weight: 600;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color1);
+}
+
+.dark-bg {
+    background-color: var(--secondary-color);
+}
+
+/* ------------------------------ habit text styling  ---------------------------------- */
+.habit-name {
+    color: var(--text-color1);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* ------------------------------ nav styling  ---------------------------------- */
+.navbar-toggler {
+    color: var(--text-color1);
+    background-color: var(--text-color1);
+}
+
+.nav-link {
+    font-size: 20px;
+    color: var(--text-color1);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    background: var(--primary-color);
+    border-radius: 3px;
+    color: var(--text-color1);
+}
+
+/* ------------------------------ card styling  ---------------------------------- */
+.card {
+    min-height: 400px;
+    background: var(--card-background-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    margin-bottom: 3rem;
+}
+
+.card2 {
+    min-height: 300px;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card3 {
+    min-height: 300px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card4 {
+    max-width: 500px;
+    min-width: 300px;
+    min-height: 300px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: var(--card-background-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.habit-card-container {
+    position: relative;
+    padding: 0 1rem;
+    display: flexbox;
+    justify-content: center;
+    max-height: 240px;
+    overflow-y: auto; 
+}
+
+/* ------------------------------ button styling  ---------------------------------- */
+.btn-signup {
+    background-color: var(--secondary-color);
+    color: var(--text-color1);
+    font-size: 18px;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: var(--text-color1);
+    color: var(--secondary-color);
+}
+
+.btn-hero {
+    padding-bottom: 1rem;
+}
+
+.btn-submit { 
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--text-color1);
+    padding: 0.4rem;
+}
+
+.btn-submit:hover,
+.btn-submit:active {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+}
+
+.options {
+    text-decoration: none;
+    color: var(--text-color2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+}
+
+.options:hover,
+.options:active {
+    color: var(--text-color1);
+    background-color: var(--text-color2);
+}
+
+.option-btn {
+    min-width: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color1);
+    padding: 0 0.2rem;
+}
+
+.option-btn:hover,
+.option-btn:active {
+    color: var(--text-color1);
+    background-color: var(--text-color2);
+}
+
+.btn-filter{
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--text-color1);
+    padding: 0.2rem;
+}
+
+.btn-filter:hover,
+.btn-filter:active {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+}
+
+#id_frequency {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: var(--card-background-color);
+    color: var(--text-color1);
+    padding: 0.2rem;
+}
+
+#id_frequency:hover,
+#id_frequency:active {
+    background-color: var(--accent-color);
+    color: var(--text-color2);
+}
+
+#id_category {
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: var(--card-background-color);
+    color: var(--text-color1);
+    padding: 0.2rem;
+}
+
+#id_category:hover,
+#id_category:active {
+    background-color: var(--accent-color);
+    color: var(--text-color2);
+}
+
+select:focus {
+    outline: none;
+}
+
+/* ------------------------------ link styling  ---------------------------------- */
+#profile {
+    color: var(--text-color1);
+    text-decoration: none;
+}
+
+#profile:hover,
+#profile:active {
+    color: var(--primary-color);
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+a {
+    color: var(--text-color1);
+}
+
+a:hover,
+a:active {
+    color: #fff;
+}
+
+.f-title {
+    margin-bottom: 2rem;
+}
+
+form label {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+form input {
+    text-align: center;
+    color: var(--text-color1);
+    background: var(--card-background-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.2rem;
+}
+
+form input:focus {
+    outline: 1px solid var(--text-color1);
+}
+
+.main-container {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: inline;
+    padding: 3rem;
+}
+
+/* ------------------------------ habit progressbar styling  ---------------------------------- */
+.habit-con {
+    margin: 0.5rem 0;
+}
+
+.progress {
+    min-width: 300px;
+    min-height: 60px;
+}
+
+.progress-bar {
+    width: auto;
+    min-height: 60px; 
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+    font-size: 14px;
+}
+
+.progress-container{
+    min-width: 340px;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0;
+}
+
+.progress-container2{
+    min-width: 340px;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0;
+}
+
+.progress-cd {
+    min-width: 300px;
+    min-height: 30px;
+    padding: 0.1rem;
+    margin: 0 5%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.total-prog {
+    min-width: 340px;
+    min-height: 30px;
+    position: absolute;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* ------------------------------ edit habit button styling  ---------------------------------- */
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+}
+
+/* Custom styling for the decrement and increment buttons */
+
+.goal-input {
+    text-align: center; /* Center the text */
+    width: 50px; /* Adjust the width as needed */
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+}
+
+.completed-field {
+    display: inline;
+}
+
+form p {
+    margin-top: 0.5rem;
+}
+
+.habit-value {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    color: var(--text-color1);
+    border: 2px solid var(--text-color1);
+    border-radius: 60px;
+}
+
+.units {
+    color: var(--text-color1);
+}
+
+.unit-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    gap: 0.5rem;
+    color: var(--text-color1);
+}
+
+.completed-field {
+    display: inline;
+}
+
+.completed {
+    background-color: green;
+}
+
+.index-container {
+    max-width: 400px;
+}

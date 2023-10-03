@@ -1,0 +1,53 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row card3">
+        <h2>Add a habit</h2>
+        <form method="POST" action="add">
+            {% csrf_token %}
+
+            <!-- Category Field -->
+            <div class="form-group">
+                <label for="{{ form.category.id_for_label }}">Category:</label>
+                {{ form.category }}
+            </div>
+
+            <!-- Habit Name Field -->
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+
+            <!-- Goal Amount Field -->
+            <div class="form-group">
+                {{ form.goal_amount.label_tag }}
+                {{ form.goal_amount }}
+            </div>
+
+            <!-- Units Field -->
+            <div class="form-group">
+                {{ form.units.label_tag }}
+                {{ form.units }}
+            </div>
+
+            <!-- Frequency Field -->
+            <div class="form-group">
+                {{ form.frequency.label_tag }}
+                {{ form.frequency }}
+            </div>
+
+            <!-- Completed Field -->
+            <div class="form-group">
+                {{ form.completed.label_tag }}
+                {{ form.completed }}
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-submit">Add Habit</button>
+                <a href="{% url 'dashboard' %}" class="btn btn-submit">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
