@@ -45,3 +45,4 @@ function valueButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", valueButtons);
+module.exports = { goalAmountButtons, valueButtons };
