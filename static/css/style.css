@@ -222,7 +222,7 @@ form input:focus {
 }
 
 /* ------------------------------ Mobile Styles ------------------------------ */
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     .h-100 {
         overflow-x: hidden;
     }
