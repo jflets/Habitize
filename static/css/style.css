@@ -92,6 +92,15 @@ h3 {
     color: var(--text-color1);
 }
 
+.navbar-text {
+    margin-left: 5rem;
+}
+
+#profile {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
 /* ------------------------------ card styling  ---------------------------------- */
 .card {
     min-height: 400px;
@@ -210,4 +219,107 @@ form input {
 
 form input:focus {
     outline: 1px solid var(--text-color1);
+}
+
+/* ------------------------------ Mobile Styles ------------------------------ */
+@media (max-width: 320px) {
+    .h-100 {
+        overflow-x: hidden;
+    }
+
+    .flex-shrink-0 {
+        padding: 0 0.1rem;
+    }
+
+    .profile-text {
+        font-size: 0;
+        visibility: hidden;
+    }
+
+    .profile-img {
+        min-width: 40px;
+    }
+    
+    .habit-name {
+        font-size: 14px;
+    }
+
+    .card4 {
+        max-width: 320px;
+        margin-bottom: 2rem;
+    }
+
+    .total-prog {
+        min-width: 290px;
+    }
+
+    .progress-container,
+    .progress-container2 {
+        min-width: 290px;
+        min-height: 60px;
+    }
+
+    .progress-bar {
+        min-height: 60px;
+    }
+
+    .progress-cd {
+        min-width: 270px;
+        margin: 0 3%;
+    }
+
+    .habit-card-container {
+        min-width: fit-content;
+        max-height: 400px;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+    .h-100 {
+        overflow-x: hidden;
+    }
+
+    .flex-shrink-0 {
+        padding: 0 0.1rem;
+    }
+
+    .profile-text {
+        font-size: 0;
+        visibility: hidden;
+    }
+    
+    .habit-name {
+        font-size: 14px;
+    }
+
+    .card4 {
+        max-width: 375px;
+        margin-bottom: 2rem;
+    }
+
+    .total-prog {
+        min-width: 340px;
+    }
+
+    .progress-container,
+    .progress-container2 {
+        min-width: 350px;
+        min-height: 60px;
+    }
+
+    .progress-bar {
+        min-height: 60px;
+    }
+
+    .progress-cd {
+        min-width: 340px;
+        margin: 0 3%;
+    }
+
+    .habit-card-container {
+        min-width: fit-content;
+        max-height: 400px;
+        padding: 0 0.5rem;
+    }
 }

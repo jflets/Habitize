@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 
 <div class="container-fluid">
   <div class="row justify-content-center">
@@ -6,74 +7,59 @@
   </div>
   <div class="container text-center">
     <div class="row card justify-content-end btn-hero">
-      <div class="d-grid gap-2 col-6 mx-auto">
-        
+      <div class="d-grid gap-2 col-10 col-md-6 mx-auto">
+        <a href="{% url 'account_signup' %}">
+          <button class="btn btn-submit" type="button">
+            <h2>Signup Now</h2>
+          </button>
+        </a>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row justify-content-center">
-        <div class="col-10 card2">
-          <h3>Transform Your Life, One Habit at a Time</h3>
-          <p>
-            Are you ready to embark on a transformative journey towards a better
-            version of yourself? Welcome to Habitize, your trusted companion on the
-            path to personal growth and self-improvement.
-          </p>
-          <h3>What is Habitize?</h3>
-          <p>
-            Habitize is not just another habit tracker; it's your gateway to a life
-            filled with purpose, positivity, and progress. With its contemporary
-            design and intuitive interface, this web-based application redefines
-            habit tracking, making it an enjoyable and enriching experience.
-          </p>
-        </div>
+      <div class="col-12 col-md-10 card2">
+        <h3>Transform Your Life, One Habit at a Time</h3>
+        <p>
+          Are you ready to embark on a transformative journey towards a better
+          version of yourself? Welcome to Habitize, your trusted companion on the
+          path to personal growth and self-improvement.
+        </p>
+        <h3>What is Habitize?</h3>
+        <p>
+          Habitize is not just another habit tracker; it's your gateway to a life
+          filled with purpose, positivity, and progress. With its contemporary
+          design and intuitive interface, this web-based application redefines
+          habit tracking, making it an enjoyable and enriching experience.
+        </p>
       </div>
+    </div>
   </div>
-  <div class="container card text-center justify-content-md-center">
+  <div class="container card text-center">
     <div class="row f-title">
-        <div class="col">
-            <h2>Features</h2>
-        </div>
+      <div class="col">
+        <h2>Features</h2>
+      </div>
     </div>
     <div class="row p-2 align-items-center">
-      <div class="col">
+      <div class="col-6 col-md-3">
         <img src="/static/images/goals-icon.svg" alt="goal icon" />
-      </div>
-      <div class="col">
-        <img class="" src="/static/images/stats-button.svg" alt="stats icon" />
-      </div>
-      <div class="col">
-        <img src="/static/images/profile-icon1.svg" alt="profile icon" />
-      </div>
-      <div class="col">
-        <img src="/static/images/habits-icon.svg" alt="habits icon" />
-      </div>
-    </div>
-    <div class="row p-2">
-      <div class="col">
         <p>Create goals to keep motivated.</p>
       </div>
-      <div class="col">
+      <div class="col-6 col-md-3">
+        <img class="" src="/static/images/stats-button.svg" alt="stats icon" />
         <p>Track your progress with daily, weekly and monthly stats.</p>
       </div>
-      <div class="col">
+      <div class="col-6 col-md-3">
+        <img src="/static/images/profile-icon1.svg" alt="profile icon" />
         <p>Customize your profile to express yourself.</p>
       </div>
-      <div class="col">
+      <div class="col-6 col-md-3">
+        <img src="/static/images/habits-icon.svg" alt="habits icon" />
         <p>Create, edit and delete habits.</p>
-      </div>
-      <div class="row justify-content-end btn-hero">
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <a href="{% url 'account_signup' %}">
-            <button class="btn btn-submit" type="button">
-                <h2>Signup Now</h2>
-              </button>
-          </a>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
-{%endblock%}
+{% endblock %}
