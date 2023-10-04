@@ -577,7 +577,7 @@ form p {
     }
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 768px) {
     .h-100 {
         overflow-x: hidden;
     }
@@ -634,11 +634,6 @@ form p {
     .flex-shrink-0 {
         padding: 0 0.1rem;
     }
-
-    .profile-text {
-        font-size: 0;
-        visibility: hidden;
-    }
     
     .habit-name {
         font-size: 25px;
@@ -647,7 +642,7 @@ form p {
     .card4 {
         width: 700px;
         margin-bottom: 2rem;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .total-prog {
@@ -668,7 +663,7 @@ form p {
         min-width: 400px;
         height: 60px;
         margin: 0 5%;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .habit-card-container {
