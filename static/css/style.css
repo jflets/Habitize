@@ -127,6 +127,12 @@ h3 {
     padding-bottom: 1rem;
 }
 
+.hero-img {
+    background-image: url('/static/images/AdobeStock_490257740.png');
+    background-position: center;
+    background-size: cover;
+}
+
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
     background-color: var(--secondary-color);
