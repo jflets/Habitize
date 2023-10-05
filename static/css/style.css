@@ -71,6 +71,15 @@ h3 {
 .dark-bg {
     background-color: var(--secondary-color);
 }
+
+.ht-text {
+    max-width: 500px;
+}
+
+.ht-container {
+    display: flex;
+    justify-content: center;
+}
 /* ------------------------------ nav styling  ---------------------------------- */
 .navbar-toggler {
     color: var(--text-color1);
@@ -90,6 +99,15 @@ h3 {
     background: var(--primary-color);
     border-radius: 3px;
     color: var(--text-color1);
+}
+
+.navbar-text {
+    margin-left: 5rem;
+}
+
+#profile {
+    display: inline-flex;
+    gap: 0.5rem;
 }
 
 /* ------------------------------ card styling  ---------------------------------- */
@@ -116,6 +134,12 @@ h3 {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.hero-img {
+    background-image: url('/static/images/AdobeStock_490257740.png');
+    background-position: center;
+    background-size: cover;
 }
 
 /* ------------------------------ button styling  ---------------------------------- */
@@ -210,4 +234,39 @@ form input {
 
 form input:focus {
     outline: 1px solid var(--text-color1);
+}
+
+form textarea {
+    width: 300px;
+    height: 200px;
+    resize: none;
+    color: var(--text-color1);
+    background: var(--card-background-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.2rem;
+}
+
+/* ------------------------------ Mobile Styles ------------------------------ */
+@media (max-width: 425px) {
+    .h-100 {
+        overflow-x: hidden;
+    }
+
+    .flex-shrink-0 {
+        padding: 0 0.1rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+    .h-100 {
+        overflow-x: hidden;
+    }
+
+    .flex-shrink-0 {
+        padding: 0 0.1rem;
+    }
 }
