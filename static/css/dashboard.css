@@ -71,7 +71,6 @@ body {
     position: relative;
     font-family: 'Playfair Display', serif;
     color: var(--text-color1);
-    overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -519,7 +518,7 @@ form p {
     position: relative;
 }
 
-/* ------------------------------ Mobile Styles ------------------------------ */
+/* ------------------------------ Media Queries ------------------------------ */
 @media (max-width: 375px) {
     .h-100 {
         overflow-x: hidden;
@@ -627,9 +626,6 @@ form p {
 }
 
 @media (min-width: 1440px) {
-    .h-100 {
-        overflow-x: hidden;
-    }
 
     .flex-shrink-0 {
         padding: 0 0.1rem;
