@@ -62,7 +62,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 LOGOUT_URL = 'logout'
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
