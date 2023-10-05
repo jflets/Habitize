@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'user_profile',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = '/'
