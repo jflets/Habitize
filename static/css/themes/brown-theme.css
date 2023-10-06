@@ -573,7 +573,7 @@ form p {
     }
 }
 
-@media (max-width: 424px) {
+@media (min-width: 375px) and (max-width: 424px) {
     .h-100 {
         overflow-x: hidden;
     }
