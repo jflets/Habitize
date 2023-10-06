@@ -657,12 +657,12 @@ form p {
     }
 
     .total-prog {
-        min-width: 340px;
+        min-width: 320px;
     }
 
     .progress-container,
     .progress-container2 {
-        min-width: 350px;
+        min-width: 330px;
         min-height: 60px;
     }
 
@@ -671,7 +671,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 325px;
+        min-width: 310px;
         margin: 0 3%;
     }
 
@@ -713,7 +713,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 400px;
+        min-width: 420px;
         height: 60px;
         margin: 0 5%;
         font-size: 20px;
