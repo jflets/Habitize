@@ -137,7 +137,7 @@ h3 {
 }
 
 .hero-img {
-    background-image: url('/static/images/AdobeStock_490257740.png');
+    background-image: url("{% static 'images/AdobeStock_490257740.png' %}");
     background-position: center;
     background-size: cover;
 }
