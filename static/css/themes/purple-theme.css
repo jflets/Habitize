@@ -63,7 +63,7 @@
 body {
     width: 100%;
     height: 100%;
-    background-image: url('/static/images/topo-1.svg');
+    background-image: url('https://res.cloudinary.com/dkvbgxsft/raw/upload/v1696518419/static/images/topo-1.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -421,7 +421,7 @@ form input:focus {
 }
 
 .progress-cd {
-    min-width: 300px;
+    min-width: 305px;
     min-height: 30px;
     padding: 0.1rem;
     margin: 0 5%;
@@ -515,7 +515,7 @@ form p {
     max-width: 400px;
 }
 
-/* ------------------------------ Mobile Styles ------------------------------ */
+/* ------------------------------ Media Queries ------------------------------ */
 @media (max-width: 375px) {
     .h-100 {
         overflow-x: hidden;
@@ -558,7 +558,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 270px;
+        min-width: 250px;
         margin: 0 3%;
     }
 
@@ -573,7 +573,7 @@ form p {
     }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .h-100 {
         overflow-x: hidden;
     }
@@ -611,7 +611,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 340px;
+        min-width: 325px;
         margin: 0 3%;
     }
 
@@ -623,17 +623,9 @@ form p {
 }
 
 @media (min-width: 1440px) {
-    .h-100 {
-        overflow-x: hidden;
-    }
 
     .flex-shrink-0 {
         padding: 0 0.1rem;
-    }
-
-    .profile-text {
-        font-size: 0;
-        visibility: hidden;
     }
     
     .habit-name {
@@ -643,7 +635,7 @@ form p {
     .card4 {
         width: 700px;
         margin-bottom: 2rem;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .total-prog {
@@ -664,7 +656,7 @@ form p {
         min-width: 400px;
         height: 60px;
         margin: 0 5%;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .habit-card-container {

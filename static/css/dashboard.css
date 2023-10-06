@@ -423,7 +423,7 @@ form input:focus {
 }
 
 .progress-cd {
-    min-width: 300px;
+    min-width: 305px;
     min-height: 30px;
     padding: 0.1rem;
     margin: 0 5%;
@@ -561,7 +561,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 270px;
+        min-width: 250px;
         margin: 0 3%;
     }
 
@@ -576,7 +576,7 @@ form p {
     }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .h-100 {
         overflow-x: hidden;
     }
@@ -614,7 +614,7 @@ form p {
     }
 
     .progress-cd {
-        min-width: 340px;
+        min-width: 325px;
         margin: 0 3%;
     }
 
