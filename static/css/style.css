@@ -142,6 +142,10 @@ h3 {
     background-size: cover;
 }
 
+.feature-images {
+    width: 80px;
+    height: 80px;
+}
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
     background-color: var(--secondary-color);
