@@ -142,10 +142,6 @@ h3 {
     background-size: cover;
 }
 
-.feature-images {
-    width: 80px;
-    height: 80px;
-}
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {
     background-color: var(--secondary-color);
@@ -265,7 +261,7 @@ form textarea {
     }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .h-100 {
         overflow-x: hidden;
     }
