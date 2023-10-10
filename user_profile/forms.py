@@ -17,9 +17,13 @@ class UserProfileForm(forms.ModelForm):
         # Get the cleaned username (could be empty)
         username = self.cleaned_data.get('username', None)
 
-        # Check if the username is not None and is not the same as the current username
-        if username and User.objects.exclude(pk=self.instance.user_id).filter(username=username).exists():
+        # Check if the username is not None and is
+        # not the same as the current username
+        if username and User.objects.exclude(pk=self.instance.user_id
+                                             ).filter(username=username
+                                                      ).exists():
             raise forms.ValidationError(
-                "This username is already in use. Please choose a different one.")
+                "This username is already in use."
+                " Please choose a different one.")
 
         return username

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import Habit
 
+
 class DashboardTestCase(TestCase):
     def setUp(self):
         # Create a test user

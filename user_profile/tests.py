@@ -4,6 +4,7 @@ from django.urls import reverse
 from .models import UserProfile, COLOR_CHOICES
 from .forms import UserProfileForm
 
+
 class UserProfileModelTestCase(TestCase):
     def setUp(self):
         # Create a user and a user profile for testing
@@ -18,6 +19,7 @@ class UserProfileModelTestCase(TestCase):
         self.assertEqual(user_profile.selected_color_theme, 'default')
         self.assertIsNone(user_profile.profile_image)
         self.assertEqual(user_profile.profile_image_public_id, '')
+
 
 class UserProfileViewTestCase(TestCase):
     def setUp(self):
@@ -39,6 +41,7 @@ class UserProfileViewTestCase(TestCase):
         url = reverse('edit_profile', kwargs={'pk': self.user_profile.id})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
+
 
 class UserProfileFormTestCase(TestCase):
     def test_user_profile_form_valid(self):

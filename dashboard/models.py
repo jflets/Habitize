@@ -2,11 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
+
 
 class Habit(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -14,7 +16,8 @@ class Habit(models.Model):
     completed = models.BooleanField(null=False, blank=False, default=False)
     value = models.PositiveIntegerField(default=0)  # Current value
     goal_amount = models.PositiveIntegerField(default=100)  # Maximum value
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     frequency = models.CharField(
         max_length=10,
@@ -48,7 +51,8 @@ class Habit(models.Model):
         # Check if the habit's frequency is set to 'daily'
         if self.frequency == 'day':
             # Check if the habit hasn't been reset today
-            if self.last_reset is None or (timezone.now() - self.last_reset).days >= 1:
+            if self.last_reset is None or (timezone.now() -
+                                           self.last_reset).days >= 1:
                 # Reset the habit by updating its value and last reset time
                 self.value = 0
                 self.last_reset = timezone.now()
