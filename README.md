@@ -1,6 +1,6 @@
 # Habitize
 
-![Landing page](/screenshots/landing-page.mov)
+![Landing page](/screenshots/landing-page.mp4)
 
 **Habitize** is a web-based habit tracking and goal management application designed to help users build and maintain positive habits. With Habitize, you can create a personalized dashboard to track your habits, set achievable goals, and measure your progress over time. The application offers a user-friendly interface and a range of features to empower users in their journey to form lasting habits.
 
@@ -174,7 +174,7 @@ The `UserProfile` model represents user profiles.
 
 7. **Responsive Design:**
    - Enjoy a responsive and accessible app across various devices.
-   ![Responsive Design](/screenshots/responsive.mov)
+   ![Responsive Design](/screenshots/responsive.mp4)
 
 8. **Sharing and Social Features:**
    - Share your progress on social media.
