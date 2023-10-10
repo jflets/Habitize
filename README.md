@@ -58,19 +58,75 @@ Habitize is built using modern web technologies, making it accessible across var
 
 [Add more user stories if needed.]
 
-## Data Models
+# Data Models
 
-[Describe the data model of your project, including key entities and their relationships.]
+## Category
+
+The `Category` model represents a category for habits.
+
+### Fields
+
+- `name`: A character field with a maximum length of 50 characters.
+
+## Habit
+
+The `Habit` model represents a habit that users can track.
+
+### Fields
+
+- `name`: A character field with a maximum length of 50 characters.
+- `date_created`: A DateTime field that auto-generates the creation date.
+- `completed`: A Boolean field to indicate if the habit is completed.
+- `value`: A PositiveIntegerField representing the current value of the habit.
+- `goal_amount`: A PositiveIntegerField representing the maximum value for the habit.
+- `category`: A ForeignKey to the `Category` model, allowing habits to be associated with categories.
+- `frequency`: A choice field for habit frequency with options: 'day', 'week', 'month'.
+- `last_reset`: A DateTime field to store the last reset date of the habit.
+- `units`: A character field with a maximum length of 10 characters.
+- `date_completed`: A DateField to store the date when the habit was completed.
+- `user`: A ForeignKey to the `User` model for user association.
+
+### Methods
+
+- `reset_habit()`: Resets the habit's value and last reset time based on the habit's frequency.
+- `save()`: Overrides the default `save()` method to reset the habit before saving.
+
+### Meta
+
+- `ordering`: Specifies the default ordering for habits.
+
+## UserProfile
+
+The `UserProfile` model represents user profiles.
+
+### Fields
+
+- `user`: A OneToOneField to the `User` model.
+- `color_theme`: A choice field for user color themes.
+- `selected_color_theme`: A character field for the selected color theme.
+- `profile_image`: A CloudinaryField for storing profile images.
+- `profile_image_public_id`: A character field to store the public ID of the profile image.
+
+### Methods
+
+- `__str__()`: Returns the username of the associated user.
+
+## Allauth
+
+`allauth` is a Django app for authentication and account management.
+
+### Included Models
+
+- `Account`: Represents a user account with fields like email, username, and password.
+
 
 ### Logic Map
 
-[Provide a logic map or flowchart that illustrates the main logic or flow of your project.]
-
-![Logic Map]()
+[Logic Map](https://www.figma.com/file/VjMGn71dAh1oFA959Chgv2/Untitled?type=whiteboard&node-id=0%3A1&t=7GxvzogChqdHBwz7-1)
 
 ## Wireframes 
 
-https://www.figma.com/file/R6z2UxOhrRZt2lgCZuNo5l/Habitize?type=design&node-id=0%3A1&mode=design&t=GgmSyiNRLry0qZJB-1
+[Wireframe](https://www.figma.com/file/R6z2UxOhrRZt2lgCZuNo5l/Habitize?type=design&node-id=0%3A1&mode=design&t=GgmSyiNRLry0qZJB-1)
 
 
 # Features
