@@ -193,20 +193,39 @@ The `UserProfile` model represents user profiles.
 
 
 # Technologies Used
-
-[List the main programming languages and technologies used in your project.]
-
-- [Technology 1]
-- [Technology 2]
-- [Technology 3]
-
 # Frameworks, Libraries, and Tools Used
+- **Frontend:**
+  - HTML, CSS, JavaScript
+  - Bootstrap for grid and styling
+  - Chrome dev tools for responsive design for various screen sizes
 
-[List any frameworks, libraries, or tools that were used in your project.]
+- **Image Storage**
+  - Cloudinary for storing statics files and user images.
 
-- [Framework/Library/Tool 1]
-- [Framework/Library/Tool 2]
-- [Framework/Library/Tool 3]
+- **Backend:**
+  - Django for the backend framework
+  - ElephantSQL for the PostgreSQL database
+  - Python for server-side logic
+
+- **Authentication and Authorization:**
+  - Django's built-in `csrf_token` for Cross-Site Request Forgery protection
+  - Django-allauth for user authentication and account management
+
+- **Deployment:**
+  - Hosting on Heroku for cloud-based deployment
+
+- **Development Tools:**
+  - Visual Studio Code as the code editor
+  - Git and GitHub for version control
+
+- **Testing and Quality Assurance:**
+  - Jest and JSDom for frontend testing
+  - Django's TestCase and Jest for automated testing
+
+- **Database Management:**
+  - Django ORM for database interactions
+  - ElephantSQL for the PostgreSQL database in production
+  - SQLite for local development and testing
 
 # Testing
 
