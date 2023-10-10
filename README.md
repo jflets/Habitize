@@ -1,6 +1,6 @@
 # Habitize
 
-![Project Screenshot]()
+![Landing page](/screenshots/landing-page.mov)
 
 **Habitize** is a web-based habit tracking and goal management application designed to help users build and maintain positive habits. With Habitize, you can create a personalized dashboard to track your habits, set achievable goals, and measure your progress over time. The application offers a user-friendly interface and a range of features to empower users in their journey to form lasting habits.
 
@@ -131,15 +131,66 @@ The `UserProfile` model represents user profiles.
 
 # Features
 
-## Feature 1
 
-- [Describe feature 1 and how to use it.]
+1. **User Registration and Authentication:**
+   - Create a secure account with a unique username and password.
+   - Log in and protect your personal data.
+   - Use third-party login like Google to create an account and log in.
+   ![Login](/screenshots/login.png)
+   ![Signup](/screenshots/signup.png)
+   ![Google Sign in](/screenshots/google-login.png)
 
-## Feature 2
+2. **User Profile Management:**
+   - Change your username.
+   - Change your profile picture.
+   - Change your color theme.
+   ![View Profile](/screenshots/view-profile.png)
+   ![Edit Profile](/screenshots/edit-profile.png)
 
-- [Describe feature 2 and how to use it.]
+3. **Dashboard:**
+   - Get a personalized dashboard displaying your habits and goals.
+   ![Dashboard](/screenshots/dashboard.png)
 
-[Add more features if needed.]
+4. **Habit Management:**
+   - Create and customize new habits.
+   - Set daily, weekly or monthly goals for each habit.
+   - Edit or delete existing habits.
+   ![Add Habits](/screenshots/add-habit.png)
+   ![Edit Habits](/screenshots/edit-habit.png)
+   ![Habit Options](/screenshots/habit-options.png)
+   ![Confirm Delete](/screenshots/confirm-delete.png)
+
+5. **Goal Management:**
+   - Define specific goals for your habits.
+   - Track and update goals.
+   - Monitor your progress toward goals.
+   ![Completed Habits](/screenshots/goal-progress.png)
+
+6. **Habit Tracking:**
+   - Easily track your habit's progress.
+   - See the habit completion date.
+   ![Habit Progress](/screenshots/habit-progress.png)
+   ![Complete Habit](/screenshots/completed-habit.png)
+
+7. **Responsive Design:**
+   - Enjoy a responsive and accessible app across various devices.
+   ![Responsive Design](/screenshots/responsive.mov)
+
+8. **Sharing and Social Features:**
+   - Share your progress on social media.
+   - Connect with others for motivation.
+   ![Social Links](/screenshots/social.png)
+
+9. **Help and Support:**
+    - Access help and contact support.
+    - Help page with app instructions.
+    ![Help Page](/screenshots/help-htu.png)
+    ![Contact Form](/screenshots/help-cu.png)
+
+10. **Admin Dashboard:**
+    - Admin panel for managing user accounts (for admin users).
+    ![Admin Panel](/screenshots/admin.png)
+
 
 # Technologies Used
 
