@@ -344,7 +344,7 @@ select:focus {
 }
 
 a {
-    color: var(--text-color1);
+    color: #fff;
 }
 
 a .navbar-text{
@@ -353,7 +353,7 @@ a .navbar-text{
 
 a:hover,
 a:active {
-    color: #fff;
+    color: var(--primary-color);
 }
 
 .f-title {
