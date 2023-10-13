@@ -22,6 +22,11 @@ class AddHabitForm(forms.ModelForm):
                                               'Enter a value'}),
         }
 
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(),
+        required=True,
+        empty_label="Select a category"
+    )
 
 class EditHabitForm(forms.ModelForm):
     class Meta:
@@ -42,3 +47,9 @@ class EditHabitForm(forms.ModelForm):
             'value': forms.NumberInput(attrs={'type': 'number', 'placeholder':
                                               'Enter a value'}),
         }
+
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(),
+        required=True,
+        empty_label='Other'
+    )
