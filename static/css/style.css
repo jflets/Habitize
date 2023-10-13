@@ -66,6 +66,7 @@ h3 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-color1);
+    text-decoration: none
 }
 
 .dark-bg {
@@ -103,6 +104,7 @@ h3 {
 
 .navbar-text {
     margin-left: 5rem;
+    text-decoration: none;
 }
 
 #profile {
@@ -203,6 +205,10 @@ h3 {
 
 a {
     color: #fff;
+}
+
+a .navbar-text{
+    text-decoration: none;
 }
 
 a:hover,
