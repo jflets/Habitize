@@ -89,6 +89,7 @@ def add_habit(request):
             habit = form.save(commit=False)
             habit.user = request.user
             habit.save()
+            messages.success(request, 'Habit added successfully.')
             return redirect('dashboard')
     else:
         form = AddHabitForm()
@@ -107,6 +108,7 @@ def edit_habit(request, habit_id):
         form = EditHabitForm(request.POST, instance=habit)
         if form.is_valid():
             habit = form.save()
+            messages.success(request, 'Habit edited successfully.')
             return redirect('dashboard')
     else:
         form = EditHabitForm(instance=habit)
@@ -135,6 +137,7 @@ def toggle_habit(request, habit_id):
     habit.date_completed = timezone.now().date()
 
     habit.save()
+    messages.success(request, 'Habit Completed.')
 
     return redirect('dashboard')
 
@@ -147,6 +150,7 @@ def delete_habit(request, habit_id):
         # Check if the user confirmed the deletion
         if 'confirm_delete' in request.POST:
             habit.delete()
+            messages.success(request, 'Habit deleted successfully.')
             return redirect('dashboard')
         else:
             # If not confirmed, redirect back to the habit list

@@ -118,6 +118,7 @@
           {% for message in messages %}
           <div
             class="alert {{ message.tags }} alert-dismissible fade show"
+            id="msg"
             role="alert"
           >
             {{ message | safe }}
@@ -171,11 +172,10 @@
     <!-- JavaScript for Bootstrap Alerts -->
     <script>
       setTimeout(function () {
-        let messages = document.querySelectorAll(".alert");
-        messages.forEach(function (message) {
-          new bootstrap.Alert(message);
-        });
-      }, 2500);
+          let messages = document.getElementById('msg');
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 3000);
     </script>
   </body>
 </html>
