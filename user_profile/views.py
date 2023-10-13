@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.signals import user_logged_in
@@ -66,6 +67,8 @@ class EditProfileView(UpdateView):
 
                 # Apply the selected color theme to the user's session
                 self.request.session['selected_color_theme'] = new_color_theme
+                
+            messages.success(self.request, 'Profile updated successfully!')
 
         return super().form_valid(form)
 
