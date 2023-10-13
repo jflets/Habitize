@@ -198,6 +198,8 @@ The `UserProfile` model represents user profiles.
   - HTML, CSS, JavaScript
   - Bootstrap for grid and styling
   - Chrome dev tools for responsive design for various screen sizes
+  - Font Awesome for icons
+  - Google Fonts for text fonts
 
 - **Image Storage**
   - Cloudinary for storing statics files and user images.

@@ -344,6 +344,10 @@ a {
     color: var(--text-color1);
 }
 
+a .navbar-text{
+    text-decoration: none;
+}
+
 a:hover,
 a:active {
     color: #fff;

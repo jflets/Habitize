@@ -213,7 +213,7 @@ a .navbar-text{
 
 a:hover,
 a:active {
-    color: var(--text-color2);
+    color: var(--primary-color);
 }
 
 .f-title {
