@@ -32,6 +32,7 @@ Habitize is built using modern web technologies, making it accessible across var
 - [Technologies Used](#technologies-used)
 - [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
 - [Testing](#testing)
+  - [Automated Testing](#automated-testing)
   - [Validator Testing](#validator-testing)
   - [Solved Bugs](#solved-bugs)
   - [Bugs](#bugs)
@@ -230,6 +231,14 @@ The `UserProfile` model represents user profiles.
   - SQLite for local development and testing
 
 # Testing
+
+## Automated Testing
+- **JS Testing:**
+  ![JS Testing](/screenshots/js-test.gif)
+
+- **Python Testing:**
+  ![Python Testing](/screenshots/python-test.gif)
+
 
 ## Validator Testing
 
