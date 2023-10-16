@@ -13,8 +13,14 @@ from .forms import UserProfileForm
 @login_required(login_url="/accounts/login")
 def view_profile(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+    if not user_profile.profile_image_public_id:
+        user_profile.profile_image_public_id = '/static/images/profile-image-icon.webp'
+        user_profile.save()
+
     context = {'user_profile': user_profile}
     return render(request, 'user_profile/view_profile.html', context)
+
 
 class EditProfileView(UpdateView):
     model = UserProfile

@@ -155,6 +155,7 @@ h6 {
 
 .navbar-text {
     margin-left: 5rem;
+    text-decoration: none;
 }
 
 #profile {
@@ -213,6 +214,10 @@ h6 {
 .habit-card-container::-webkit-scrollbar {
     display: none;
   }
+
+.rounded-circle {
+    background-color: var(--accent-color);
+}
 
 /* ------------------------------ button styling  ---------------------------------- */
 .btn-signup {

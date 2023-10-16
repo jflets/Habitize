@@ -1,4 +1,5 @@
 {% extends 'user_profile/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -7,7 +8,7 @@
     {% if user_profile.profile_image %}
     <img src="{{ user_profile.profile_image.url }}" width="300" height="300" alt="Profile Image" class="rounded-circle">
     {% else %}
-    <img src="#" alt="Placeholder Image" class="rounded-circle">
+    <img src="{% static '/images/profile-image-icon.webp' %}" alt="Placeholder Image" class="rounded-circle">
     {% endif %}
     <p>Username: {{ user.username }}</p>
       <a href="{% url 'edit_profile' user_profile.pk %}" class="btn btn-submit">Edit Profile</a>
