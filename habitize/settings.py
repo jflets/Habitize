@@ -199,3 +199,8 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+# Error handlers
+handler404 = 'habitize.views.custom_404_view'
+handler403 = 'habitize.views.custom_403_view'
+handler500 = 'habitize.views.custom_500_view'
