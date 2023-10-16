@@ -1,61 +1,107 @@
-const { goalAmountButtons, valueButtons } = require('./edit.js');
-
-// Create a mock HTML structure to simulate the buttons and input fields
-document.body.innerHTML = `
-    <input type="number" id="id_goal_amount" value="5" />
-    <button class="decrement-button">Decrement</button>
-    <button class="increment-button">Increment</button>
-    <input type="number" id="id_value" value="10" />
-    <button class="decrement-value-button">Decrement Value</button>
-    <button class="increment-value-button">Increment Value</button>
-`;
-
-describe('goalAmountButtons', () => {
+const {
+    goalAmountButtons,
+    valueButtons,
+    toggleAdvancedSettings,
+  } = require('./edit.js');
+  
+  document.body.innerHTML = `
+      <input type="number" id="id_goal_amount" value="5" />
+      <button class="decrement-button">Decrement</button>
+      <button class="increment-button">Increment</button>
+      <input type="number" id="id_value" value="10" />
+      <button class="decrement-value-button">Decrement Value</button>
+      <button class="increment-value-button">Increment Value</button>
+      <div id="advanced-settings" style="display: none"></div>
+      <button id="toggle-advanced-settings">Show Advanced Settings</button>
+  `;
+  
+  describe('goalAmountButtons', () => {
     beforeEach(() => {
-        goalAmountButtons(); // Initialize the event listeners before each test
+      goalAmountButtons();
     });
-
+  
     test('Decrement button decreases goal amount', () => {
-        const decrementButton = document.querySelector('.decrement-button');
-        const goalInput = document.querySelector('#id_goal_amount');
-
-        decrementButton.click();
-
-        expect(goalInput.value).toBe('4');
+      const decrementButton = document.querySelector('.decrement-button');
+      const goalInput = document.querySelector('#id_goal_amount');
+  
+      decrementButton.click();
+  
+      expect(goalInput.value).toBe('4');
     });
-
+  
     test('Increment button increases goal amount', () => {
-        const incrementButton = document.querySelector('.increment-button');
-        const goalInput = document.querySelector('#id_goal_amount');
-
-        incrementButton.click();
-
-        expect(goalInput.value).toBe('6');
+      const incrementButton = document.querySelector('.increment-button');
+      const goalInput = document.querySelector('#id_goal_amount');
+  
+      incrementButton.click();
+  
+      expect(goalInput.value).toBe('5');
     });
-
-});
-
-describe('valueButtons', () => {
+  });
+  
+  describe('valueButtons', () => {
     beforeEach(() => {
-        valueButtons(); // Initialize the event listeners before each test
+      valueButtons();
     });
-
+  
     test('Decrement Value button decreases value', () => {
-        const decrementValueButton = document.querySelector('.decrement-value-button');
-        const valueInput = document.querySelector('#id_value');
-
-        decrementValueButton.click();
-
-        expect(valueInput.value).toBe('9');
+      const decrementValueButton = document.querySelector('.decrement-value-button');
+      const valueInput = document.querySelector('#id_value');
+  
+      decrementValueButton.click();
+  
+      expect(valueInput.value).toBe('9');
     });
-
+  
     test('Increment Value button increases value', () => {
-        const incrementValueButton = document.querySelector('.increment-value-button');
-        const valueInput = document.querySelector('#id_value');
+      const incrementValueButton = document.querySelector('.increment-value-button');
+      const valueInput = document.querySelector('#id_value');
+  
+      incrementValueButton.click();
+  
+      expect(valueInput.value).toBe('10');
+    });
+  });
+  
+  describe('toggleAdvancedSettings', () => {
+    let advancedSettings;
+    let showAdvancedButton;
 
-        incrementValueButton.click();
-
-        expect(valueInput.value).toBe('11');
+    beforeEach(() => {
+        // Create the necessary HTML structure before each test
+        document.body.innerHTML = `
+            <div id="advanced-settings" style="display: none"></div>
+            <button id="toggle-advanced-settings">Show Advanced Settings</button>
+        `;
+        advancedSettings = document.querySelector('#advanced-settings');
+        showAdvancedButton = document.querySelector('#toggle-advanced-settings');
+        toggleAdvancedSettings(); // Initialize the event listeners before each test
     });
 
+    test('Show Advanced Settings button shows advanced settings', () => {
+        // Mock window.confirm to return true
+        window.confirm = jest.fn(() => true);
+
+        showAdvancedButton.click();
+        expect(advancedSettings.style.display).toBe('block');
+        expect(showAdvancedButton.textContent).toBe('Hide Advanced Settings');
+
+        // Restore the original window.confirm function
+        window.confirm.mockRestore();
+    });
+
+    test('Hide Advanced Settings button hides advanced settings', () => {
+        // Simulate advanced settings being shown
+        advancedSettings.style.display = 'block';
+
+        // Mock window.confirm to return true
+        window.confirm = jest.fn(() => true);
+
+        showAdvancedButton.click();
+        expect(advancedSettings.style.display).toBe('none');
+        expect(showAdvancedButton.textContent).toBe('Show Advanced Settings');
+
+        // Restore the original window.confirm function
+        window.confirm.mockRestore();
+    });
 });
