@@ -30,7 +30,7 @@ Habitize is built using modern web technologies, making it accessible across var
   - [Feature 1](#feature-1)
   - [Feature 2](#feature-2)
 - [Technologies Used](#technologies-used)
-- [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
+  - [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
 - [Testing](#testing)
   - [Automated Testing](#automated-testing)
   - [Validator Testing](#validator-testing)
@@ -157,7 +157,7 @@ The `UserProfile` model represents user profiles.
    - Set daily, weekly or monthly goals for each habit.
    - Edit or delete existing habits.
    ![Add Habits](/screenshots/add-habit.png)
-   ![Edit Habits](/screenshots/edit-habit.png)
+   ![Edit Habits](/screenshots/edit-habit.gif)
    ![Habit Options](/screenshots/habit-options.png)
    ![Confirm Delete](/screenshots/confirm-delete.png)
 
@@ -185,16 +185,19 @@ The `UserProfile` model represents user profiles.
 9. **Help and Support:**
     - Access help and contact support.
     - Help page with app instructions.
-    ![Help Page](/screenshots/help-htu.png)
-    ![Contact Form](/screenshots/help-cu.png)
+    ![Help Page](/screenshots/help-page.gif)
 
 10. **Admin Dashboard:**
     - Admin panel for managing user accounts (for admin users).
     ![Admin Panel](/screenshots/admin.png)
 
+11. **User Feedback Messages**
+    - Users will receive feedback messages whenever they make any changes or perform actions.
+    ![User Feedback Messages](/screenshots/user-feedback.gif)
+
 
 # Technologies Used
-# Frameworks, Libraries, and Tools Used
+## Frameworks, Libraries, and Tools Used
 - **Frontend:**
   - HTML, CSS, JavaScript
   - Bootstrap for grid and styling
@@ -229,6 +232,10 @@ The `UserProfile` model represents user profiles.
   - Django ORM for database interactions
   - ElephantSQL for the PostgreSQL database in production
   - SQLite for local development and testing
+
+- **Image Conversion**
+  - [CloudConvert](https://cloudconvert.com/) for MOV to GIF
+  - [Convertio](https://convertio.co/) for PNG to WebP
 
 # Testing
 
