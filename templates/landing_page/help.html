@@ -4,26 +4,114 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col text-center">
-      <h2 class="mt-1">How to use Habitize</h2>
-      <div class="ht-container mb-2">
-        <p class="ht-text">1. Create an account or login.<br><br>2. Add your first habit by clicking the add button.<br>  - When adding a habit pic a category for your habit.<br>  - Add a habit name.
-          <br>  - Pick a habit name.<br>  - set a goal of your choice.<br>  - Set your unit of measurement.<br>  - Choose a frequency for your habit i.e. Daily, Weekly or Monthly.
-          <br><br>3. You can edit your habit by clicking the three dots on the right side of the habit.<br>  - When editing your habit you can adjust your current amount to progress your habit.<br><br>
-          4. You can also complete or delete your habit by clicking the three dots.<br><br>5.In the habit section of the dashboard you can filter your habits by frequency.<br><br>
-          5. You can monitor the progress of your habit by the number on the left side of the habit and the bar behind the habit.<br><br>6. You can also see your progress of completing your habits in the completed habits section of the dashboard.
+      <h2 class="mt-1">How to Use Habitize</h2>
+
+      <!-- Section 1: Account Management -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">1. Account Management</h3>
+        <p>
+          <strong>Create an account or log in to get started with Habitize.</strong>
+          <br>
+          <strong>If you already have a Google account, you can also log in using it:</strong>
+          <br>
+          <br>
+          - Click the "Log in with Google" button on the login page.
+          <br>
+          - Follow the prompts to log in using your Google credentials.
+          <br>
+          - You're all set to use Habitize with your Google account.
         </p>
-      </div>
-      <h3>Contact Us</h3>
-      <form action="{% url 'thank-you' %}" class="contact-us mb-2">
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-        <label for="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        <label></label>
-        <button type="submit" class="btn-submit">Submit</button>
-      </form>
+      </section>
+
+
+      <!-- Section 2: Adding Habits -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">2. Adding Habits</h3>
+        <p>
+          <strong>Follow these steps to add a new habit:</strong>
+          <br>
+          <br>
+          - Choose a category for your habit.
+          <br>
+          - Provide a habit name.
+          <br>
+          - Set a goal for your habit.
+          <br>
+          - Specify the unit of measurement.
+          <br>
+          - Select the frequency for your habit (Daily, Weekly, or Monthly).
+        </p>
+      </section>
+
+      <!-- Section 3: Editing Habits -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">3. Editing Habits</h3>
+        <p>
+          <strong>You can edit your habits by following these steps:</strong>
+          <br>
+          <br>
+          - Click the three dots on the right side of the habit.
+          <br>
+          - Adjust the current amount to track your habit's progress.
+        </p>
+      </section>
+
+      <!-- Section 4: Completing and Deleting Habits -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">4. Completing and Deleting Habits</h3>
+        <p>
+          You can complete or delete a habit by clicking the three dots next to the habit entry.
+        </p>
+      </section>
+
+      <!-- Section 5: Filtering Habits by Frequency -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">5. Filtering by Frequency</h3>
+        <p>
+          In the habit section of the dashboard, you can filter your habits by frequency (Daily, Weekly, or Monthly).
+        </p>
+      </section>
+
+      <!-- Section 6: Tracking Habit Progress -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">6. Tracking Habit Progress</h3>
+        <p>
+          <strong>You can monitor the progress of your habits using:</strong>
+          <br>
+          <br>
+          - The number on the left side of the habit entry.
+          <br>
+          - The progress bar behind the habit.
+        </p>
+      </section>
+
+      <!-- Section 7: Viewing Completed Habits -->
+      <section class="help-section mt-3 help-card">
+        <h3 class="text-decoration-underline">7. Viewing Completed Habits</h3>
+        <p>
+          Check your progress in completing habits in the "Completed Habits" section of the dashboard.
+        </p>
+      </section>
+
+      <!-- Section 8: Contact Us -->
+      <section class="help-section mt-3">
+        <h3 class="text-decoration-underline">Contact Us</h3>
+        <p>
+          <strong>If you need further assistance or have questions, please don't hesitate to reach out to us.</strong></br>
+          Use the form below to contact us:
+        </p>
+
+        <form action="{% url 'thank-you' %}" class="contact-us mt-3 mb-2">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <label for="submit"></label>
+          <button type="submit" class="btn-submit" id="submit">Submit</button>
+        </form>
+      </section>
     </div>
   </div>
 </div>

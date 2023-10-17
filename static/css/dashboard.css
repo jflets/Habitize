@@ -698,6 +698,10 @@ form p {
 
 @media (min-width: 1440px) {
 
+    .h-100 {
+        overflow-x: hidden;
+    }
+
     .flex-shrink-0 {
         padding: 0 0.1rem;
     }
