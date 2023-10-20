@@ -46,7 +46,83 @@ Habitize is built using modern web technologies, making it accessible across var
 
 # How to Use
 
-[Explain how to use your project, including setup instructions and any necessary prerequisites.]
+Welcome to Habitize! This section will guide you through the basic steps to get started with our habit-tracking and management app.
+
+## 1. Sign Up for an Account
+
+To begin your habit-tracking journey, you'll need to create an account:
+
+1. Click on the "Sign Up" or "Register" button on the app's landing page.
+2. Provide your registration details, including your email and a secure password.
+3. Once your details are entered, click "Register."
+4. Check your email for a confirmation message and follow the provided link to verify your account.
+
+## 2. Log In to Your Account
+
+After successfully registering, you can log in to your account:
+
+1. Click on the "Log In" button.
+2. Enter your registered email and password.
+3. Click "Log In" to access your account.
+
+## 3. Create and Manage Your Habits
+
+Habitize empowers you to track and manage your habits. Here's how:
+
+1. From your dashboard, navigate to "Habits" or a similar section.
+2. Click on the "Add New Habit" button.
+3. Define the name, details, target amount, and tracking frequency for the habit.
+4. Confirm the addition of the new habit.
+
+## 4. Edit or Delete Habits
+
+If you ever need to make changes to your habits, it's easy:
+
+1. Go to your "Habits" or "My Habits" section.
+2. Select the habit you wish to edit.
+3. Make the necessary changes, like the name or tracking frequency.
+4. Save your edits, and the habit will be updated.
+
+To delete a habit:
+
+1. Access your habit list.
+2. Select the habit you want to remove.
+3. Confirm the deletion, and it will be removed from your list.
+
+## 5. Log Habit Completions
+
+As you make progress, you can log habit completions:
+
+1. Go to your "Habits" or a related section.
+2. Click on the habit you've completed for the day.
+3. Mark it as completed, and your progress will be recorded.
+
+## 6. Track Your Progress
+
+Habitize provides you with tools to monitor your progress:
+
+1. Check the "Progress Tracking" or similar section to view your overall habit completion summary.
+2. Identify habits you haven't completed and track your performance.
+
+## 7. Manage Your Profile
+
+Customize your profile to make it truly yours:
+
+1. Access your user profile by clicking on your name or profile picture.
+2. Edit and update your user profile details, including your display name and profile picture.
+3. Choose from different color themes to personalize your experience.
+
+## 8. Achieve Your Goals
+
+Set specific goals for your habits:
+
+1. Visit the "Goals" section.
+2. Choose a habit you'd like to set a goal for.
+3. Specify the target amount and tracking frequency.
+4. Confirm the addition of your goal.
+
+Habitize is designed to help you successfully track and achieve your daily habits. Use these steps to create and manage your habits, track your progress, and customize your experience.
+
 # UX
 The Strategy Plane
 Habitize is designed as a user-friendly platform where individuals can effectively track and manage their habits. The overall user experience focuses on simplicity and accessibility, making it easy for users to create, monitor, and achieve their goals. The graphical elements and design aim to create a motivating and productive environment.
