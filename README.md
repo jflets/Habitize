@@ -37,7 +37,6 @@ Habitize is built using modern web technologies, making it accessible across var
   - [Validator Testing](#validator-testing)
   - [Solved Bugs](#solved-bugs)
   - [Bugs](#bugs)
-  - [Testing User Stories](#testing-user-stories)
 - [Deployment](#deployment)
   - [Local Development](#local-development)
 - [Credits](#credits)
@@ -565,17 +564,40 @@ The Edit Profile Page puts users in control of their personal information. They 
 
 # Testing
 
+**Testing Strategy**
+
+For the development of the Habitize app, a comprehensive testing strategy was employed to ensure its functionality, reliability, and user satisfaction. This strategy encompassed manual and automated testing procedures, validation checks, and validation of user story acceptance criteria.
+
+**Testing Overview**
+
+Testing procedures were systematically divided into different sections to ensure rigorous examination of all aspects of the application. Each section had test cases specifically designed to evaluate its functionality and compliance with industry standards.
+
+**Testing Schedule Overview**
+
+Detailed testing procedures and methodologies can be found in the testing.md file in the repository. This document contains a comprehensive breakdown of testing methods and schedules for each language used in the project.
 ## Automated Testing
-- **JS Testing:**
+- **JS Testing:** Using Jest and JSDOM
   ![JS Testing](/screenshots/js-test.gif)
 
-- **Python Testing:**
+- **Python Testing:** Using Uni test
   ![Python Testing](/screenshots/python-test.gif)
-
-
 ## Validator Testing
 
-- [Describe any validation tools used and the results.]
+The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. The following validators were used:
+
+1. **W3C HTML Validator:** All HTML code was validated to ensure it met HTML standards and was free from structural errors. Any issues identified were addressed during development.
+
+2. **W3C CSS Validator:** CSS files were validated using the W3C CSS Validator to confirm that they adhered to CSS standards and had no errors or warnings.
+
+3. **JSHint:** For JavaScript files, JSHint was employed to identify potential errors and code quality issues. This step helped maintain clean and efficient JavaScript code.
+
+4. **PEP 8 for Python Files:** Python files were checked for adherence to PEP 8, the Python Enhancement Proposal that defines coding conventions for the Python codebase. This ensured consistent and readable Python code.
+
+**User Story Testing**
+
+To meet user expectations, User Story tests were implemented. These tests ensured that the acceptance criteria of the user stories, as outlined in the project's documentation, were successfully met. The status of the functionality requirements for each user story, along with the corresponding commits, was documented in the issues section of the repository. User Story tests were conducted before closing the respective issues and marking them as completed.
+
+This comprehensive testing strategy and validation process helped ensure the quality, functionality, and reliability of the Habitize app, ultimately providing a satisfying user experience.
 
 ## Solved Bugs
 
@@ -588,16 +610,6 @@ The Edit Profile Page puts users in control of their personal information. They 
 ## Bugs
 
 [Describe any known bugs or issues in your project.]
-
-## Testing User Stories
-
-1. [User Story 1 Testing]
-   - [Describe the test scenario and the result.]
-
-2. [User Story 2 Testing]
-   - [Describe the test scenario and the result.]
-
-[Add more testing scenarios for user stories if needed.]
 
 # Deployment
 
