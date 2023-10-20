@@ -21,8 +21,9 @@ Habitize is built using modern web technologies, making it accessible across var
 ## Table Of Contents
 
 - [How to Use](#how-to-use)
-- [Target Audience](#target-audience)
+- [UX](#ux)
   - [User Stories](#user-stories)
+  - [Scope Plane](#scope-plane)
 - [Data Models](#data-model)
   - [Logic Map](#logic-map)
 - [Wireframes](#wireframes)
@@ -105,7 +106,7 @@ A total of 12 epics have been identified, each with its set of user stories aime
 ## User Stories
 From the Epics, 45 User stories were developed. Each story was assigned a classification of Must-Have, Should-Have, Could-Have, or Won't Have. Each story was also assigned user story points based on your best estimation for the time/difficulty of completing each story. The full list of User Stories, separated by those completed and those pushed to a future release, is available on the project [Kanban Board](https://github.com/users/jflets/projects/3).
 
-**#62 Initial Django & Deployment Setup**
+**[#62](https://github.com/jflets/Habitize/issues/62) Initial Django & Deployment Setup**
   -  Create Django apps for the project.
   -  Implement security measures for secret key protection.
   -  Early deployment of the site to Heroku for development purposes.
@@ -166,9 +167,7 @@ From the Epics, 45 User stories were developed. Each story was assigned a classi
 - [#24](https://github.com/jflets/Habitize/issues/24) USER STORY: Perform Administrative Tasks Should Have Story Points: 1
 - [#23](https://github.com/jflets/Habitize/issues/23) USER STORY: Monitor User Activity and Habits Should Have Story Points: 1
 - [#22](https://github.com/jflets/Habitize/issues/22) USER STORY: Manage User Accounts from the Admin Panel Must Have Story Points: 1
-- [#21](https://github
-
-.com/jflets/Habitize/issues/21) USER STORY: Access Admin-Specific Features Must Have Story Points: 1
+- [#21](https://github.com/jflets/Habitize/issues/21) USER STORY: Access Admin-Specific Features Must Have Story Points: 1
 - [#20](https://github.com/jflets/Habitize/issues/20) USER STORY: Log in to the Admin Panel Must Have Story Points: 1
 
 **[#11](https://github.com/jflets/Habitize/issues/11) Manage Users**
@@ -179,17 +178,70 @@ From the Epics, 45 User stories were developed. Each story was assigned a classi
 - [#15](https://github.com/jflets/Habitize/issues/15) USER STORY: Access User Registration Details Must Have Story points: 1
 - [#14](https://github.com/jflets/Habitize/issues/14) USER STORY: View Registered Users Must Have Story points: 1
 
-## Target Audience
+## Scope Plane
 
-### User Stories
+In the scope of the Habitize app, we aim to deliver a set of essential features to provide users with a comprehensive habit-tracking and management experience. Below are the key features planned:
 
-1. [User Story 1]
-   - As a [type of user], I want to [perform an action] so that [benefit or reason].
+1. **User Registration and Authentication**
+   - Users can sign up for a new account on the platform.
+   - Users provide registration details and create a secure password.
+   - Users receive a confirmation email for account verification.
+   - Users can log in to their accounts using their credentials.
+   - Users can use single sign-on (SSO) methods like Google Login.
+   - Users can reset their password if they forget it.
+   - Users can log out of their accounts.
 
-2. [User Story 2]
-   - As a [type of user], I want to [perform an action] so that [benefit or reason].
+2. **Habit Creation and Management**
+   - Users can add new habits to their tracking list.
+   - Users define the name and details of each habit.
+   - Users specify the target amount for habit completion.
+   - Users choose the target frequency for tracking each habit.
+   - Users confirm the addition of a new habit to their list.
 
-[Add more user stories if needed.]
+3. **Habit Editing**
+   - Users can edit the name and details of existing habits.
+   - Users can modify the target amount for habit completion.
+   - Users can adjust the target frequency for habit tracking.
+   - Users save habit edits and see updated information.
+
+4. **Habit Deletion**
+   - Users can delete habits they no longer wish to track.
+   - Users have the option to confirm the deletion of a habit.
+
+5. **Habit Tracking**
+   - Users can mark habits as completed when they are done.
+   - Users can log habit completions, providing valuable tracking data.
+
+6. **Habit Progress Tracking**
+   - Users can view a summary of their overall habit completion.
+   - Users can identify habits they haven't completed.
+   - Users can see the progress of each habit.
+   - Users can view a list of all their habits.
+
+7. **User Profile Management**
+   - Users can view their own profile information.
+   - Users can edit and update their user profile.
+   - Users can change their profile picture.
+   - Users can set a personalized display name.
+   - Users can choose from different color themes.
+
+8. **Goals and Progress**
+   - Users can set goals for specific habits.
+   - Users can track their habit completion status.
+   - Users can view their goals and progress over time.
+
+9. **Admin Access**
+   - Admin users can perform administrative tasks.
+   - Admin users can monitor user activity and habits.
+   - Admin users can manage user accounts from the admin panel.
+   - Admin users can access admin-specific features.
+   - Admin users can log in to the admin panel.
+
+10. **Responsive Design**
+    - The app will be fully responsive to ensure a seamless experience across various devices and screen sizes.
+
+11. **Alternative Color Modes**
+    - Users have the option to select from different color modes to customize the app's appearance.
 
 # Data Models
 
