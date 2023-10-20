@@ -385,31 +385,46 @@ The `UserProfile` model represents user profiles.
 
 [Logic Map](https://www.figma.com/file/VjMGn71dAh1oFA959Chgv2/Untitled?type=whiteboard&node-id=0%3A1&t=7GxvzogChqdHBwz7-1)
 
+A logic map was developed to outline the comprehensive functionality and navigation flow of the system. This logic map serves as a visual guide, illustrating the logical sequence of actions and connections within the application, ensuring a structured and intuitive user experience.
+
+I also used [Figma](https://www.figma.com/) to create this.
+
 ## Wireframes 
 
 [Wireframe](https://www.figma.com/file/R6z2UxOhrRZt2lgCZuNo5l/Habitize?type=design&node-id=0%3A1&mode=design&t=GgmSyiNRLry0qZJB-1)
 
+Wireframes were created for every significant page, tailored to both mobile and tablet devices. These wireframes were designed with the primary goal of ensuring that the website is fully responsive, adapting seamlessly to various device sizes.
+
+I used [Figma](https://www.figma.com/) for creating the wireframes.
 # Pages
 
 ## Landing Page
+The Landing Page serves as the initial entry point for users. It provides a welcoming introduction to the application, offering a glimpse of what the app is all about and encouraging users to explore further. Users can quickly grasp the purpose and appeal of the application from this page.
   ![Landing page](/screenshots/landing-page.gif)
 ## Login Page
+The Login Page offers a secure gateway for registered users to access their accounts. Users can log in with their credentials, ensuring their data and habits are kept private. This page grants users control over their personalized habit tracking.
   ![Login](/screenshots/login.png)
 ## Signup Page
+The Signup Page allows new users to join the application. By creating an account, users can start their habit-tracking journey. It offers a straightforward registration process to get them started quickly and effectively.
   ![Signup](/screenshots/signup.png)
 ## Help Page
+The Help Page provides users with essential guidance and support. It serves as a valuable resource for understanding how to use the application effectively. Users can find answers to their questions, troubleshoot issues, and maximize their experience.
   ![Help Page](/screenshots/help-page.gif)
 ## Dashboard
+The Dashboard is the central hub for users to manage and monitor their habits. It offers an at-a-glance overview of their progress and goals. Users can easily track and stay motivated to achieve their habits on this page.
   ![Dashboard](/screenshots/dashboard.png)
 ## Add Habits Page
+The Add Habits Page empowers users to set and customize their habits. It allows them to define the name, details, tracking frequency, and completion goals for new habits. Users can personalize their habit tracking to align with their specific goals and preferences.
   ![Add Habits](/screenshots/add-habit.png)
 ## Edit Habits Page
+The Edit Habits Page enables users to modify and fine-tune their existing habits. Users can update habit details, targets, and tracking options as they progress. This flexibility supports users in refining their tracking to better fit their evolving needs.
   ![Edit Habits](/screenshots/edit-habit.gif)
 ## View Profile Page
+The View Profile Page allows users to discover and learn more about other users within the community. It fosters social interaction and engagement, encouraging users to connect, share experiences, and gain inspiration from others.
   ![View Profile](/screenshots/view-profile.png)
 ## Edit Profile Page
+The Edit Profile Page puts users in control of their personal information. They can customize their profile, update their display name, and even change their profile picture. This page lets users tailor their public identity within the app to their liking.
   ![Edit Profile](/screenshots/edit-profile.png)
-
 
 
 # Features
