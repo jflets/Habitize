@@ -25,23 +25,19 @@ Habitize is built using modern web technologies, making it accessible across var
   - [User Stories](#user-stories)
   - [Scope Plane](#scope-plane)
 - [Data Models](#data-model)
-  - [Logic Map](#logic-map)
+- [Logic Map](#logic-map)
 - [Wireframes](#wireframes)
+- [Pages](#pages)
 - [Features](#features)
-  - [Feature 1](#feature-1)
-  - [Feature 2](#feature-2)
 - [Technologies Used](#technologies-used)
   - [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
 - [Testing](#testing)
   - [Automated Testing](#automated-testing)
   - [Validator Testing](#validator-testing)
   - [Solved Bugs](#solved-bugs)
-  - [Bugs](#bugs)
 - [Deployment](#deployment)
   - [Local Development](#local-development)
 - [Credits](#credits)
-  - [Inspiration](#inspiration)
-  - [Code References](#code-references)
 
 # How to Use
 
@@ -380,7 +376,7 @@ The `UserProfile` model represents user profiles.
 - `Account`: Represents a user account with fields like email, username, and password.
 
 
-### Logic Map
+## Logic Map
 
 [Logic Map](https://www.figma.com/file/VjMGn71dAh1oFA959Chgv2/Untitled?type=whiteboard&node-id=0%3A1&t=7GxvzogChqdHBwz7-1)
 
