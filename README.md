@@ -600,31 +600,117 @@ To meet user expectations, User Story tests were implemented. These tests ensure
 This comprehensive testing strategy and validation process helped ensure the quality, functionality, and reliability of the Habitize app, ultimately providing a satisfying user experience.
 
 ## Solved Bugs
+Throughout the development of Habitize, a few notable bugs were encountered and successfully resolved. When facing challenges, my approach involved seeking solutions through personal research, utilizing online resources like Stack Overflow, and referring to tutorials on platforms such as YouTube. Below, I'll provide details about these specific challenges and how they were effectively resolved:
 
-1. [Bug description and how it was resolved.]
+1. **Bug: Image Upload Issue**
 
-2. [Bug description and how it was resolved.]
+   - **Description**: During testing and with feedback from personal contacts, I became aware of an issue related to users' difficulties in uploading images for their habits. This issue had the potential to impact the overall user experience and the visual representation of their habits.
 
-[Add more resolved bugs if needed.]
+   - **Resolution**: I meticulously investigated the problem and applied a solution based on the insights I gathered from my personal research. This involved revamping the image upload feature, providing more user-friendly guidance, and improving error handling. These changes ensured that users could seamlessly add images to their habits, significantly enhancing their experience.
 
-## Bugs
+2. **Bug: Unauthorized Page Access via URL Path**
 
-[Describe any known bugs or issues in your project.]
+   - **Description**: A security concern arose when I observed that users could access specific pages and features by manually entering URL paths, even if they weren't authenticated. Addressing this potential vulnerability was a top priority.
+
+   - **Resolution**: As a solo developer, I took the initiative to fortify the application's security by improving access control mechanisms. This entailed revising routing and authorization logic to guarantee that only authorized users could access specific areas. My research into middleware and access control checks led to the successful prevention of unauthorized access via URL paths, strengthening the application's security.
+
+3. **Bug: Habit Ownership and User Association**
+
+   - **Description**: A critical bug affecting the core functionality of Habitize came to light. It was discovered that habits were not correctly associated with specific users, resulting in habits being inadvertently shared among users.
+
+   - **Resolution**: As the sole developer, I undertook a comprehensive analysis and identified that the issue stemmed from database schema misalignment. My research, combined with feedback from personal contacts, led to the restructuring of the database schema and habit creation process. This ensured that each habit was accurately linked to the user who created it, providing users with a personalized and secure experience.
+
+## Known Bugs
+
+As of the most recent release of Habitize, there are no known bugs or issues in the project. Continuous testing, monitoring, and user feedback play a crucial role in maintaining the application's reliability.
 
 # Deployment
 
-[Explain how your project can be deployed or hosted.]
+Habitize has been deployed to provide users with seamless access to their habit-tracking experience. The following steps outline how the project was deployed for public use.
+
+**Project Deployment**
+
+1. **Heroku Account**: To deploy Habitize, you need to have a Heroku account. Sign up or log in to Heroku if you don't have an account.
+
+2. **Create a New App**: From the main Heroku Dashboard, select 'New' and then 'Create New App.' Choose a unique name for your app, e.g., Habitize, and select a suitable region. Click 'Create App' to continue.
+
+3. **Heroku Postgres**: Navigate to the 'Resources' tab within your app's settings. In the 'Add-ons' section, search for 'Heroku Postgres,' select the package that appears, and add 'Heroku Postgres' as the database for your app.
+
+4. **Database Configuration**: In the 'Settings' tab, under the 'Config Vars' section, you'll find the DATABASE_URL. Copy this value to your clipboard for later use in configuring Django.
+
+5. **Environment Variables**: Create a new file in your Django app repository called `env.py`. Within this file, import the `os` library and set the environment variable for DATABASE_URL by pasting the link copied from Heroku. The line should appear as `os.environ["DATABASE_URL"] = "Paste the link in here."`
+
+6. **Secret Key**: In the `env.py` file, add a secret key using `os.environ["SECRET_KEY"] = "your secret key goes here."` Don't forget to add this secret key to the Heroku Config Vars as `SECRET_KEY` for the KEY value and the secret key value you created as the VALUE.
+
+7. **Django Configuration**: In the `settings.py` file within your Django app, make the following adjustments:
+   - Import necessary libraries: `from pathlib import Path`, `import os`, and `import dj_database_url`.
+   - Add the line: `if os.path.isfile("env.py"): import env`.
+   - Replace the insecure default secret key with: `SECRET_KEY = os.environ.get('SECRET_KEY')`.
+   - Replace the databases section with:
+     ```python
+     DATABASES = {
+         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+     }
+     ```
+     Ensure the correct indentation for Python is used.
+
+8. **Migrate Models**: In your terminal, migrate the models to the new database connection.
+
+9. **Cloudinary Configuration**: In a browser, navigate to Cloudinary. Log in or create an account and log in. From the dashboard, copy the CLOUDINARY_URL to your clipboard. In the `env.py` file, add `os.environ["CLOUDINARY_URL"] = "paste in the URL copied to the clipboard here."` Also, add the `KEY - DISABLE_COLLECTSTATIC` with the `Value - 1` to the Heroku Config Vars. Note that this key-value pair must be removed before the final deployment.
+
+10. **Installed Apps**: Add the Cloudinary libraries to the list of installed apps. The order they are inserted is important. `'cloudinary_storage'` should go above `'django.contrib.staticfiles'`, and `'cloudinary'` should go below it.
+
+11. **Static Files Configuration**: In the `settings.py` file, add the STATIC files settings, including the URL, storage path, directory path, root path, media URL, and default file storage path.
+
+12. **Templates Directory**: Link the file to the templates directory in Heroku by adding: `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`. Change the templates directory to `TEMPLATES_DIR` under `'DIRS': [TEMPLATES_DIR]`.
+
+13. **ALLOWED_HOSTS**: Add Heroku to the `ALLOWED_HOSTS` list. The format will be the app name given in Heroku when creating the app followed by `.herokuapp.com`.
+
+14. **Top-Level Folders**: In your code editor, create three new top-level folders: `media`, `static`, and `templates`.
+
+15. **Procfile**: Create a new file at the top-level directory named `Procfile`. Within the Procfile, add the following code: `web: gunicorn PROJECT_NAME.wsgi`.
+
+16. **GitHub**: In the terminal, add the changed files, commit, and push to GitHub to ensure the latest code is available for deployment.
+
+17. **Manual Deployment**: In Heroku, navigate to the 'Deployment' tab and deploy the branch manually. Watch the build logs for any errors.
+
+Once the deployment process is complete, Heroku will display a 'Your App Was Successfully Deployed' message, along with a link to your Habitize app, making it accessible to users.
 
 ## Local Development
 
-[Provide instructions for local development, including how to clone the repository and set up the development environment.]
+During the development of Habitize, a local development environment was set up to facilitate efficient coding, testing, and debugging. Local development offers several advantages, including improved development speed, offline accessibility, and enhanced testing capabilities. Here is an overview of the key aspects of local development for the Habitize application:
+
+1. **Version Control with Git**: The project was managed using Git, a distributed version control system. Git allowed for effective collaboration, code tracking, and easy integration with online repositories, such as GitHub. All project code was maintained in Git repositories.
+
+2. **Integrated Development Environment (IDE)**: An integrated development environment was used to streamline code writing and debugging. Popular IDEs, like Visual Studio Code, were chosen for their extensibility and compatibility with various programming languages and frameworks.
+
+3. **Local Database Setup**: A local database, using SQLite, was configured for local development. SQLite is a lightweight, serverless database engine suitable for development and testing. It allows developers to work with a database without the need for a separate database server.
+
+4. **Virtual Environments**: Python virtual environments were employed to isolate project dependencies. This ensured that the required packages and libraries were consistent and did not interfere with other Python projects. Virtual environments enhance project portability and maintain clean development environments.
+
+5. **Requirements File**: A requirements.txt file was maintained to list all project dependencies. This file made it easy to install the necessary packages with a single command, ensuring that the project could be replicated in different environments.
+
+6. **Debugging Tools**: Debugging tools, Django Debug Toolbar and print statements, were used extensively to identify and resolve issues within the application. These tools provided insights into the application's behavior and performance during local testing.
+
+8. **Development Server**: Django's built-in development server was used to run the application locally. This server allows developers to preview the application in a browser and perform real-time testing and debugging.
 
 # Credits
+**Resources Used**
 
-## Inspiration
+The development of Habitize was supported by various resources to ensure the successful implementation of features and functionalities.
 
-[Credit any sources or inspirations that influenced your project.]
+1. **Django Documentation**: Extensive use of the Django documentation was made throughout the project. It served as a valuable reference for Django framework-related concepts, ensuring the project's robustness and adherence to best practices.
 
-## Code References
+2. **Django AllAuth Documentation**: The Django AllAuth documentation played a crucial role in guiding the implementation of user authentication features. It provided a comprehensive guide for integrating the package into the project and achieving user account management capabilities.
 
-[List any code references or tutorials that were helpful in developing your project.]
+3. **Cloudinary Documentation**: The Cloudinary documentation was an essential resource during development. It facilitated the setup and configuration of Cloudinary APIs within the Django application. This resource was particularly valuable in enabling media file management, including image uploads and storage.
+
+4. **Code Institute Reference Material**: The Code Institute reference material was consulted as a general resource for aspects that had been previously covered during the course. It provided guidance and reference points to ensure the project's alignment with industry standards.
+
+5. **Django Google Authentication Tutorial**: A helpful tutorial on implementing Google authentication using Django AllAuth was referenced during the development. You can find the tutorial [here](https://dev.to/mdrhmn/django-google-authentication-using-django-allauth-18f8). This resource assisted in setting up Google login functionality within Habitize.
+
+6. **Django Email Sending Guide**: To ensure secure and efficient email functionality, the guide on how to send email with Django and Gmail in production was followed. You can access the guide [here](https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab). This resource provided essential insights into configuring email sending with Gmail for production use, enhancing communication features within Habitize.
+
+7. **Bootstrap Color Modes**: The project also incorporated color themes for users, allowing them to customize their experience. The [Bootstrap Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode) documentation provided guidance on implementing dark mode and other color modes, enhancing user interface personalization within Habitize.
+
+8. **Other Referenced Resources**: Any additional resources used during the project are appropriately referenced and acknowledged, ensuring transparency and credit to the respective sources.
