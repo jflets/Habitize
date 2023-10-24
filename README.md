@@ -28,7 +28,9 @@ Habitize is built using modern web technologies, making it accessible across var
 - [Logic Map](#logic-map)
 - [Wireframes](#wireframes)
 - [Pages](#pages)
+- [Database Schema](#database-schema)
 - [Features](#features)
+- [Design](#design)
 - [Technologies Used](#technologies-used)
   - [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
 - [Testing](#testing)
@@ -421,6 +423,16 @@ The View Profile Page allows users to discover and learn more about other users 
 The Edit Profile Page puts users in control of their personal information. They can customize their profile, update their display name, and even change their profile picture. This page lets users tailor their public identity within the app to their liking.
   ![Edit Profile](/screenshots/edit-profile.png)
 
+# Database Schema
+
+1. **User Model (AllAuth Model)**
+   - The User Model in Habitize utilizes the built-in Django User Model extended with AllAuth for user authentication. It includes fields for username, email, password, and other authentication-related data. The User Model serves as the foundation for user registration and login processes.
+
+2. **Custom User Profile Model**
+   - In addition to the User Model, there's a custom User Profile Model. This model extends the user's profile information and allows users to personalize their experience by selecting different **Color Themes**. This model includes a field to store the chosen color theme, providing users with a way to customize the visual appearance of their interface.
+
+3. **Custom Habit Model**
+   - The Habit Model is central to Habitize's core functionality. It represents the habits that users want to track. This model includes attributes such as habit name, description, and other habit-related data. It is directly connected to the User Model via a foreign key, allowing each user to have their set of habits.
 
 # Features
 
@@ -486,6 +498,20 @@ The Edit Profile Page puts users in control of their personal information. They 
 11. **User Feedback Messages**
     - Users will receive feedback messages whenever they make any changes or perform actions.
     ![User Feedback Messages](/screenshots/user-feedback.gif)
+
+# Design
+
+In the development of Habitize, careful attention was given to the visual design and user interface. The color scheme was meticulously curated using the [Coolors](https://coolors.co/) palette generator, ensuring that it resonates with the brand and provides a refined and modern aesthetic. The chosen color scheme has been thoughtfully selected to maintain high contrast, prioritizing accessibility for all users.
+
+![Colour Palette](/screenshots/color-palette.png)
+
+Typography played a crucial role in enhancing the site's appearance. The **Playfair** font from Google Fonts was chosen for its refined and elegant look. This selection ensures that the site's content, including habit details and user interactions, is presented in a clear and sophisticated manner, adding to the overall user experience.
+
+![Playfair](/screenshots/font.png)
+
+Images used in Habitize primarily focus on maintaining a polished and modern interface. While there is one playful cartoon image that adds a touch of personality, the overall design remains sleek and sophisticated. The cartoon image, contributing to a friendly and approachable ambiance, complements the site's objective of helping users establish positive habits.
+
+With visual elements that strike a balance between refinement and approachability, Habitize aims to provide an engaging and user-friendly environment for habit tracking and personal growth.
 
 
 # Technologies Used
