@@ -590,13 +590,14 @@ With visual elements that strike a balance between refinement and approachabilit
 
 For the development of the Habitize app, a comprehensive testing strategy was employed to ensure its functionality, reliability, and user satisfaction. This strategy encompassed manual and automated testing procedures, validation checks, and validation of user story acceptance criteria.
 
-**Testing Overview**
+## Testing Overview
 
 Testing procedures were systematically divided into different sections to ensure rigorous examination of all aspects of the application. Each section had test cases specifically designed to evaluate its functionality and compliance with industry standards.
 
-**Testing Schedule Overview**
+## Testing Schedule Overview
 
-Detailed testing procedures and methodologies can be found in the testing.md file in the repository. This document contains a comprehensive breakdown of testing methods and schedules for each language used in the project.
+Detailed testing procedures and methodologies can be found [here](testing.md). This document contains a comprehensive breakdown of testing methods and schedules for each language used in the project.
+
 ## Automated Testing
 - **JS Testing:** Using Jest and JSDOM
   ![JS Testing](/screenshots/js-test.gif)
