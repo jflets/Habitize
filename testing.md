@@ -136,6 +136,22 @@
 5. **Security of User Data:**
    - Ensure that user data is secured and not accessible by unauthorized users.
 
+| **Feature**                         | **Expected Outcome**                                                                                              | **Testing Performed**                                            | **Result**                                                                                         | **Pass/Fail** |
+|:-----------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:-------------:|
+| Nav links                           | Nav links should load the corresponding page                                                                      | Click the nav links                                              | All links open the appropriate pages                                                               | Pass          |
+| Hello (user) link                   | Loads view profile page                                                                                           | Click hello (user) link                                          | Opens view profile page                                                                            | Pass          |
+| Add button for habits               | Loads add habit page                                                                                              | Click add butotn                                                 | Opens add habit page                                                                               | Pass          |
+| Habit options button                | Displays dropdown menu with options for habit                                                                     | Click options button                                             | Displays a dropdown menu of habit options                                                          | Pass          |
+| Edit option button                  | Loads edit habit page                                                                                             | Click edit habit options button                                  | Loads edit habit page                                                                              | Pass          |
+| Complete habit option button        | Changes the habit colour to green, adds the date of completion and changes the current amount to the goal amount  | Click complete habit option button                               | Habit changes to green, completion date is added and current amount is the same as the goal amount | Pass          |
+| Delete habit option button          | Displays delete habit confirmation page                                                                           | Click delete habit option button                                 | Loads confirm habit completion page                                                                | Pass          |
+| Delete habit confirmation (confirm) | Habit is deleted permanently                                                                                      | Click confirm delete                                             | Habit is deleted permanently                                                                       | Pass          |
+| Delete habit confirmation (cancel)  | Redirects to the Dashboard page                                                                                   | Click cancel delete                                              | User is redirected to Dashboard page                                                               | Pass          |
+| Habit filter dropdown               | Display dropdown menu of the different frequency options                                                          | Click frequency filter dropdown                                  | Dropdown menu is displayed with frequency options                                                  | Pass          |
+| Apply filter button                 | Apples the frequency filter selected from the dropdown and only habits with selected frequency will be displayed  | Click apply filter                                               | Filter is applied to habit list and only habits with selected frequency are displayed              | Pass          |
+| Responsive design                   | Page should adapt to different screen sizes                                                                       | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes                                                              | Pass          |
+
+
 ## Add Habits Page
 
 1. **Security Testing:**
@@ -147,6 +163,19 @@
 
 3. **Error Handling:**
    - Verify that appropriate error messages are displayed for input issues.
+
+|                        |                                                                             |                                                                  |                                                                            |               |
+|------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------|---------------|
+| **Feature**            | **Expected Outcome**                                                        | **Testing Performed**                                            | **Result**                                                                 | **Pass/Fail** |
+| Nav links              | Nav links should load the corresponding page                                | Click the nav links                                              | All links open the appropriate pages                                       | Pass          |
+| Category dropdown menu | Dropdown menu of categories should show                                     | Click on category dropdown                                       | Menu of categories drop down                                               | Pass          |
+| Input boxes            | Allow user to input corresponding information                               | Click in put box and type information                            | Allows user to type information                                            | Pass          |
+| Frequency dropdown     | Dropdown menu of frequency options should show                              | Click frequency dropdown                                         | Menu drops down with different frequency options                           | Pass          |
+| Complete check box     | Allow user to tick checkbox to set habit as complete                        | Click complete checkbox                                          | Allows user to tick complete checkbox                                      | Pass          |
+| Add habit button       | Redirects user back to dashboard and updates habits list with the new habit | Click add habit button                                           | Redirects user back to dashboard and new habit is displayed in habits list | Pass          |
+| Cancel button          | Should not save habit and should redirect to dashboard                      | Click cancel button                                              | Redirects to dashboard and habit is not saved                              | Pass          |
+| Responsive design      | Page should adapt to different screen sizes                                 | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes                                      | Pass          |
+
 
 ## Edit Habits Page
 
