@@ -59,8 +59,15 @@ class Habit(models.Model):
                 self.save()
 
     def save(self, *args, **kwargs):
+        # Check if the current value has reached the goal amount
+        if self.value >= self.goal_amount:
+            self.completed = True
+        else:
+            self.completed = False
+
         # Call the reset_habit method before saving the habit
         self.reset_habit()
+
         super().save(*args, **kwargs)
 
     class Meta:
