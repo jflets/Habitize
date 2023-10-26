@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import timedelta
 
 
 class Category(models.Model):
@@ -47,16 +48,22 @@ class Habit(models.Model):
     def __str__(self):
         return self.name
 
+
     def reset_habit(self):
-        # Check if the habit's frequency is set to 'daily'
         if self.frequency == 'day':
-            # Check if the habit hasn't been reset today
-            if self.last_reset is None or (timezone.now() -
-                                           self.last_reset).days >= 1:
-                # Reset the habit by updating its value and last reset time
-                self.value = 0
-                self.last_reset = timezone.now()
-                self.save()
+            reset_period = timedelta(days=1)
+        elif self.frequency == 'week':
+            reset_period = timedelta(weeks=1)
+        elif self.frequency == 'month':
+            reset_period = timedelta(days=30)
+
+        # Check if the habit hasn't been reset within the reset_period
+        if self.last_reset is None or (timezone.now() - self.last_reset) >= reset_period:
+            # Reset the habit by updating its value and last reset time
+            self.value = 0
+            self.last_reset = timezone.now()
+            self.save()
+
 
     def save(self, *args, **kwargs):
         # Check if the current value has reached the goal amount

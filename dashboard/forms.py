@@ -52,5 +52,5 @@ class EditHabitForm(forms.ModelForm):
     category = forms.ModelChoiceField(
         queryset=Category.objects.all(),
         required=True,
-        empty_label='Other'
+        empty_label='Select a category'
     )
