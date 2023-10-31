@@ -24,11 +24,10 @@ Habitize is built using modern web technologies, making it accessible across var
 - [UX](#ux)
   - [User Stories](#user-stories)
   - [Scope Plane](#scope-plane)
-- [Data Models](#data-model)
+- [Data Models](#data-models)
 - [Logic Map](#logic-map)
 - [Wireframes](#wireframes)
 - [Pages](#pages)
-- [Database Schema](#database-schema)
 - [Features](#features)
 - [Design](#design)
 - [Technologies Used](#technologies-used)
@@ -318,6 +317,13 @@ In the scope of the Habitize app, we aim to deliver a set of essential features 
 
 # Data Models
 
+The User Model in Habitize utilizes the built-in Django User Model extended with AllAuth for user authentication. It includes fields for username, email, password, and other authentication-related data. The User Model serves as the foundation for user registration and login processes.
+
+![erd](/screenshots/erd.png)
+
+[DrawSQL app](https://drawsql.app/) was used to create the ERD.
+
+
 ## Category
 
 The `Category` model represents a category for habits.
@@ -328,7 +334,7 @@ The `Category` model represents a category for habits.
 
 ## Habit
 
-The `Habit` model represents a habit that users can track.
+The Habit Model is central to Habitize's core functionality. It represents the habits that users want to track. This model includes attributes such as habit name, description, and other habit-related data. It is directly connected to the User Model via a foreign key, allowing each user to have their set of habits.
 
 ### Fields
 
@@ -355,7 +361,7 @@ The `Habit` model represents a habit that users can track.
 
 ## UserProfile
 
-The `UserProfile` model represents user profiles.
+In addition to the User Model, there's a custom User Profile Model. This model extends the user's profile information and allows users to personalize their experience by selecting different Color Themes. This model includes a field to store the chosen color theme, providing users with a way to customize the visual appearance of their interface.
 
 ### Fields
 
@@ -422,17 +428,6 @@ The View Profile Page allows users to discover and learn more about other users 
 ## Edit Profile Page
 The Edit Profile Page puts users in control of their personal information. They can customize their profile, update their display name, and even change their profile picture. This page lets users tailor their public identity within the app to their liking.
   ![Edit Profile](/screenshots/edit-profile.png)
-
-# Database Schema
-
-1. **User Model (AllAuth Model)**
-   - The User Model in Habitize utilizes the built-in Django User Model extended with AllAuth for user authentication. It includes fields for username, email, password, and other authentication-related data. The User Model serves as the foundation for user registration and login processes.
-
-2. **Custom User Profile Model**
-   - In addition to the User Model, there's a custom User Profile Model. This model extends the user's profile information and allows users to personalize their experience by selecting different **Color Themes**. This model includes a field to store the chosen color theme, providing users with a way to customize the visual appearance of their interface.
-
-3. **Custom Habit Model**
-   - The Habit Model is central to Habitize's core functionality. It represents the habits that users want to track. This model includes attributes such as habit name, description, and other habit-related data. It is directly connected to the User Model via a foreign key, allowing each user to have their set of habits.
 
 # Features
 
