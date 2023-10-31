@@ -398,6 +398,8 @@ I also used [Figma](https://www.figma.com/) to create this.
 
 [Wireframe](https://www.figma.com/file/R6z2UxOhrRZt2lgCZuNo5l/Habitize?type=design&node-id=0%3A1&mode=design&t=GgmSyiNRLry0qZJB-1)
 
+![Wireframe](/screenshots/wireframe.png)
+
 Wireframes were created for every significant page, tailored to both mobile and tablet devices. These wireframes were designed with the primary goal of ensuring that the website is fully responsive, adapting seamlessly to various device sizes.
 
 I used [Figma](https://www.figma.com/) for creating the wireframes.
