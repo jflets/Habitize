@@ -388,6 +388,8 @@ In addition to the User Model, there's a custom User Profile Model. This model e
 
 [Logic Map](https://www.figma.com/file/VjMGn71dAh1oFA959Chgv2/Untitled?type=whiteboard&node-id=0%3A1&t=7GxvzogChqdHBwz7-1)
 
+![Logic Map](/screenshots/logic-map.png)
+
 A logic map was developed to outline the comprehensive functionality and navigation flow of the system. This logic map serves as a visual guide, illustrating the logical sequence of actions and connections within the application, ensuring a structured and intuitive user experience.
 
 I also used [Figma](https://www.figma.com/) to create this.
@@ -640,7 +642,7 @@ Throughout the development of Habitize, a few notable bugs were encountered and 
 
 ## Known Bugs
 
-As of the most recent release of Habitize, there are no known bugs or issues in the project. Continuous testing, monitoring, and user feedback play a crucial role in maintaining the application's reliability.
+As of the most recent release of Habitize, there is one known bug more so a css container setting. I have nested the habits within a container and the options button is nested in the habit, when a user clicks the option button within a habit the dropdown menu is partly hidden and requires the user to scroll down to see the full list of options. I have been unable to fix this without breaking the habit styling itself.
 
 # Deployment
 
