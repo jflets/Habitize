@@ -277,3 +277,114 @@
  **Responsive Design Testing:**
    - Verify the responsiveness of the application on different devices and screen sizes.
 
+# Validator testing screenshots
+
+## Pep8
+### Habitize
+habitize-settings.py
+![habitize-settings.py](/screenshots/pep8/habitize/habitize-settings.png)
+
+habitize-urls.py
+![habitize-urls-py](/screenshots/pep8/habitize/habitize-urls.png)
+
+habitize-views.py
+![habitize-views.py](/screenshots/pep8/habitize/habitize-views.png)
+
+habitize-wsgi.py
+![habitize-wsgi.py](/screenshots/pep8/habitize/habitize-wsgi.png)
+
+habitize-asgi.py
+![habitize-asgi.py](/screenshots/pep8/habitize/hbitize-asgi.png)
+
+### Dashboard
+
+dashboard-admin.py
+ ![dashboard-admin.py](/screenshots/pep8/dashboard/dashboard-admin.png)
+
+ dashboard-apps.py
+ ![dashboard-apps.py](/screenshots/pep8/dashboard/dashboard-apps.png)
+
+ dashboard-forms.py
+ ![dashboard-forms.py](/screenshots/pep8/dashboard/dashboard-forms.png)
+
+ dashboard-models.py
+ ![dashboard-models.py](/screenshots/pep8/dashboard/dashboard-models.png)
+
+ dashboard-tests.py
+ ![dashboard-tests.py](/screenshots/pep8/dashboard/dashboard-tests.png)
+
+ dashboard-urls.py
+ ![dashboard-urls.py](/screenshots/pep8/dashboard/dashboard-urls.png)
+
+ dashboard-views.py
+ ![dashboard-views.py](/screenshots/pep8/dashboard/dashboard-views.png)
+
+### Landing page
+landing-page-apps.py
+![landing-page-apps.py](/screenshots/pep8/landing-page/landing-page-apps.png)
+
+landing-page-tests.py
+![landing-page-tests.py](/screenshots/pep8/landing-page/landing-page-tests.png)
+
+landing-page-urls.py
+![landing-page-urls.py](/screenshots/pep8/landing-page/landing-page-urls.png)
+
+landing-page-views.py
+![landing-page-views.py](/screenshots/pep8/landing-page/landing-page-views.png)
+
+### User profile
+user-profile-admin.py
+![user-profile-admin.py](/screenshots/pep8/user-profile/user-profile-admin.png)
+
+user-profile-forms.py
+![user-profile-forms.py](/screenshots/pep8/user-profile/user-profile-apps.png)
+
+user-profile-models.py
+![user-profile-models.py](/screenshots/pep8/user-profile/user-profile-models.png)
+
+user-profile-tests.py
+![user-profile-tests.py](/screenshots/pep8/user-profile/user-profile-tests.png)
+
+user-profile-urls.py
+![user-profile-urls.py](/screenshots/pep8/user-profile/user-profile-urls.png)
+
+user-profile-views.py
+![user-profile-views.py](/screenshots/pep8/user-profile/user-profile-views.png)
+
+## JSHint
+edit.js
+![edit.js](/screenshots/jshint/edit.png)
+
+index.js
+![index.js](/screenshots/jshint/index.png)
+
+tests.js
+![tests.js](/screenshots/jshint/test.png)
+
+## W3C CSS
+
+The warnings in the following style sheets are due to the (vendor extensions) I have used.
+
+style.css
+![style.css](/screenshots/w3css/style-css.png)
+
+dashboard.css
+![dashboard.css](/screenshots/w3css/dashboard-css.png)
+
+turquoise-theme.css
+![turquoise-theme.css](/screenshots/w3css/turquoise-theme-css.png)
+
+blue-theme.css
+![blue-theme.css](/screenshots/w3css/blue-theme-css.png)
+
+purple-theme.css
+![purple-theme.css](/screenshots/w3css/purple-theme-css.png)
+
+pink-theme.css
+![pink-theme.css](/screenshots/w3css/pink-theme-css.png)
+
+brown-theme.css
+![brown-theme.css](/screenshots/w3css/brown-theme-css.png)
+
+green-theme.css
+![green-theme.css](/screenshots/w3css/green-theme-css.png)

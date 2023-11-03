@@ -28,6 +28,7 @@ class AddHabitForm(forms.ModelForm):
         empty_label="Select a category"
     )
 
+
 class EditHabitForm(forms.ModelForm):
     class Meta:
         model = Habit

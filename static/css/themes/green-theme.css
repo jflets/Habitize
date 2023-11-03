@@ -440,7 +440,7 @@ form input:focus {
     min-width: 340px;
     min-height: 30px;
     position: absolute;
-    display: flexbox;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;

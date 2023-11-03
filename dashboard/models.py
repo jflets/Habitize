@@ -48,7 +48,6 @@ class Habit(models.Model):
     def __str__(self):
         return self.name
 
-
     def reset_habit(self):
         if self.frequency == 'day':
             reset_period = timedelta(days=1)
@@ -58,12 +57,12 @@ class Habit(models.Model):
             reset_period = timedelta(days=30)
 
         # Check if the habit hasn't been reset within the reset_period
-        if self.last_reset is None or (timezone.now() - self.last_reset) >= reset_period:
+        if self.last_reset is None or (timezone.now() -
+                                       self.last_reset) >= reset_period:
             # Reset the habit by updating its value and last reset time
             self.value = 0
             self.last_reset = timezone.now()
             self.save()
-
 
     def save(self, *args, **kwargs):
         # Check if the current value has reached the goal amount
