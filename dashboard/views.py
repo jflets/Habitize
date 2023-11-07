@@ -111,11 +111,29 @@ def edit_habit(request, habit_id):
     if request.method == 'POST':
         form = EditHabitForm(request.POST, instance=habit)
         if form.is_valid():
-            habit = form.save()
+            # Check if "completed" checkbox is checked
+            completed = form.cleaned_data['completed']
+            # Check if the "current amount" matches the "goal amount"
+            current_amount = form.cleaned_data['value']
+            goal_amount = form.cleaned_data['goal_amount']
+
+            if current_amount == goal_amount:
+                # If the "current amount" matches the "goal amount," mark the habit as complete
+                habit.completed = True
+            elif completed:
+                # If the "completed" checkbox is checked, set the "current amount" to the "goal amount"
+                habit.value = goal_amount
+
+            # Manually set the "value" field to its current value to preserve the read-only state
+            form.instance.value = habit.value
+            form.save()
             messages.success(request, 'Habit edited successfully.')
             return redirect('dashboard')
     else:
         form = EditHabitForm(instance=habit)
+
+    # Make the "value" input field readonly in the template
+    form.fields['value'].widget.attrs['readonly'] = 'readonly'
 
     context = {
         'form': form,

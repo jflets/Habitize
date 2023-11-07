@@ -32,8 +32,7 @@ class AddHabitForm(forms.ModelForm):
 class EditHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
-        fields = ['name', 'units', 'value', 'frequency',
-                  'goal_amount', 'completed', 'category']
+        fields = ['name', 'units', 'value', 'frequency', 'goal_amount', 'completed', 'category']
         labels = {
             'name': 'Habit Name',
             'value': 'Current Amount',
@@ -41,13 +40,9 @@ class EditHabitForm(forms.ModelForm):
             'completed': 'Completed',
         }
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder':
-                                           'Enter the habit name'}),
-            'units': forms.TextInput(attrs={'placeholder':
-                                            'Enter custom units'}),
-            'value': forms.NumberInput(attrs={'type': 'number', 'placeholder':
-                                              'Enter a value', 'readonly':
-                                              'readonly'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Enter the habit name'}),
+            'units': forms.TextInput(attrs={'placeholder': 'Enter custom units'}),
+            'completed': forms.CheckboxInput(),
         }
 
     category = forms.ModelChoiceField(

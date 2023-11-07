@@ -35,7 +35,9 @@ function valueButtons() {
     const decrementValueButton = document.querySelector(".decrement-value-button");
     const incrementValueButton = document.querySelector(".increment-value-button");
     const valueInput = document.querySelector("#id_value");
-    const goalInput = document.querySelector("#id_goal_amount"); // Added goalInput
+    const goalInput = document.querySelector("#id_goal_amount");
+    const completedCheckbox = document.querySelector("#id_completed");
+
     let isButtonDisabled = false;
     let isAdvancedSettingsOpen = false;
 
@@ -45,10 +47,10 @@ function valueButtons() {
             if (!isAdvancedSettingsOpen) {
                 isButtonDisabled = true;
                 let currentValue = parseInt(valueInput.value);
-                let goalValue = parseInt(goalInput.value); // Get goal value
+                let goalValue = parseInt(goalInput.value);
                 if (!isNaN(currentValue) && !isNaN(goalValue)) {
                     if (increment) {
-                        if (currentValue < goalValue) { // Check against goalValue
+                        if (currentValue < goalValue) {
                             valueInput.value = currentValue + 1;
                         }
                     } else {
@@ -56,12 +58,14 @@ function valueButtons() {
                             valueInput.value = currentValue - 1;
                         }
                     }
-                    // Disable or enable based on goal achievement
-                    if (currentValue + 1 === goalValue) {
-                        valueInput.disabled = true;
-                    } else if (currentValue === goalValue) {
-                        valueInput.disabled = false;
+
+                    // Automatically check/uncheck "completed" based on current amount and goal amount
+                    if (parseInt(valueInput.value) === parseInt(goalInput.value)) {
+                        completedCheckbox.checked = true;
+                    } else {
+                        completedCheckbox.checked = false;
                     }
+
                     setTimeout(() => {
                         isButtonDisabled = false;
                     }, 500);
@@ -100,4 +104,4 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleAdvancedSettings();
 });
 
-module.exports = { goalAmountButtons, valueButtons, toggleAdvancedSettings };
+// module.exports = { goalAmountButtons, valueButtons, toggleAdvancedSettings };
