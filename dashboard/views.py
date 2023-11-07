@@ -118,13 +118,16 @@ def edit_habit(request, habit_id):
             goal_amount = form.cleaned_data['goal_amount']
 
             if current_amount == goal_amount:
-                # If the "current amount" matches the "goal amount," mark the habit as complete
+                # If the "current amount" matches the
+                # "goal amount," mark the habit as complete
                 habit.completed = True
             elif completed:
-                # If the "completed" checkbox is checked, set the "current amount" to the "goal amount"
+                # If the "completed" checkbox is checked,
+                # set the "current amount" to the "goal amount"
                 habit.value = goal_amount
 
-            # Manually set the "value" field to its current value to preserve the read-only state
+            # Manually set the "value" field to its current
+            # value to preserve the read-only state
             form.instance.value = habit.value
             form.save()
             messages.success(request, 'Habit edited successfully.')
