@@ -45,9 +45,7 @@ class EditHabitForm(forms.ModelForm):
                                            'Enter the habit name'}),
             'units': forms.TextInput(attrs={'placeholder':
                                             'Enter custom units'}),
-            'value': forms.NumberInput(attrs={'type': 'number', 'placeholder':
-                                              'Enter a value', 'readonly':
-                                              'readonly'}),
+            'completed': forms.CheckboxInput(),
         }
 
     category = forms.ModelChoiceField(

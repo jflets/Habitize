@@ -154,6 +154,7 @@ h6 {
 
 .navbar-text {
     margin-left: 5rem;
+    text-decoration: none;
 }
 
 #profile {
