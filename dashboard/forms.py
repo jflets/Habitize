@@ -28,6 +28,7 @@ class AddHabitForm(forms.ModelForm):
         empty_label="Select a category"
     )
 
+
 class EditHabitForm(forms.ModelForm):
     class Meta:
         model = Habit
@@ -45,11 +46,12 @@ class EditHabitForm(forms.ModelForm):
             'units': forms.TextInput(attrs={'placeholder':
                                             'Enter custom units'}),
             'value': forms.NumberInput(attrs={'type': 'number', 'placeholder':
-                                              'Enter a value'}),
+                                              'Enter a value', 'readonly':
+                                              'readonly'}),
         }
 
     category = forms.ModelChoiceField(
         queryset=Category.objects.all(),
         required=True,
-        empty_label='Other'
+        empty_label='Select a category'
     )

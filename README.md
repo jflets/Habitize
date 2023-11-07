@@ -24,11 +24,10 @@ Habitize is built using modern web technologies, making it accessible across var
 - [UX](#ux)
   - [User Stories](#user-stories)
   - [Scope Plane](#scope-plane)
-- [Data Models](#data-model)
+- [Data Models](#data-models)
 - [Logic Map](#logic-map)
 - [Wireframes](#wireframes)
 - [Pages](#pages)
-- [Database Schema](#database-schema)
 - [Features](#features)
 - [Design](#design)
 - [Technologies Used](#technologies-used)
@@ -318,6 +317,13 @@ In the scope of the Habitize app, we aim to deliver a set of essential features 
 
 # Data Models
 
+The User Model in Habitize utilizes the built-in Django User Model extended with AllAuth for user authentication. It includes fields for username, email, password, and other authentication-related data. The User Model serves as the foundation for user registration and login processes.
+
+![erd](/screenshots/erd.png)
+
+[DrawSQL app](https://drawsql.app/) was used to create the ERD.
+
+
 ## Category
 
 The `Category` model represents a category for habits.
@@ -328,7 +334,7 @@ The `Category` model represents a category for habits.
 
 ## Habit
 
-The `Habit` model represents a habit that users can track.
+The Habit Model is central to Habitize's core functionality. It represents the habits that users want to track. This model includes attributes such as habit name, description, and other habit-related data. It is directly connected to the User Model via a foreign key, allowing each user to have their set of habits.
 
 ### Fields
 
@@ -355,7 +361,7 @@ The `Habit` model represents a habit that users can track.
 
 ## UserProfile
 
-The `UserProfile` model represents user profiles.
+In addition to the User Model, there's a custom User Profile Model. This model extends the user's profile information and allows users to personalize their experience by selecting different Color Themes. This model includes a field to store the chosen color theme, providing users with a way to customize the visual appearance of their interface.
 
 ### Fields
 
@@ -382,6 +388,8 @@ The `UserProfile` model represents user profiles.
 
 [Logic Map](https://www.figma.com/file/VjMGn71dAh1oFA959Chgv2/Untitled?type=whiteboard&node-id=0%3A1&t=7GxvzogChqdHBwz7-1)
 
+![Logic Map](/screenshots/logic-map.png)
+
 A logic map was developed to outline the comprehensive functionality and navigation flow of the system. This logic map serves as a visual guide, illustrating the logical sequence of actions and connections within the application, ensuring a structured and intuitive user experience.
 
 I also used [Figma](https://www.figma.com/) to create this.
@@ -389,6 +397,8 @@ I also used [Figma](https://www.figma.com/) to create this.
 ## Wireframes 
 
 [Wireframe](https://www.figma.com/file/R6z2UxOhrRZt2lgCZuNo5l/Habitize?type=design&node-id=0%3A1&mode=design&t=GgmSyiNRLry0qZJB-1)
+
+![Wireframe](/screenshots/wireframe.png)
 
 Wireframes were created for every significant page, tailored to both mobile and tablet devices. These wireframes were designed with the primary goal of ensuring that the website is fully responsive, adapting seamlessly to various device sizes.
 
@@ -422,17 +432,6 @@ The View Profile Page allows users to discover and learn more about other users 
 ## Edit Profile Page
 The Edit Profile Page puts users in control of their personal information. They can customize their profile, update their display name, and even change their profile picture. This page lets users tailor their public identity within the app to their liking.
   ![Edit Profile](/screenshots/edit-profile.png)
-
-# Database Schema
-
-1. **User Model (AllAuth Model)**
-   - The User Model in Habitize utilizes the built-in Django User Model extended with AllAuth for user authentication. It includes fields for username, email, password, and other authentication-related data. The User Model serves as the foundation for user registration and login processes.
-
-2. **Custom User Profile Model**
-   - In addition to the User Model, there's a custom User Profile Model. This model extends the user's profile information and allows users to personalize their experience by selecting different **Color Themes**. This model includes a field to store the chosen color theme, providing users with a way to customize the visual appearance of their interface.
-
-3. **Custom Habit Model**
-   - The Habit Model is central to Habitize's core functionality. It represents the habits that users want to track. This model includes attributes such as habit name, description, and other habit-related data. It is directly connected to the User Model via a foreign key, allowing each user to have their set of habits.
 
 # Features
 
@@ -606,9 +605,9 @@ Detailed testing procedures and methodologies can be found [here](testing.md). T
   ![Python Testing](/screenshots/python-test.gif)
 ## Validator Testing
 
-The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. The following validators were used:
+The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. Full validator testing and screenshots can be found [here](/testing.md). The following validators were used:
 
-1. **W3C HTML Validator:** All HTML code was validated to ensure it met HTML standards and was free from structural errors. Any issues identified were addressed during development.
+1. **W3C HTML Validator:** Due to the jinja templates within the django project unfortunately W3C cannot read the full HTML file and therefore displays errors. I attempted to pull the HTML from
 
 2. **W3C CSS Validator:** CSS files were validated using the W3C CSS Validator to confirm that they adhered to CSS standards and had no errors or warnings.
 
@@ -645,7 +644,7 @@ Throughout the development of Habitize, a few notable bugs were encountered and 
 
 ## Known Bugs
 
-As of the most recent release of Habitize, there are no known bugs or issues in the project. Continuous testing, monitoring, and user feedback play a crucial role in maintaining the application's reliability.
+As of the most recent release of Habitize, there is one known bug more so a css container setting. I have nested the habits within a container and the options button is nested in the habit, when a user clicks the option button within a habit the dropdown menu is partly hidden and requires the user to scroll down to see the full list of options. I have been unable to fix this without breaking the habit styling itself.
 
 # Deployment
 

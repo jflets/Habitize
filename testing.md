@@ -1,3 +1,21 @@
+# Table Of Contents
+- [Testing Schedule](#testing-schedule)
+   - [Landing Page](#landing-page)
+   - [login Page](#login-page)
+   - [Signup page](#signup-page)
+   - [help Page](#help-page)
+   - [Dashboard](#dashboard)
+   - [Add Habits Page](#add-habits-page)
+   - [Edit Habits Page](#edit-habits-page)
+   - [View Profile Page](#view-profile-page)
+   - [Edit Profile Page](#edit-profile-page)
+   - [Password Reset](#password-reset)
+- [Validator Testing](#validator-testing-screenshots)
+   - [PEP8](#pep8)
+   - [JSHint](#jshint)
+   - [W3C](#w3c-css)
+- [Accessibility Testing](#accessability-testing)
+
 # Testing Schedule
 ## Application Settings
 
@@ -189,6 +207,26 @@
 3. **Changes Saved:**
    - Confirm that changes are saved and reflected on the dashboard.
 
+|                                    |                                                                                                                                         |                                                                                    |                                                                                                                                      |               |
+|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| **Feature**                        | **Expected Outcome**                                                                                                                    | **Testing Performed**                                                              | **Result**                                                                                                                           | **Pass/Fail** |
+| Nav links                          | Nav links should load the corresponding page                                                                                            | Click the nav links                                                                | All links open the appropriate pages                                                                                                 | Pass          |
+| Edit habit button from option menu | Should open edit habit page and have habit information                                                                                  | Click edit habit button from option menu                                           | Opens edit habit page and displays habit information                                                                                 | Pass          |
+| Habit name input                   | Should display habits name and allow user to change information                                                                         | Click habit name                                                                   | Displays habit name and allows user to change information                                                                            | Pass          |
+| Current amount input               | Should display the current amount                                                                                                       | Open edit page                                                                     | Displays current amount                                                                                                              | Pass          |
+| Current amount increase button     | Should allow user to increase amount until goal amount is reached                                                                       | Click increase button until goal amount was reached, then clicked a few more times | Allowed user to increase amount up to the goal amount but not passed                                                                 | Pass          |
+| Current amount decrease button     | Should allow user to decrease current amount but not lower than 0                                                                       | Click decrease button to 0 then click a few more times                             | Allows user to decrease current amount down to 0 but not less                                                                        | Pass          |
+| Complete checkbox                  | Allow user to tick checkbox to set habit as complete                                                                                    | Click complete checkbox                                                            | Allows user to tick complete checkbox                                                                                                | Pass          |
+| Update habit button                | Should have the update made by the user and redirect the user back to the dash board and updates should be displayed in the habits list | Click update habit                                                                 | Habit saves the user changes and then redirects the user back to the dashboard and the updated habit is displayed in the habits list | Pass          |
+| Show advanced settings             | Should trigger a popup to ask user to confirm show advanced settings                                                                    | Click show advanced settings                                                       | A popup is displayed asking to confirm or cancel my choice                                                                           | Pass          |
+| Confirm show advanced settings     | Should load the hidden settings and display the information in the edit page                                                            | Click confirm                                                                      | Hidden settings are displayed in edit habit page                                                                                     | Pass          |
+| Cancel show advanced settings      | Should close the popup and not show any advanced settings                                                                               | Click cancel                                                                       | Popup closes and no advanced settings are shown                                                                                      | Pass          |
+| Category dropdown menu	            | Dropdown menu of categories should show	                                                                                                | Click on category dropdown	                                                        | Menu of categories drop down                                                                                                         | Pass          |
+| Frequency dropdown                 | Dropdown menu of frequency options should show	                                                                                         | Click frequency dropdown	                                                          | Menu drops down with different frequency options                                                                                     | Pass          |
+| Goal amount input                  | Display the goal amount and allow user to increase and decrease amount                                                                  | Increase and decrease goal amount                                                  | Gola amount is shown and user can increase and decrease amount                                                                       | Pass          |
+| Responsive design                  | Page should adapt to different screen sizes                                                                                             | Using Chrome dev tools, scale the page to different screen sizes                   | Page adapts to different screen sizes                                                                                                | Pass          |
+
+
 ## View Profile Page
 
 1. **Security Testing:**
@@ -200,6 +238,17 @@
 
 3. **Navigation Testing:**
    - Test the navigation to edit the user's profile.
+
+|                                       |                                              |                                                                  |                                       |               |
+|---------------------------------------|----------------------------------------------|------------------------------------------------------------------|---------------------------------------|---------------|
+| **Feature**                           | **Expected Outcome**                         | **Testing Performed**                                            | **Result**                            | **Pass/Fail** |
+| Nav links                             | Nav links should load the corresponding page | Click the nav links                                              | All links open the appropriate pages  | Pass          |
+| User image displayed (image added)    | Image is displayed                           | Open view profile page                                           | Profile image is displayed            | Pass          |
+| User image displayed (no image added) | Profile icon displayed                       | Open view profile page                                           | Icon image is displayed               | Pass          |
+| User name displayed                   | User should be displayed below profile image | Open view profile page                                           | Username is displayed                 | Pass          |
+| Edit profile button                   | Should load edit profile page                | Click button                                                     | Opens edit profile page               | Pass          |
+| Responsive design                     | Page should adapt to different screen sizes  | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes | Pass          |
+
 
 ## Edit Profile Page
 
@@ -213,6 +262,19 @@
 3. **Changes Saved:**
    - Confirm that changes to the profile are saved.
 
+|                                               |                                                                                                            |                                                                  |                                                                           |               |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------------------|---------------|
+| **Feature**                                   | **Expected Outcome**                                                                                       | **Testing Performed**                                            | **Result**                                                                | **Pass/Fail** |
+| Nav links                                     | Nav links should load the corresponding page                                                               | Click the nav links                                              | All links open the appropriate pages                                      | Pass          |
+| User name displayed                           | User should be displayed and allow user to change name                                                     | Type new username                                                | Username is changed once update is saved                                  | Pass          |
+| User profile image displayed (image added)    | Image is displayed                                                                                         | Open view profile page                                           | Profile image is displayed                                                | Pass          |
+| User profile image displayed (no image added) | Profile icon displayed                                                                                     | Open view profile page                                           | Icon image is displayed                                                   | Pass          |
+| User profile image upload                     | User should be able to upload new profile image                                                            | Click choose file button and upload image                        | Profile image is successfully uploaded                                    | Pass          |
+| Color theme radio buttons                     | Button should display the color inside the button and should change the color theme of the site when saved | Click color theme buttons and save update                        | Color theme for the site has changed                                      | Pass          |
+| Update button                                 | Should apply and save changes made by user                                                                 | Click update button                                              | User changes have been applied and saved                                  | Pass          |
+| Cancel button                                 | Should not save any changes and should redirect the user back to the view profile page                     | Click cancel button                                              | No changes are saved and user is redirected back to the view profile page | Pass          |
+| Responsive design                             | Page should adapt to different screen sizes                                                                | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes                                     | Pass          |
+
 ## Password Reset
 
 1. **Security Testing:**
@@ -221,19 +283,129 @@
 2. **Email Confirmation:**
    - Verify that users can reset their passwords if forgotten.
 
+|                       |                                                                             |                                                                  |                                                                     |               |
+|-----------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------------|---------------|
+| **Feature**           | **Expected Outcome**                                                        | **Testing Performed**                                            | **Result**                                                          | **Pass/Fail** |
+| Nav links             | Nav links should load the corresponding page                                | Click the nav links                                              | All links open the appropriate pages                                | Pass          |
+| Email input           | Should allow user to input their email and validate that the email is valid | Type email in input box                                          | User can input their email and if email is invalid user is notified | Pass          |
+| Reset password button | Should send email to user with reset link                                   | Click reset email button                                         | Email is sent to user with password reset link                      | Pass          |
+| Responsive design     | Page should adapt to different screen sizes                                 | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes                               | Pass          |
+
 ## Additional Testing
-
-1. **Image Upload Testing:**
-   - Test image uploads for user profiles and habits.
-   - Check for compatibility and responsiveness with various file types and sizes.
-
-2. **Security Vulnerability Testing:**
-   - Perform security testing, including penetration testing, to identify vulnerabilities and ensure data security.
-
-3. **Email Confirmation Testing:**
-   - Test email confirmation for user registration and password reset.
-   - Ensure that email links are generated and lead to the correct actions.
-
-4. **Responsive Design Testing:**
+ **Responsive Design Testing:**
    - Verify the responsiveness of the application on different devices and screen sizes.
+
+# Validator testing screenshots
+
+## Pep8
+### Habitize
+habitize-settings.py
+![habitize-settings.py](/screenshots/pep8/habitize/habitize-settings.png)
+
+habitize-urls.py
+![habitize-urls-py](/screenshots/pep8/habitize/habitize-urls.png)
+
+habitize-views.py
+![habitize-views.py](/screenshots/pep8/habitize/habitize-views.png)
+
+habitize-wsgi.py
+![habitize-wsgi.py](/screenshots/pep8/habitize/habitize-wsgi.png)
+
+habitize-asgi.py
+![habitize-asgi.py](/screenshots/pep8/habitize/hbitize-asgi.png)
+
+### Dashboard
+
+dashboard-admin.py
+ ![dashboard-admin.py](/screenshots/pep8/dashboard/dashboard-admin.png)
+
+ dashboard-apps.py
+ ![dashboard-apps.py](/screenshots/pep8/dashboard/dashboard-apps.png)
+
+ dashboard-forms.py
+ ![dashboard-forms.py](/screenshots/pep8/dashboard/dashboard-forms.png)
+
+ dashboard-models.py
+ ![dashboard-models.py](/screenshots/pep8/dashboard/dashboard-models.png)
+
+ dashboard-tests.py
+ ![dashboard-tests.py](/screenshots/pep8/dashboard/dashboard-tests.png)
+
+ dashboard-urls.py
+ ![dashboard-urls.py](/screenshots/pep8/dashboard/dashboard-urls.png)
+
+ dashboard-views.py
+ ![dashboard-views.py](/screenshots/pep8/dashboard/dashboard-views.png)
+
+### Landing page
+landing-page-apps.py
+![landing-page-apps.py](/screenshots/pep8/landing-page/landing-page-apps.png)
+
+landing-page-tests.py
+![landing-page-tests.py](/screenshots/pep8/landing-page/landing-page-tests.png)
+
+landing-page-urls.py
+![landing-page-urls.py](/screenshots/pep8/landing-page/landing-page-urls.png)
+
+landing-page-views.py
+![landing-page-views.py](/screenshots/pep8/landing-page/landing-page-views.png)
+
+### User profile
+user-profile-admin.py
+![user-profile-admin.py](/screenshots/pep8/user-profile/user-profile-admin.png)
+
+user-profile-forms.py
+![user-profile-forms.py](/screenshots/pep8/user-profile/user-profile-apps.png)
+
+user-profile-models.py
+![user-profile-models.py](/screenshots/pep8/user-profile/user-profile-models.png)
+
+user-profile-tests.py
+![user-profile-tests.py](/screenshots/pep8/user-profile/user-profile-tests.png)
+
+user-profile-urls.py
+![user-profile-urls.py](/screenshots/pep8/user-profile/user-profile-urls.png)
+
+user-profile-views.py
+![user-profile-views.py](/screenshots/pep8/user-profile/user-profile-views.png)
+
+## JSHint
+edit.js
+![edit.js](/screenshots/jshint/edit.png)
+
+index.js
+![index.js](/screenshots/jshint/index.png)
+
+tests.js
+![tests.js](/screenshots/jshint/test.png)
+
+## W3C CSS
+
+The warnings in the following style sheets are due to the (vendor extensions) I have used.
+
+style.css
+![style.css](/screenshots/w3css/style-css.png)
+
+dashboard.css
+![dashboard.css](/screenshots/w3css/dashboard-css.png)
+
+turquoise-theme.css
+![turquoise-theme.css](/screenshots/w3css/turquoise-theme-css.png)
+
+blue-theme.css
+![blue-theme.css](/screenshots/w3css/blue-theme-css.png)
+
+purple-theme.css
+![purple-theme.css](/screenshots/w3css/purple-theme-css.png)
+
+pink-theme.css
+![pink-theme.css](/screenshots/w3css/pink-theme-css.png)
+
+brown-theme.css
+![brown-theme.css](/screenshots/w3css/brown-theme-css.png)
+
+green-theme.css
+![green-theme.css](/screenshots/w3css/green-theme-css.png)
+
+# Accessability Testing
 

@@ -35,6 +35,7 @@ function valueButtons() {
     const decrementValueButton = document.querySelector(".decrement-value-button");
     const incrementValueButton = document.querySelector(".increment-value-button");
     const valueInput = document.querySelector("#id_value");
+    const goalInput = document.querySelector("#id_goal_amount"); // Added goalInput
     let isButtonDisabled = false;
     let isAdvancedSettingsOpen = false;
 
@@ -44,13 +45,22 @@ function valueButtons() {
             if (!isAdvancedSettingsOpen) {
                 isButtonDisabled = true;
                 let currentValue = parseInt(valueInput.value);
-                if (!isNaN(currentValue)) {
+                let goalValue = parseInt(goalInput.value); // Get goal value
+                if (!isNaN(currentValue) && !isNaN(goalValue)) {
                     if (increment) {
-                        valueInput.value = currentValue + 1;
+                        if (currentValue < goalValue) { // Check against goalValue
+                            valueInput.value = currentValue + 1;
+                        }
                     } else {
                         if (currentValue > 0) {
                             valueInput.value = currentValue - 1;
                         }
+                    }
+                    // Disable or enable based on goal achievement
+                    if (currentValue + 1 === goalValue) {
+                        valueInput.disabled = true;
+                    } else if (currentValue === goalValue) {
+                        valueInput.disabled = false;
                     }
                     setTimeout(() => {
                         isButtonDisabled = false;

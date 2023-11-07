@@ -205,8 +205,6 @@ h6 {
 .habit-card-container {
     position: relative;
     padding: 0 1rem;
-    display: flex;
-    justify-content: center;
     max-height: 240px;
     overflow-y: auto;
 }

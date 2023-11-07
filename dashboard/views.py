@@ -23,7 +23,8 @@ def get_dashboard(request):
         habits = habits.filter(frequency='month')
     else:
         # Handle cases where an invalid frequency is selected
-        habits = habits.all()  # Display all habits, you can customize this behavior
+        habits = habits.all()
+        # Display all habits, you can customize this behavior
 
     total_habits = habits.count()
     completed_habits = habits.filter(completed=True).count()
@@ -56,11 +57,14 @@ def get_dashboard(request):
     total_habits_month = habits.filter(frequency='month').count()
 
     completed_progress_day = (
-        completed_habits_day / total_habits_day) * 100 if total_habits_day > 0 else 0
+        completed_habits_day /
+        total_habits_day) * 100 if total_habits_day > 0 else 0
     completed_progress_week = (
-        completed_habits_week / total_habits_week) * 100 if total_habits_week > 0 else 0
+        completed_habits_week /
+        total_habits_week) * 100 if total_habits_week > 0 else 0
     completed_progress_month = (
-        completed_habits_month / total_habits_month * 100) if total_habits_month > 0 else 0
+        completed_habits_month /
+        total_habits_month * 100) if total_habits_month > 0 else 0
 
     context = {
         'habits': habits,
@@ -159,17 +163,20 @@ def delete_habit(request, habit_id):
     context = {'habit': habit}
     return render(request, 'dashboard/delete_confirmation.html', context)
 
+
 @login_required(login_url="/accounts/login")
 def set_selected_color_theme(request, color_theme):
     # Check if the selected color theme is valid
-    valid_color_themes = ['default', 'blue', 'turquoise', 'green', 'pink', 'purple', 'brown']
+    valid_color_themes = ['default', 'blue', 'turquoise',
+                          'green', 'pink', 'purple', 'brown']
 
     if color_theme not in valid_color_themes:
         messages.error(request, 'Invalid color theme selected.')
         return redirect('dashboard')
 
     # Get the user's UserProfile instance
-    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    user_profile, created = UserProfile.objects.get_or_create(user=request.
+                                                              user)
 
     # Set the selected color theme in the user's profile
     user_profile.selected_color_theme = color_theme
@@ -178,6 +185,7 @@ def set_selected_color_theme(request, color_theme):
     # Set the selected color theme in the session
     request.session['selected_color_theme'] = color_theme
 
-    messages.success(request, f'Color theme set to {color_theme.capitalize()}.')
+    messages.success(request,
+                     f'Color theme set to{color_theme.capitalize()}.')
 
     return redirect('dashboard')
