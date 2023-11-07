@@ -605,9 +605,9 @@ Detailed testing procedures and methodologies can be found [here](testing.md). T
   ![Python Testing](/screenshots/python-test.gif)
 ## Validator Testing
 
-The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. The following validators were used:
+The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. Full validator testing and screenshots can be found [here](/testing.md). The following validators were used:
 
-1. **W3C HTML Validator:** All HTML code was validated to ensure it met HTML standards and was free from structural errors. Any issues identified were addressed during development.
+1. **W3C HTML Validator:** Due to the jinja templates within the django project unfortunately W3C cannot read the full HTML file and therefore displays errors. I attempted to pull the HTML from
 
 2. **W3C CSS Validator:** CSS files were validated using the W3C CSS Validator to confirm that they adhered to CSS standards and had no errors or warnings.
 

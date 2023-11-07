@@ -1,3 +1,21 @@
+# Table Of Contents
+- [Testing Schedule](#testing-schedule)
+   - [Landing Page](#landing-page)
+   - [login Page](#login-page)
+   - [Signup page](#signup-page)
+   - [help Page](#help-page)
+   - [Dashboard](#dashboard)
+   - [Add Habits Page](#add-habits-page)
+   - [Edit Habits Page](#edit-habits-page)
+   - [View Profile Page](#view-profile-page)
+   - [Edit Profile Page](#edit-profile-page)
+   - [Password Reset](#password-reset)
+- [Validator Testing](#validator-testing-screenshots)
+   - [PEP8](#pep8)
+   - [JSHint](#jshint)
+   - [W3C](#w3c-css)
+- [Accessibility Testing](#accessability-testing)
+
 # Testing Schedule
 ## Application Settings
 
@@ -388,3 +406,6 @@ brown-theme.css
 
 green-theme.css
 ![green-theme.css](/screenshots/w3css/green-theme-css.png)
+
+# Accessability Testing
+
