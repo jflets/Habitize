@@ -15,6 +15,7 @@
    - [JSHint](#jshint)
    - [W3C](#w3c-css)
 - [Accessibility Testing](#accessability-testing)
+- [Error Pages](#error-pages)
 
 # Testing Schedule
 ## Application Settings
@@ -409,3 +410,49 @@ green-theme.css
 
 # Accessability Testing
 
+Landing Page
+![landing page](/screenshots/accessibility/lp-access.png)
+
+Signup Page
+![signup page](/screenshots/accessibility/signup-access.png)
+
+Login Page  
+![login page](/screenshots/accessibility/login-access.png)
+
+Help Page   
+![help page](/screenshots/accessibility/help-access.png)
+
+Dashboard   
+![dashboard page](/screenshots/accessibility/dash-access.png)
+
+Add Habit Page
+![add habit page](/screenshots/accessibility/add-hab-access.png)
+
+Edit Habit Page
+![edit habit page](/screenshots/accessibility/edit-hab-access.png)
+
+Delete Habit Page
+![delete habit page](/screenshots/accessibility/delete-hab-access.png)
+
+View Profile Page
+![view profile page](/screenshots/accessibility/view-pro-access.png)
+
+Edit profile page
+![edit profile page](/screenshots/accessibility/edit-pro-access.png)
+
+Logout Page  
+![logout page](/screenshots/accessibility/logout-access.png)
+
+Password Reset Page
+![password reset page](/screenshots/accessibility/pass-reset-access.png)
+
+# Error Pages
+
+### 404
+![404 error page](/screenshots/error-pages/404-page.png)
+
+### 403
+![403 error page](/screenshots/error-pages/404-page.png)
+
+### 500
+![500 error page](/screenshots/error-pages/500-error.png)
