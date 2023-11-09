@@ -14,7 +14,7 @@
    - [PEP8](#pep8)
    - [JSHint](#jshint)
    - [W3C CSS](#w3c-css)
-   - [W3C HTML]()
+   - [W3C HTML](#w3c-html)
 - [Accessibility Testing](#accessability-testing)
 - [Error Pages](#error-pages)
 
@@ -394,57 +394,57 @@ dashboard.css
 turquoise-theme.css
 ![turquoise-theme.css](/screenshots/w3css/turquoise-theme-css.png)
 
-blue-theme.css
+blue-theme.css  
 ![blue-theme.css](/screenshots/w3css/blue-theme-css.png)
 
-purple-theme.css
+purple-theme.css  
 ![purple-theme.css](/screenshots/w3css/purple-theme-css.png)
 
-pink-theme.css
+pink-theme.css  
 ![pink-theme.css](/screenshots/w3css/pink-theme-css.png)
 
-brown-theme.css
+brown-theme.css  
 ![brown-theme.css](/screenshots/w3css/brown-theme-css.png)
 
-green-theme.css
+green-theme.css  
 ![green-theme.css](/screenshots/w3css/green-theme-css.png)
 
 ## W3C HTML
 
-landing page
+landing page  
 ![landing-page.html](/screenshots/w3c-html/landing-page-html.png)
 
-signup page
+signup page  
 ![signup.html](/screenshots/w3c-html/signup-html.png)
 
-login page
+login page  
 ![login.html](/screenshots/w3c-html/login-html.png)
 
-logout page
+logout page  
 ![logout.html](/screenshots/w3c-html/logout-html.png)
 
-forgot password page
+forgot password page  
 ![forgot-password.html](/screenshots/w3c-html/forgot-password-html.png)
 
 dashboard page (The error on this page is due to the jinja template link and the warning is for an aria label that i feel is necessary for the accessibility of the page.)
 ![dashboard.html](/screenshots/w3c-html/dashboard-html.png)
 
-add habit page
+add habit page  
 ![add-habit.html](/screenshots/w3c-html/add-habit-html.png)
 
-edit habit page
+edit habit page  
 ![edit-habit.html](/screenshots/w3c-html/edit-habit-html.png)
 
-delete habit page
+delete habit page  
 ![delete-habit.html](/screenshots/w3c-html/delete-habit-html.png)
 
-view profile page
+view profile page  
 ![view-profile.html](/screenshots/w3c-html/view-profile-html.png)
 
-edit profile page
+edit profile page  
 ![edt-profile.html](/screenshots/w3c-html/edit-profile-html.png)
 
-help page
+help page  
 ![help.html](/screenshots/w3c-html/help-html.png)
 
 
@@ -464,37 +464,37 @@ Login Page
 Help Page   
 ![help page](/screenshots/accessibility/help-access.png)
 
-Dashboard   
+Dashboard     
 ![dashboard page](/screenshots/accessibility/dash-access.png)
 
-Add Habit Page
+Add Habit Page  
 ![add habit page](/screenshots/accessibility/add-hab-access.png)
 
-Edit Habit Page
+Edit Habit Page  
 ![edit habit page](/screenshots/accessibility/edit-hab-access.png)
 
-Delete Habit Page
+Delete Habit Page  
 ![delete habit page](/screenshots/accessibility/delete-hab-access.png)
 
-View Profile Page
+View Profile Page  
 ![view profile page](/screenshots/accessibility/view-pro-access.png)
 
-Edit profile page
+Edit profile page  
 ![edit profile page](/screenshots/accessibility/edit-pro-access.png)
 
-Logout Page  
+Logout Page   
 ![logout page](/screenshots/accessibility/logout-access.png)
 
-Password Reset Page
+Password Reset Page  
 ![password reset page](/screenshots/accessibility/pass-reset-access.png)
 
 # Error Pages
 
-### 404
+### 404  
 ![404 error page](/screenshots/error-pages/404-page.png)
 
-### 403
+### 403  
 ![403 error page](/screenshots/error-pages/404-page.png)
 
-### 500
+### 500  
 ![500 error page](/screenshots/error-pages/500-error.png)
