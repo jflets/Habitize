@@ -13,7 +13,8 @@
 - [Validator Testing](#validator-testing-screenshots)
    - [PEP8](#pep8)
    - [JSHint](#jshint)
-   - [W3C](#w3c-css)
+   - [W3C CSS](#w3c-css)
+   - [W3C HTML]()
 - [Accessibility Testing](#accessability-testing)
 - [Error Pages](#error-pages)
 
@@ -408,7 +409,48 @@ brown-theme.css
 green-theme.css
 ![green-theme.css](/screenshots/w3css/green-theme-css.png)
 
+## W3C HTML
+
+landing page
+![landing-page.html](/screenshots/w3c-html/landing-page-html.png)
+
+signup page
+![signup.html](/screenshots/w3c-html/signup-html.png)
+
+login page
+![login.html](/screenshots/w3c-html/login-html.png)
+
+logout page
+![logout.html](/screenshots/w3c-html/logout-html.png)
+
+forgot password page
+![forgot-password.html](/screenshots/w3c-html/forgot-password-html.png)
+
+dashboard page (The error on this page is due to the jinja template link and the warning is for an aria label that i feel is necessary for the accessibility of the page.)
+![dashboard.html](/screenshots/w3c-html/dashboard-html.png)
+
+add habit page
+![add-habit.html](/screenshots/w3c-html/add-habit-html.png)
+
+edit habit page
+![edit-habit.html](/screenshots/w3c-html/edit-habit-html.png)
+
+delete habit page
+![delete-habit.html](/screenshots/w3c-html/delete-habit-html.png)
+
+view profile page
+![view-profile.html](/screenshots/w3c-html/view-profile-html.png)
+
+edit profile page
+![edt-profile.html](/screenshots/w3c-html/edit-profile-html.png)
+
+help page
+![help.html](/screenshots/w3c-html/help-html.png)
+
+
 # Accessability Testing
+
+The reason the accessability is not 100% is due to the lack of contrast in the footer, but this was by design as I have purposely muted the footer text to make it less distracting to the user.
 
 Landing Page
 ![landing page](/screenshots/accessibility/lp-access.png)
