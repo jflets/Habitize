@@ -270,6 +270,7 @@ h6 {
 }
 
 .btn-filter{
+    color: var(--text-color2);
     font-size: 14px;
     font-weight: 400;
     border-radius: 4px;
