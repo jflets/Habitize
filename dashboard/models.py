@@ -12,11 +12,11 @@ class Category(models.Model):
 
 
 class Habit(models.Model):
-    name = models.CharField(max_length=50, null=False, blank=False)
+    name = models.CharField(max_length=11, null=False, blank=False)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(null=False, blank=False, default=False)
     value = models.PositiveIntegerField(default=0)  # Current value
-    goal_amount = models.PositiveIntegerField(default=100)  # Maximum value
+    goal_amount = models.PositiveIntegerField(default=10)  # Maximum value
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -35,7 +35,7 @@ class Habit(models.Model):
     last_reset = models.DateTimeField(null=True, blank=True)
 
     units = models.CharField(
-        max_length=10,
+        max_length=6,
         null=True,
         blank=True,
     )
