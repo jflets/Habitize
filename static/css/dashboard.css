@@ -70,7 +70,7 @@ body {
     background-color: var(--secondary-color);
     position: relative;
     font-family: 'Playfair Display', serif;
-    color: var(--text-color2);
+    color: var(--text-color1);
     overflow-x: hidden;
 }
 
@@ -235,6 +235,7 @@ h6 {
 }
 
 .btn-submit { 
+    color: var(--text-color2);
     font-size: 18px;
     font-weight: 500;
     border-radius: 4px;
