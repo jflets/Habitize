@@ -607,19 +607,13 @@ Detailed testing procedures and methodologies can be found [here](testing.md). T
 
 The Habitize app underwent thorough validation testing to ensure code quality and adherence to industry best practices. Full validator testing and screenshots can be found [here](/testing.md). The following validators were used:
 
-1. **W3C HTML Validator:** Due to the jinja templates within the django project unfortunately W3C cannot read the full HTML file and therefore displays errors. I attempted to pull the HTML from
+1. **W3C HTML Validator:** To Put my HTML through a validator with the jinja template i had top copy the HTML file from chrome developer tools and than had to manually paste the HTML into W3C HTML validator.
 
 2. **W3C CSS Validator:** CSS files were validated using the W3C CSS Validator to confirm that they adhered to CSS standards and had no errors or warnings.
 
 3. **JSHint:** For JavaScript files, JSHint was employed to identify potential errors and code quality issues. This step helped maintain clean and efficient JavaScript code.
 
 4. **PEP 8 for Python Files:** Python files were checked for adherence to PEP 8, the Python Enhancement Proposal that defines coding conventions for the Python codebase. This ensured consistent and readable Python code.
-
-**User Story Testing**
-
-To meet user expectations, User Story tests were implemented. These tests ensured that the acceptance criteria of the user stories, as outlined in the project's documentation, were successfully met. The status of the functionality requirements for each user story, along with the corresponding commits, was documented in the issues section of the repository. User Story tests were conducted before closing the respective issues and marking them as completed.
-
-This comprehensive testing strategy and validation process helped ensure the quality, functionality, and reliability of the Habitize app, ultimately providing a satisfying user experience.
 
 ## Solved Bugs
 Throughout the development of Habitize, a few notable bugs were encountered and successfully resolved. When facing challenges, my approach involved seeking solutions through personal research, utilizing online resources like Stack Overflow, and referring to tutorials on platforms such as YouTube. Below, I'll provide details about these specific challenges and how they were effectively resolved:

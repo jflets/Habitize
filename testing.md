@@ -10,6 +10,7 @@
    - [View Profile Page](#view-profile-page)
    - [Edit Profile Page](#edit-profile-page)
    - [Password Reset](#password-reset)
+- [User Story Testing](#user-story-testing---by-epics)
 - [Validator Testing](#validator-testing-screenshots)
    - [PEP8](#pep8)
    - [JSHint](#jshint)
@@ -293,9 +294,70 @@
 | Reset password button | Should send email to user with reset link                                   | Click reset email button                                         | Email is sent to user with password reset link                      | Pass          |
 | Responsive design     | Page should adapt to different screen sizes                                 | Using Chrome dev tools, scale the page to different screen sizes | Page adapts to different screen sizes                               | Pass          |
 
-## Additional Testing
- **Responsive Design Testing:**
-   - Verify the responsiveness of the application on different devices and screen sizes.
+# User Story Testing - by Epics
+
+To meet user expectations, User Story tests were implemented. These tests ensured that the acceptance criteria of the user stories, as outlined in the project's documentation, were successfully met. The status of the functionality requirements for each user story, along with the corresponding commits, was documented in the issues section of the repository. User Story tests were conducted before closing the respective issues and marking them as completed.
+
+This comprehensive testing strategy and validation process helped ensure the quality, functionality, and reliability of the Habitize app, ultimately providing a satisfying user experience.
+
+**[#1](https://github.com/jflets/Habitize/issues/1) User Registration**
+
+This was accomplished by adding the signup link in the nav bar.
+![signup link](/screenshots/signup.png)
+
+**[#2](https://github.com/jflets/Habitize/issues/2) User Login**
+
+This was accomplished by adding the login link in the nav bar.
+![login link](/screenshots/login.png)
+
+**[#3](https://github.com/jflets/Habitize/issues/3) Habit Creation**
+
+This was accomplished by adding habit creation functionality to the dashboard.
+![create habit](/screenshots/add-habit.png)
+
+**[#4](https://github.com/jflets/Habitize/issues/4) Habit Editing**
+
+This was accomplished by adding an options button to the the habits on the dashboard with an edit option to allow users to edit their habits. To try deture users from making large changes to their habits i have added a (hide advanced settings) so users have to confirm they want to make changes to their habit.
+![edit habit](/screenshots/edit-habit.gif)
+
+**[#5](https://github.com/jflets/Habitize/issues/5) Habit Deletion**
+
+This was accomplished this by adding a delete option in the option button dropdown menu.
+![delete habit](/screenshots/confirm-delete.png)
+
+**[#6](https://github.com/jflets/Habitize/issues/6) Habit Tracking**
+
+To accomplish this I added a feature where if a habit is completed the habit will turn green and the date the habit was completed will be displayed on the habit.
+![habit completion](/screenshots/completed-habit.png)
+
+
+**[#7](https://github.com/jflets/Habitize/issues/7) Habit Progress Tracking**
+
+To accomplish habit tracking I integrated a progress bar and amount counter to the habits displayed on the dashboard.
+![habit tracking](/screenshots/habit-progress.png)
+
+**[#8](https://github.com/jflets/Habitize/issues/8) User Profile**
+
+To accomplish this I extended the base user profile and created a user profile where users can adust their display image name and color theme.
+![user profile](/screenshots/view-profile.png)
+![edit profile](/screenshots/edit-profile.png)
+
+**[#9](https://github.com/jflets/Habitize/issues/9) Goals**
+
+To accomplish this I added a goals display on the dashboard, so users can see what their goals are for the day, week and month and be able to visually see the progress.
+![goal display](/screenshots/goal-progress.png)
+
+**[#10](https://github.com/jflets/Habitize/issues/10) Admin Access**
+
+To accomplish this I used the built in django admin panel, as it has all the functionality needed.
+![admin access](/screenshots/admin.png)
+
+**[#11](https://github.com/jflets/Habitize/issues/11) Manage Users**
+
+To accomplish this I the built in admin panel along with allauth for managing your users.
+![Managing users](/screenshots/user-management.png)
+
+
 
 # Validator testing screenshots
 
@@ -452,10 +514,10 @@ help page
 
 The reason the accessability is not 100% is due to the lack of contrast in the footer, but this was by design as I have purposely muted the footer text to make it less distracting to the user.
 
-Landing Page
+Landing Page  
 ![landing page](/screenshots/accessibility/lp-access.png)
 
-Signup Page
+Signup Page  
 ![signup page](/screenshots/accessibility/signup-access.png)
 
 Login Page  
