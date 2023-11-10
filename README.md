@@ -16,7 +16,9 @@ Habitize is built using modern web technologies, making it accessible across var
 
 ## Demo
 
-Please click [here](https://habitize-0cb9a976b845.herokuapp.com/) to view the live site.
+Please click [here](https://habitize-0cb9a976b845.herokuapp.com/) to view the live site. (please make sure to open this link in a separate tab)
+
+If for any reason the above link does not work please copy and paste the following: (https://habitize-0cb9a976b845.herokuapp.com/)
 
 ## Table Of Contents
 
