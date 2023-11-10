@@ -70,7 +70,7 @@ body {
     background-color: var(--secondary-color);
     position: relative;
     font-family: 'Playfair Display', serif;
-    color: var(--text-color1);
+    color: var(--text-color2);
 }
 
 body::-webkit-scrollbar {
