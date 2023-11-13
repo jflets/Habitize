@@ -1,3 +1,5 @@
+from django import forms
+from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -13,11 +15,10 @@ from .forms import UserProfileForm
 
 @login_required(login_url="/accounts/login")
 def view_profile(request):
-    user_profile, created = UserProfile.objects.get_or_create(user=request.
-                                                              user)
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
 
     if not user_profile.profile_image_public_id:
-        user_profile.profile_image_public_id = '/static/images/profile-image-icon.webp'  # noqa
+        user_profile.profile_image_public_id = '/static/images/profile-image-icon.webp'
         user_profile.save()
 
     context = {'user_profile': user_profile}
@@ -42,6 +43,9 @@ class EditProfileView(UpdateView):
             new_username = form.cleaned_data.get('username')
 
             if new_username and self.request.user.username != new_username:
+                # Check if the new username is already in use
+                if User.objects.exclude(pk=self.request.user.pk).filter(username=new_username).exists():
+                    raise ValidationError("This username is already in use. Please choose a different one.")
                 self.request.user.username = new_username
                 self.request.user.save()
 
@@ -56,28 +60,24 @@ class EditProfileView(UpdateView):
                     public_id = response['public_id']
 
                     # Save the public_id to the user's profile
-                    self.request.user.userprofile.profile_image_public_id = public_id  # noqa
+                    self.request.user.userprofile.profile_image_public_id = public_id
                 except Exception as e:
                     # Handle any exceptions during the upload
                     # (e.g., network issues, Cloudinary errors)
-                    # You should customize this error handling based on your
-                    # application's requirements
+                    # Customize this error handling based on your application's requirements
                     print(f"Error uploading profile image: {str(e)}")
             else:
                 # No new profile image provided, retain the existing public_id
-                public_id = self.request.user.userprofile.profile_image_public_id  # noqa
+                public_id = self.request.user.userprofile.profile_image_public_id
 
-                # Update the user's selected color theme
             new_color_theme = form.cleaned_data['color_theme']
             old_color_theme = self.request.user.userprofile.color_theme
 
             if new_color_theme != old_color_theme:
-                # Only update the session and re-render
-                # if the theme has changed
                 self.request.user.userprofile.color_theme = new_color_theme
                 self.request.user.userprofile.save()
 
-            # Apply the selected color theme to the user's session
+                # Apply the selected color theme to the user's session
                 self.request.session['selected_color_theme'] = new_color_theme
 
             messages.success(self.request, 'Profile updated successfully!')
@@ -91,7 +91,5 @@ class EditProfileView(UpdateView):
 
     @receiver(user_logged_in)
     def set_color_theme_session(sender, request, user, **kwargs):
-        # Check if the user has a color theme in their profile
         if hasattr(user, 'userprofile') and user.userprofile.color_theme:
-            request.session['selected_'
-                            'color_theme'] = user.userprofile.color_theme
+            request.session['selected_color_theme'] = user.userprofile.color_theme
