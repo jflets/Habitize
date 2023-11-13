@@ -53,24 +53,37 @@ class UserProfileForm(forms.ModelForm):
     def clean_profile_image(self):
         profile_image = self.cleaned_data.get('profile_image')
 
-        if profile_image:
-            # Check if the image size is greater than 5MB
-            if profile_image.size > 5 * 1024 * 1024:  # 5MB in bytes
-                raise forms.ValidationError("Image size must be 5MB or less.")
-            
-            try:
-                # Upload the file to Cloudinary
-                response = uploader.upload(profile_image)
+        # If no new image is provided, return the existing public_id (if any)
+        if not profile_image:
+            return self.instance.profile_image
 
-                # Check if the upload was successful
-                if 'public_id' in response:
-                    # Access the public_id attribute
-                    public_id = response['public_id']
-                    # You can store or use the public_id as needed
-                    return public_id
-                else:
-                    raise forms.ValidationError("Failed to upload image to Cloudinary")
-            except Exception as e:
-                raise forms.ValidationError(f"Error uploading image: {str(e)}")
+        # Check if it's a CloudinaryField instance
+        if isinstance(profile_image, cloudinary.models.CloudinaryField):
+            return profile_image.public_id
 
-        return profile_image
+        # Check if the image is a CloudinaryResource
+        if isinstance(profile_image, cloudinary.models.CloudinaryResource):
+            # Return the public_id from the CloudinaryResource
+            return profile_image.public_id
+
+        # Check if the image size is greater than 5MB
+        if profile_image.size > 5 * 1024 * 1024:  # 5MB in bytes
+            raise forms.ValidationError("Image size must be 5MB or less.")
+
+        try:
+            # Upload the file to Cloudinary
+            response = uploader.upload(profile_image)
+
+            # Check if the upload was successful
+            if 'public_id' in response:
+                # Access the public_id attribute
+                public_id = response['public_id']
+                # You can store or use the public_id as needed
+                return public_id
+            else:
+                raise forms.ValidationError("Failed to upload"
+                                            "image to Cloudinary")
+        except cloudinary.api.Error as e:
+            raise forms.ValidationError(f"Cloudinary API error: {str(e)}")
+        except Exception as e:
+            raise forms.ValidationError(f"Error uploading image: {str(e)}")
