@@ -9,13 +9,13 @@
         <label for="{{ form.username.id_for_label }}">Username:</label>
         {% if form.username.widget.attrs.readonly %}
         <p>{{ form.instance.user.username }}</p>
-        {{ form.username }} {% else %} {{ form.username }} {% endif %}
+        {% else %}
+        {{ form.username }}
+        {% endif %}
       </div>
 
       <div class="form-group">
-        <label for="{{ form.profile_image.id_for_label }}"
-          >Profile Image:</label
-        >
+        <label for="{{ form.profile_image.id_for_label }}">Profile Image:</label>
         {% if form.instance.profile_image %}
         <img
           src="{{ form.instance.profile_image.url }}"
@@ -46,17 +46,26 @@
               role="group"
               aria-label="Color Theme"
             >
-              <input type="radio" name="color_theme" id="color-{{ choice.0 }}"
-              value="{{ choice.0 }}" class="radio-btn" {% if choice.0 ==
-              form.color_theme.value %}checked{% endif %}>
-              <label class="btn-color" for="color-{{ choice.0 }}"
-                >{{ choice.1 }}</label
-              >
+              <input
+                type="radio"
+                name="color_theme"
+                id="color-{{ choice.0 }}"
+                value="{{ choice.0 }}"
+                class="radio-btn"
+                {% if choice.0 == form.color_theme.value %}checked{% endif %}
+              />
+              <label
+                class="btn-color"
+                for="color-{{ choice.0 }}"
+              >{{ choice.1 }}</label>
             </div>
           </div>
           {% if forloop.counter|divisibleby:3 %}
         </div>
-        <div class="row justify-content-center">{% endif %} {% endfor %}</div>
+        <div class="row justify-content-center">
+          {% endif %}
+          {% endfor %}
+        </div>
       </div>
       {% if not form.username.widget.attrs.readonly %}
       <input type="submit" value="Update" class="btn btn-submit" />
@@ -66,8 +75,7 @@
     {% if form.errors %}
     <div class="error">
       <p><strong>Error:</strong> There was an issue with your submission.</p>
-      {{ form.non_field_errors }} {{ form.username.errors }} {{
-      form.profile_image.errors }}
+      {{ form.non_field_errors }} {{ form.username.errors }} {{ form.profile_image.errors }}
     </div>
     {% endif %}
   </div>

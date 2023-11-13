@@ -499,6 +499,8 @@ The Edit Profile Page puts users in control of their personal information. They 
 11. **User Feedback Messages**
     - Users will receive feedback messages whenever they make any changes or perform actions.
     ![User Feedback Messages](/screenshots/user-feedback.gif)
+    - Users will also receive feedback messages for errors.
+    ![Error Feedback Messages](/screenshots/file-to-large.png)
 
 # Design
 
@@ -571,10 +573,15 @@ With visual elements that strike a balance between refinement and approachabilit
 - **Development Tools:**
   - Visual Studio Code as the code editor
   - Git and GitHub for version control
+  - [Tableconvert](https://tableconvert.com) for creating the markdown testing tables.
 
 - **Testing and Quality Assurance:**
   - Jest and JSDom for frontend testing
   - Django's TestCase and Jest for automated testing
+  - Chrome developer tools for checking errors, accessibility and responsiveness.
+
+- **Email Send Integration**
+   - Gmail
 
 - **Database Management:**
   - Django ORM for database interactions

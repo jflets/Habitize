@@ -2,6 +2,7 @@ from django import forms
 from .models import UserProfile
 from django.contrib.auth.models import User
 from allauth.socialaccount.models import SocialAccount
+import cloudinary
 
 
 class UserProfileForm(forms.ModelForm):
@@ -47,3 +48,18 @@ class UserProfileForm(forms.ModelForm):
                                         "Please choose a different one.")
 
         return username
+
+    def clean_profile_image(self):
+        profile_image = self.cleaned_data.get('profile_image')
+
+        if profile_image:
+            # Fetch information about the image from Cloudinary
+            response = cloudinary.api.resource(profile_image.public_id)
+
+            # Check if the image size is greater than 5 MB
+            max_size = 5 * 1024 * 1024  # 5 MB in bytes
+            if 'bytes' in response and response['bytes'] > max_size:
+                raise forms.ValidationError("File size must be"
+                                            "no more than 5 MB.")
+
+        return profile_image

@@ -16,7 +16,7 @@
       <p>Welcome, {{ user.username }} !</p>
 
       {% else %}
-      <a href="{% provider_login_url 'google' action='reauthenticate' %}">login with Google</a>
+      <a href="{% provider_login_url 'google' action='connect' %}">login with Google</a>
       {% endif %}
       </p>
 
