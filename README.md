@@ -478,25 +478,33 @@ The Edit Profile Page puts users in control of their personal information. They 
    ![Habit Progress](/screenshots/habit-progress.png)
    ![Complete Habit](/screenshots/completed-habit.png)
 
-7. **Responsive Design:**
+7 **Custom User Profile**
+   - Users can customize their username to suit them.
+   ![custom username](/screenshots/username-edit.png)
+   - Users can upload their own profile images.
+   ![custom profile image](/screenshots/custom-profile-image.png)
+   - Users can change the color of the site to suit them.
+   ![color theme](/screenshots/color-theme-change.png)
+
+8. **Responsive Design:**
    - Enjoy a responsive and accessible app across various devices.
    ![Responsive Design](/screenshots/responsive.gif)
 
-8. **Sharing and Social Features:**
+9. **Sharing and Social Features:**
    - Share your progress on social media.
    - Connect with others for motivation.
    ![Social Links](/screenshots/social.png)
 
-9. **Help and Support:**
+10. **Help and Support:**
     - Access help and contact support.
     - Help page with app instructions.
     ![Help Page](/screenshots/help-page.gif)
 
-10. **Admin Dashboard:**
+11. **Admin Dashboard:**
     - Admin panel for managing user accounts (for admin users).
     ![Admin Panel](/screenshots/admin.png)
 
-11. **User Feedback Messages**
+12. **User Feedback Messages**
     - Users will receive feedback messages whenever they make any changes or perform actions.
     ![User Feedback Messages](/screenshots/user-feedback.gif)
     - Users will also receive feedback messages for errors.
