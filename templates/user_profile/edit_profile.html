@@ -42,6 +42,13 @@
             <input type="submit" value="Update" class="btn btn-submit">
             <a href="{% url 'view_profile' %}" class="btn btn-submit">Cancel</a>
         </form>
+        {% if form.errors %}
+        <div class="error">
+          <p><strong>Error:</strong> There was an issue with your submission.</p>
+          {{ form.non_field_errors }}
+          {{ form.profile_image.errors }}
+        </div>
+        {% endif %}
     </div>
   </div>
 {% endblock %}

@@ -20,7 +20,7 @@ class UserProfile(models.Model):
     color_theme = models.CharField(
         max_length=20, choices=COLOR_CHOICES, default='default')
     selected_color_theme = models.CharField(max_length=50, default='default')
-    profile_image = CloudinaryField('image', null=True, blank=True)
+    profile_image = CloudinaryField('image', null=True, blank=True, max_length=1024 * 1024 * 5)
     profile_image_public_id = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
