@@ -521,7 +521,7 @@ form p {
 }
 
 /* ------------------------------ Media Queries ------------------------------ */
-@media (max-width: 320px) {
+@media (max-width: 374px) {
     .h-100 {
         overflow-x: hidden;
     }
