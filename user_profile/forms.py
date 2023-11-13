@@ -6,7 +6,7 @@ import cloudinary
 
 
 class UserProfileForm(forms.ModelForm):
-    username = forms.CharField(max_length=150, required=False)
+    username = forms.CharField(max_length=15, required=False)
     profile_image = forms.ImageField(required=False)
 
     class Meta:
