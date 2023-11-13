@@ -3,6 +3,7 @@ from .models import UserProfile
 from django.contrib.auth.models import User
 from allauth.socialaccount.models import SocialAccount
 import cloudinary
+from cloudinary import uploader, api
 
 
 class UserProfileForm(forms.ModelForm):
@@ -53,13 +54,23 @@ class UserProfileForm(forms.ModelForm):
         profile_image = self.cleaned_data.get('profile_image')
 
         if profile_image:
-            # Fetch information about the image from Cloudinary
-            response = cloudinary.api.resource(profile_image.public_id)
+            # Check if the image size is greater than 5MB
+            if profile_image.size > 5 * 1024 * 1024:  # 5MB in bytes
+                raise forms.ValidationError("Image size must be 5MB or less.")
+            
+            try:
+                # Upload the file to Cloudinary
+                response = uploader.upload(profile_image)
 
-            # Check if the image size is greater than 5 MB
-            max_size = 5 * 1024 * 1024  # 5 MB in bytes
-            if 'bytes' in response and response['bytes'] > max_size:
-                raise forms.ValidationError("File size must be"
-                                            "no more than 5 MB.")
+                # Check if the upload was successful
+                if 'public_id' in response:
+                    # Access the public_id attribute
+                    public_id = response['public_id']
+                    # You can store or use the public_id as needed
+                    return public_id
+                else:
+                    raise forms.ValidationError("Failed to upload image to Cloudinary")
+            except Exception as e:
+                raise forms.ValidationError(f"Error uploading image: {str(e)}")
 
         return profile_image
