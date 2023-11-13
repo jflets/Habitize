@@ -7,7 +7,7 @@ from cloudinary import uploader, api
 
 
 class UserProfileForm(forms.ModelForm):
-    username = forms.CharField(max_length=15, required=False)
+    username = forms.CharField(max_length=15, required=True)
     profile_image = forms.ImageField(required=False)
 
     class Meta:
