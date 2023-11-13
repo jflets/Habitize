@@ -21,13 +21,16 @@ class UserProfileForm(forms.ModelForm):
         user = self.instance.user
 
         # Check if the user signed in with Google
-        self.is_google_user = SocialAccount.objects.filter(user=user, provider='google').exists()
+        self.is_google_user = SocialAccount.objects.filter(
+            user=user, provider='google').exists()
 
         # If signed in with Google, disable the username field
         if self.is_google_user:
             self.fields['username'].widget.attrs['readonly'] = True
-            self.fields['username'].required = False  # Make the field not required
-            self.fields['username'].help_text = "You signed in with Google. Username cannot be changed."
+            self.fields['username'].required = False
+            # Make the field not required
+            self.fields['username'].help_text =\
+                "You signed in with Google. Username cannot be changed."
 
         return cleaned_data
 
@@ -35,8 +38,12 @@ class UserProfileForm(forms.ModelForm):
         # Get the cleaned username (could be empty)
         username = self.cleaned_data.get('username', None)
 
-        # Check if the username is not None and is not the same as the current username
-        if username and User.objects.exclude(pk=self.instance.user_id).filter(username=username).exists():
-            raise forms.ValidationError("This username is already in use. Please choose a different one.")
+        # Check if the username is not None and
+        # is not the same as the current username
+        if username and User.objects.exclude(pk=self.instance.
+                                             user_id).filter(
+                                                 username=username).exists():
+            raise forms.ValidationError("This username is already in use."
+                                        "Please choose a different one.")
 
         return username
