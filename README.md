@@ -711,6 +711,17 @@ During the development of Habitize, a local development environment was set up t
 
 8. **Development Server**: Django's built-in development server was used to run the application locally. This server allows developers to preview the application in a browser and perform real-time testing and debugging.
 
+9. **Local Database**: I used the built in Django database an automated testing database. This means there is some commented out code in my settings.py: 
+   ``` 
+   DATABASES = {
+      'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+      }
+   }
+   ```
+As this is only sued when running the automated tests.
+
 # Credits
 **Resources Used**
 
