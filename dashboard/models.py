@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from datetime import timedelta
+from django.core.validators import MaxValueValidator
 
 
 class Category(models.Model):
@@ -15,8 +16,9 @@ class Habit(models.Model):
     name = models.CharField(max_length=11, null=False, blank=False)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(null=False, blank=False, default=False)
-    value = models.PositiveIntegerField(default=0)  # Current value
-    goal_amount = models.PositiveIntegerField(default=10)  # Maximum value
+    value = models.PositiveIntegerField(default=0)
+    goal_amount = models.PositiveIntegerField(default=10,
+                                              validators=[MaxValueValidator(9999)])
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
 

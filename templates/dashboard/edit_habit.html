@@ -71,6 +71,25 @@
                     <button id="toggle-advanced-settings" type="button" class="btn btn-submit">Show Advanced Settings</button>
                 </p>
             </div>
+            {% if form.errors %}
+                <div class="error">
+                    <p><strong>Error:</strong> There was an issue with your submission.</p>
+                    {% if form.non_field_errors %}
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if form.goal_amount.errors %}
+                        <ul>
+                            {% for error in form.goal_amount.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endif %}
         </form>
     </div>
 </div>
