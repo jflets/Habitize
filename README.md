@@ -110,15 +110,6 @@ Customize your profile to make it truly yours:
 2. Edit and update your user profile details, including your display name and profile picture.
 3. Choose from different color themes to personalize your experience.
 
-## 8. Achieve Your Goals
-
-Set specific goals for your habits:
-
-1. Visit the "Goals" section.
-2. Choose a habit you'd like to set a goal for.
-3. Specify the target amount and tracking frequency.
-4. Confirm the addition of your goal.
-
 Habitize is designed to help you successfully track and achieve your daily habits. Use these steps to create and manage your habits, track your progress, and customize your experience.
 
 # UX
@@ -424,7 +415,7 @@ The Dashboard is the central hub for users to manage and monitor their habits. I
   ![Dashboard](/screenshots/dashboard.png)
 ## Add Habits Page
 The Add Habits Page empowers users to set and customize their habits. It allows them to define the name, details, tracking frequency, and completion goals for new habits. Users can personalize their habit tracking to align with their specific goals and preferences.
-  ![Add Habits](/screenshots/add-habit.png)
+  ![Add Habits](/screenshots/add-habit-2.png)
 ## Edit Habits Page
 The Edit Habits Page enables users to modify and fine-tune their existing habits. Users can update habit details, targets, and tracking options as they progress. This flexibility supports users in refining their tracking to better fit their evolving needs.
   ![Edit Habits](/screenshots/edit-habit.gif)
