@@ -9,6 +9,12 @@ from user_profile.models import UserProfile
 
 @login_required(login_url="/accounts/login")
 def get_dashboard(request):
+    """
+    View function for rendering the user's dashboard.
+
+    Retrieves habits based on the selected frequency, calculates progress,
+    and renders the dashboard template with the relevant data.
+    """
     # Get the selected frequency from the request
     selected_frequency = request.GET.get('frequency')
 
@@ -87,6 +93,12 @@ def get_dashboard(request):
 
 @login_required(login_url="/accounts/login")
 def add_habit(request):
+    """
+    View function for adding a new habit.
+
+    Handles the form submission, validates the form, and saves the habit.
+    Redirects to the dashboard upon successful addition.
+    """
     if request.method == 'POST':
         form = AddHabitForm(request.POST)
         if form.is_valid():
@@ -106,6 +118,12 @@ def add_habit(request):
 
 @login_required(login_url="/accounts/login")
 def edit_habit(request, habit_id):
+    """
+    View function for editing an existing habit.
+
+    Handles the form submission, validates the form, and updates the habit.
+    Redirects to the dashboard upon successful editing.
+    """
     habit = get_object_or_404(Habit, id=habit_id, user=request.user)
 
     if request.method == 'POST':
@@ -147,6 +165,12 @@ def edit_habit(request, habit_id):
 
 @login_required(login_url="/accounts/login")
 def toggle_habit(request, habit_id):
+    """
+    View function for toggling the completion status of a habit.
+
+    Marks a habit as completed, updates progress,
+    and redirects to the dashboard.
+    """
     habit = get_object_or_404(Habit, id=habit_id)
 
     if habit.completed:
@@ -169,6 +193,13 @@ def toggle_habit(request, habit_id):
 
 @login_required(login_url="/accounts/login")
 def delete_habit(request, habit_id):
+    """
+    View function for deleting a habit.
+
+    Handles the form submission for deletion confirmation
+    and deletes the habit.
+    Redirects to the dashboard upon successful deletion.
+    """
     habit = get_object_or_404(Habit, id=habit_id)
 
     if request.method == 'POST':
@@ -187,6 +218,12 @@ def delete_habit(request, habit_id):
 
 @login_required(login_url="/accounts/login")
 def set_selected_color_theme(request, color_theme):
+    """
+    View function for setting the selected color theme for the user.
+
+    Validates the selected color theme, updates the user's profile, and
+    redirects to the dashboard with the selected color theme.
+    """
     # Check if the selected color theme is valid
     valid_color_themes = ['default', 'blue', 'turquoise',
                           'green', 'pink', 'purple', 'brown']

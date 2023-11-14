@@ -6,6 +6,8 @@ from django.core.validators import MaxValueValidator
 
 
 class Category(models.Model):
+    """Model representing a category for habits."""
+
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -13,12 +15,15 @@ class Category(models.Model):
 
 
 class Habit(models.Model):
+    """Model representing a habit."""
+
     name = models.CharField(max_length=11, null=False, blank=False)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(null=False, blank=False, default=False)
     value = models.PositiveIntegerField(default=0)
     goal_amount = models.PositiveIntegerField(default=10,
-                                              validators=[MaxValueValidator(9999)])
+                                              validators=[MaxValueValidator
+                                                          (9999)])
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -51,6 +56,7 @@ class Habit(models.Model):
         return self.name
 
     def reset_habit(self):
+        """Reset the habit if the reset conditions are met."""
         if self.frequency == 'day':
             reset_period = timedelta(days=1)
         elif self.frequency == 'week':
@@ -67,6 +73,8 @@ class Habit(models.Model):
             self.save()
 
     def save(self, *args, **kwargs):
+        """Save method to update completed status and reset the habit
+        before saving."""
         # Check if the current value has reached the goal amount
         if self.value >= self.goal_amount:
             self.completed = True

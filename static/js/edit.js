@@ -1,3 +1,4 @@
+// Function to handle goal amount buttons
 function goalAmountButtons() {
     const decrementButton = document.querySelector(".decrement-button");
     const incrementButton = document.querySelector(".increment-button");
@@ -5,6 +6,7 @@ function goalAmountButtons() {
     let isButtonDisabled = false;
     let isAdvancedSettingsOpen = false;
 
+    // Function to handle button click events
     function handleButtonClick(event, increment) {
         event.preventDefault();
         if (!isButtonDisabled) {
@@ -27,10 +29,12 @@ function goalAmountButtons() {
         }
     }
 
+    // Event listeners for decrement and increment buttons
     decrementButton.addEventListener("click", (event) => handleButtonClick(event, false));
     incrementButton.addEventListener("click", (event) => handleButtonClick(event, true));
 }
 
+// Function to handle value buttons
 function valueButtons() {
     const decrementValueButton = document.querySelector(".decrement-value-button");
     const incrementValueButton = document.querySelector(".increment-value-button");
@@ -41,6 +45,7 @@ function valueButtons() {
     let isButtonDisabled = false;
     let isAdvancedSettingsOpen = false;
 
+    // Function to handle button click events
     function handleButtonClick(event, increment) {
         event.preventDefault();
         if (!isButtonDisabled) {
@@ -74,14 +79,17 @@ function valueButtons() {
         }
     }
 
+    // Event listeners for decrement and increment buttons
     decrementValueButton.addEventListener("click", (event) => handleButtonClick(event, false));
     incrementValueButton.addEventListener("click", (event) => handleButtonClick(event, true));
 }
 
+// Function to toggle advanced settings
 function toggleAdvancedSettings() {
     const advancedSettings = document.getElementById("advanced-settings");
     const toggleButton = document.getElementById("toggle-advanced-settings");
 
+    // Event listener for toggle button
     toggleButton.addEventListener("click", function () {
         if (advancedSettings.style.display === "none") {
             const confirmation = window.confirm("Are you sure you want to make changes to this habit?");
@@ -98,10 +106,12 @@ function toggleAdvancedSettings() {
     });
 }
 
+// Event listener for when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
     goalAmountButtons();
     valueButtons();
     toggleAdvancedSettings();
 });
 
+// Exporting the functions (commented out as it is only sued when running automated tests)
 // module.exports = { goalAmountButtons, valueButtons, toggleAdvancedSettings };

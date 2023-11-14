@@ -15,8 +15,14 @@ from .forms import UserProfileForm
 
 @login_required(login_url="/accounts/login")
 def view_profile(request):
-    user_profile, created = UserProfile.objects.get_or_create(user=request.
-                                                              user)
+    """
+    View function for displaying the user profile.
+
+    Retrieves the user profile and ensures that a default profile image is set.
+    Renders the 'view_profile.html' template with the user profile context.
+    """
+    user_profile, created = UserProfile.objects.get_or_create(
+        user=request.user)
 
     if not user_profile.profile_image_public_id:
         user_profile.profile_image_public_id = \
@@ -28,29 +34,52 @@ def view_profile(request):
 
 
 class EditProfileView(UpdateView):
+    """
+    Class-based view for editing the user profile.
+
+    Uses the UserProfile model and UserProfileForm for editing user
+    information.
+    Redirects to 'view_profile' upon successful form submission.
+
+    Methods:
+    - get_initial: Sets the initial username to the current user's username.
+    - form_valid: Handles form submission, validates changes,
+    and updates the user's profile.
+    - get_context_data: Adds color choices to the context.
+    """
     model = UserProfile
     form_class = UserProfileForm
     template_name = 'user_profile/edit_profile.html'
     success_url = reverse_lazy('view_profile')
 
     def get_initial(self):
+        """
+        Set the initial username to the current user's username.
+        """
         initial = super().get_initial()
-        # Set the initial username to the current user's username
         initial['username'] = self.request.user.username
         return initial
 
     def form_valid(self, form):
-        # Check if any changes were made to the form data
+        """
+        Handle form submission, validate changes, and update the user's
+        profile.
+
+        Checks for changes in the form data and updates the user's username,
+        profile image, color theme, and session accordingly.
+
+        Raises a ValidationError if the new username is already in use.
+
+        Displays a success message upon successful profile update.
+        """
         if form.has_changed():
             new_username = form.cleaned_data.get('username')
 
             if new_username and self.request.user.username != new_username:
-                # Check if the new username is already in use
-                if User.objects.exclude(pk=self.request.
-                                        user.pk).filter(username=new_username
-                                                        ).exists():
-                    raise ValidationError("This username"
-                                          "is already in use."
+                if User.objects.exclude(
+                    pk=self.request.user.pk).filter(
+                        username=new_username).exists():
+                    raise ValidationError("This username is already in use."
                                           "Please choose a different one.")
                 self.request.user.username = new_username
                 self.request.user.save()
@@ -59,21 +88,13 @@ class EditProfileView(UpdateView):
 
             if profile_image:
                 try:
-                    # Upload the profile image to Cloudinary
                     response = uploader.upload(profile_image)
-
-                    # Get the public_id from the Cloudinary response
                     public_id = response['public_id']
-
-                    # Save the public_id to the user's profile
                     self.request.user.userprofile.profile_image_public_id =\
                         public_id
                 except Exception as e:
-                    # Handle any exceptions during the upload
-                    # (e.g., network issues, Cloudinary errors)
                     print(f"Error uploading profile image: {str(e)}")
             else:
-                # No new profile image provided, retain the existing public_id
                 public_id =\
                     self.request.user.userprofile.profile_image_public_id
 
@@ -83,8 +104,6 @@ class EditProfileView(UpdateView):
             if new_color_theme != old_color_theme:
                 self.request.user.userprofile.color_theme = new_color_theme
                 self.request.user.userprofile.save()
-
-                # Apply the selected color theme to the user's session
                 self.request.session['selected_color_theme'] = new_color_theme
 
             messages.success(self.request, 'Profile updated successfully!')
@@ -92,12 +111,18 @@ class EditProfileView(UpdateView):
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
+        """
+        Add color choices to the context.
+        """
         context = super().get_context_data(**kwargs)
         context['color_choices'] = COLOR_CHOICES
         return context
 
     @receiver(user_logged_in)
     def set_color_theme_session(sender, request, user, **kwargs):
+        """
+        Signal receiver to set the color theme in the session upon user login.
+        """
         if hasattr(user, 'userprofile') and user.userprofile.color_theme:
-            request.session['selected_color'
-                            '_theme'] = user.userprofile.color_theme
+            request.session['selected_color_theme'] =\
+                user.userprofile.color_theme
