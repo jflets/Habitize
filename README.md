@@ -31,6 +31,7 @@ If for any reason the above link does not work please copy and paste the followi
 - [Wireframes](#wireframes)
 - [Pages](#pages)
 - [Features](#features)
+- [Future Enhancements](#future-enhancements)
 - [Design](#design)
 - [Technologies Used](#technologies-used)
   - [Frameworks, Libraries, and Tools Used](#frameworks-libraries-and-tools-used)
@@ -494,6 +495,17 @@ The Edit Profile Page puts users in control of their personal information. They 
     - Users will also receive feedback messages for errors.
     ![Error Feedback Messages](/screenshots/file-to-large.png)
 
+# Future Enhancements
+
+There where a few features i would have like to implement in the future. I have left them on the kanban board as won't have user stories. 
+The features I would like to add in future are:
+
+ - [#59](https://github.com/jflets/Habitize/issues/59) Sending users notifications fit they have not completed habit or if they have not logged any habits in a time period.
+ - [#60](https://github.com/jflets/Habitize/issues/60) Automated habit frequency breakdown, I would like to have a feature where when a weekly or monthly habit is added it breaks won into daily or weekly habits.
+ - [#61](https://github.com/jflets/Habitize/issues/61) User streaks, I would want to allow users to track their consistency by seeing a streak of their habit completions for a month or longer.
+
+ These features would need to be developed further in order to see wether they would be suitable.
+
 # Design
 
 In the development of Habitize, careful attention was given to the visual design and user interface. The color scheme was meticulously curated using the [Coolors](https://coolors.co/) palette generator, ensuring that it resonates with the brand and provides a refined and modern aesthetic. The chosen color scheme has been thoughtfully selected to maintain high contrast, prioritizing accessibility for all users.
@@ -546,6 +558,9 @@ With visual elements that strike a balance between refinement and approachabilit
   - Chrome dev tools for responsive design for various screen sizes
   - Font Awesome for icons
   - Google Fonts for text fonts
+
+- **Templates:**
+   - I used Jinja tempting to insert data from the database into the site pages.
 
 - **Image Storage**
   - Cloudinary for storing statics files and user images.
@@ -742,3 +757,5 @@ The development of Habitize was supported by various resources to ensure the suc
 7. **Bootstrap Color Modes**: The project also incorporated color themes for users, allowing them to customize their experience. The [Bootstrap Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode) documentation provided guidance on implementing dark mode and other color modes, enhancing user interface personalization within Habitize.
 
 8. **Other Referenced Resources**: Any additional resources used during the project are appropriately referenced and acknowledged, ensuring transparency and credit to the respective sources.
+
+9. **Acknowledgments**: Thank you to my tutor Graeme Taylor for all his guidance and support.
