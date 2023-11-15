@@ -1,9 +1,9 @@
 # Table Of Contents
 - [Testing Schedule](#testing-schedule)
    - [Landing Page](#landing-page)
-   - [login Page](#login-page)
+   - [Login Page](#login-page)
    - [Signup page](#signup-page)
-   - [help Page](#help-page)
+   - [Help Page](#help-page)
    - [Dashboard](#dashboard)
    - [Add Habits Page](#add-habits-page)
    - [Edit Habits Page](#edit-habits-page)
@@ -313,7 +313,7 @@ This was accomplished by adding the login link in the nav bar.
 **[#3](https://github.com/jflets/Habitize/issues/3) Habit Creation**
 
 This was accomplished by adding habit creation functionality to the dashboard.
-![create habit](/screenshots/add-habit.png)
+![create habit](/screenshots/add-habit-2.png)
 
 **[#4](https://github.com/jflets/Habitize/issues/4) Habit Editing**
 
@@ -556,7 +556,7 @@ Password Reset Page
 ![404 error page](/screenshots/error-pages/404-page.png)
 
 ### 403  
-![403 error page](/screenshots/error-pages/404-page.png)
+![403 error page](/screenshots/error-pages/403-error-page.png)
 
 ### 500  
 ![500 error page](/screenshots/error-pages/500-error.png)

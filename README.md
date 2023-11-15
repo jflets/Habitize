@@ -454,7 +454,7 @@ The Edit Profile Page puts users in control of their personal information. They 
    - Create and customize new habits.
    - Set daily, weekly or monthly goals for each habit.
    - Edit or delete existing habits.
-   ![Add Habits](/screenshots/add-habit.png)
+   ![Add Habits](/screenshots/add-habit-2.png)
    ![Edit Habits](/screenshots/edit-habit.gif)
    ![Habit Options](/screenshots/habit-options.png)
    ![Confirm Delete](/screenshots/confirm-delete.png)
