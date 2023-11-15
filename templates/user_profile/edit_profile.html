@@ -5,18 +5,24 @@
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
 
+      <!-- Username Field -->
       <div class="form-group">
         <label for="{{ form.username.id_for_label }}">Username:</label>
         {% if form.username.widget.attrs.readonly %}
+        <!-- Display current username if the field is readonly -->
         <p>{{ form.instance.user.username }}</p>
         {% else %}
-        {{ form.username }}
-        {% endif %}
+        <!-- Display editable username input field -->
+        {{ form.username }} {% endif %}
       </div>
 
+      <!-- Profile Image Field -->
       <div class="form-group">
-        <label for="{{ form.profile_image.id_for_label }}">Profile Image:</label>
+        <label for="{{ form.profile_image.id_for_label }}"
+          >Profile Image:</label
+        >
         {% if form.instance.profile_image %}
+        <!-- Display current profile image if it exists -->
         <img
           src="{{ form.instance.profile_image.url }}"
           alt="Current Profile Image"
@@ -27,6 +33,7 @@
         <br />
         <label>Change Profile Image:</label>
         {% endif %}
+        <!-- Input field for updating profile image -->
         <input
           class="file-input"
           type="file"
@@ -36,6 +43,7 @@
         />
       </div>
 
+      <!-- Color Theme Field -->
       <div class="form-group">
         <label>Color Theme:</label>
         <div class="row justify-content-center">
@@ -46,36 +54,34 @@
               role="group"
               aria-label="Color Theme"
             >
-              <input
-                type="radio"
-                name="color_theme"
-                id="color-{{ choice.0 }}"
-                value="{{ choice.0 }}"
-                class="radio-btn"
-                {% if choice.0 == form.color_theme.value %}checked{% endif %}
-              />
-              <label
-                class="btn-color"
-                for="color-{{ choice.0 }}"
-              >{{ choice.1 }}</label>
+              <!-- Radio button for each color theme choice -->
+              <input type="radio" name="color_theme" id="color-{{ choice.0 }}"
+              value="{{ choice.0 }}" class="radio-btn" {% if choice.0 ==
+              form.color_theme.value %}checked{% endif %} />
+              <!-- Label displaying the color theme name -->
+              <label class="btn-color" for="color-{{ choice.0 }}"
+                >{{ choice.1 }}</label
+              >
             </div>
           </div>
+          <!-- Create a new row after every three color theme choices -->
           {% if forloop.counter|divisibleby:3 %}
         </div>
-        <div class="row justify-content-center">
-          {% endif %}
-          {% endfor %}
-        </div>
+        <div class="row justify-content-center">{% endif %} {% endfor %}</div>
       </div>
       {% if not form.username.widget.attrs.readonly %}
+      <!-- Submit and Cancel Buttons (only displayed if username is editable) -->
       <input type="submit" value="Update" class="btn btn-submit" />
-      {% endif %}
       <a href="{% url 'view_profile' %}" class="btn btn-submit">Cancel</a>
+      {% endif %}
     </form>
+
+    <!-- Display form errors, if any -->
     {% if form.errors %}
     <div class="error">
       <p><strong>Error:</strong> There was an issue with your submission.</p>
-      {{ form.non_field_errors }} {{ form.username.errors }} {{ form.profile_image.errors }}
+      {{ form.non_field_errors }} {{ form.username.errors }} {{
+      form.profile_image.errors }}
     </div>
     {% endif %}
   </div>

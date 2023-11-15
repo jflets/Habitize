@@ -1,15 +1,25 @@
-{% extends "dashboard/base.html" %}
-{% block content %}
+{% extends "dashboard/base.html" %} {% block content %}
 <div class="container main-container">
-    <div class="row card2 px-2">
-        <h2>Confirm Deletion</h2>
-        <p>Are you sure you want to delete this habit?</p>
-        <form method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="confirm_delete" value="1">
-            <button type="submit" class="btn btn-danger">Delete</button>
-            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Cancel</a>
-        </form>
-    </div>
+  <div class="row card2 px-2">
+    <!-- Heading for Confirm Deletion -->
+    <h2>Confirm Deletion</h2>
+
+    <!-- Deletion Confirmation Message -->
+    <p>Are you sure you want to delete this habit?</p>
+
+    <!-- Form for Confirming Deletion -->
+    <form method="POST">
+      {% csrf_token %}
+
+      <!-- Hidden Field for Confirmation -->
+      <input type="hidden" name="confirm_delete" value="1" />
+
+      <!-- Delete Button -->
+      <button type="submit" class="btn btn-danger">Delete</button>
+
+      <!-- Cancel Button -->
+      <a href="{% url 'dashboard' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
 </div>
 {% endblock %}

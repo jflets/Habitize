@@ -128,7 +128,7 @@ Habitize is designed as a user-friendly platform where individuals can effective
 - Foster a productive and consistent user routine
 - Provide a digital platform for habit tracking and self-improvement
 
-**Epics**
+**Epics**  
 A total of 12 epics have been identified, each with its set of user stories aimed at enhancing the Habitize app. For a detailed breakdown of each epic and its associated user stories, please refer to the project [Kanban Board](https://github.com/users/jflets/projects/3).
 
 1. **Initial Django & Deployment Setup**
@@ -709,9 +709,9 @@ During the development of Habitize, a local development environment was set up t
 
 6. **Debugging Tools**: Debugging tools, Django Debug Toolbar and print statements, were used extensively to identify and resolve issues within the application. These tools provided insights into the application's behavior and performance during local testing.
 
-8. **Development Server**: Django's built-in development server was used to run the application locally. This server allows developers to preview the application in a browser and perform real-time testing and debugging.
+7. **Development Server**: Django's built-in development server was used to run the application locally. This server allows developers to preview the application in a browser and perform real-time testing and debugging.
 
-9. **Local Database**: I used the built in Django database an automated testing database. This means there is some commented out code in my settings.py: 
+8. **Local Database**: I used the built in Django database an automated testing database. This means there is some commented out code in my settings.py: 
    ``` 
    DATABASES = {
       'default': {
@@ -720,7 +720,7 @@ During the development of Habitize, a local development environment was set up t
       }
    }
    ```
-As this is only sued when running the automated tests.
+   As this is only used when running the automated tests.
 
 # Credits
 **Resources Used**
