@@ -95,7 +95,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'habitize.wsgi.application'
 
-# DATABASES settings
+# Testing DATABASES settings
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Main DATABASES settings
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }

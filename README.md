@@ -4,6 +4,8 @@
 
 **Habitize** is a web-based habit tracking and goal management application designed to help users build and maintain positive habits. With Habitize, you can create a personalized dashboard to track your habits, set achievable goals, and measure your progress over time. The application offers a user-friendly interface and a range of features to empower users in their journey to form lasting habits.
 
+The site provides role based permissions for users to interact with a central dataset. It includes user authentication, email validation, and Full CRUD functionality for habits and provides customized user profiles.
+
 ## Key Features
 
 - **User-Friendly Dashboard:** Create and customize your dashboard to display the habits that matter most to you.
@@ -127,7 +129,7 @@ Habitize is designed as a user-friendly platform where individuals can effective
 - Enable users to track and manage their habits
 - Assist users in achieving personal and lifestyle goals
 - Foster a productive and consistent user routine
-- Provide a digital platform for habit tracking and self-improvement
+- Provide a digital platform for habit tracking
 
 **Epics**  
 A total of 12 epics have been identified, each with its set of user stories aimed at enhancing the Habitize app. For a detailed breakdown of each epic and its associated user stories, please refer to the project [Kanban Board](https://github.com/users/jflets/projects/3).
@@ -411,14 +413,17 @@ The Signup Page allows new users to join the application. By creating an account
 ## Help Page
 The Help Page provides users with essential guidance and support. It serves as a valuable resource for understanding how to use the application effectively. Users can find answers to their questions, troubleshoot issues, and maximize their experience.
   ![Help Page](/screenshots/help-page.gif)
+
+Once a user has submitted the contact form the will be redirected to a thank you page. The form is not sent to any email address as this if for project purposes only. However in future automated email responses could be implemented.
+  ![thank you page](/screenshots/help-ty-page.png)
 ## Dashboard
-The Dashboard is the central hub for users to manage and monitor their habits. It offers an at-a-glance overview of their progress and goals. Users can easily track and stay motivated to achieve their habits on this page.
+The Dashboard is the central hub for users to manage and monitor their habits. It offers an at a glance overview of their progress and goals. Users can easily track and stay motivated to achieve their habits on this page.
   ![Dashboard](/screenshots/dashboard.png)
 ## Add Habits Page
 The Add Habits Page empowers users to set and customize their habits. It allows them to define the name, details, tracking frequency, and completion goals for new habits. Users can personalize their habit tracking to align with their specific goals and preferences.
   ![Add Habits](/screenshots/add-habit-2.png)
 ## Edit Habits Page
-The Edit Habits Page enables users to modify and fine-tune their existing habits. Users can update habit details, targets, and tracking options as they progress. This flexibility supports users in refining their tracking to better fit their evolving needs.
+The Edit Habits Page enables users to modify and fine tune their existing habits. Users can update habit details, targets, and tracking options as they progress. This flexibility supports users in refining their tracking to better fit their evolving needs.
   ![Edit Habits](/screenshots/edit-habit.gif)
 ## View Profile Page
 The View Profile Page allows users to discover and learn more about other users within the community. It fosters social interaction and engagement, encouraging users to connect, share experiences, and gain inspiration from others.
@@ -441,7 +446,7 @@ The Edit Profile Page puts users in control of their personal information. They 
 2. **User Profile Management:**
    - Change your username.
    ![custom username](/screenshots/username-edit.png)
-   - Change your profile picture.
+   - Change your profile picture.  
    ![custom profile image](/screenshots/custom-profile-image.png)
    - Change your color theme.
    ![color theme](/screenshots/color-theme-change.png)
@@ -450,7 +455,13 @@ The Edit Profile Page puts users in control of their personal information. They 
    - Get a personalized dashboard displaying your habits and goals.
    ![Dashboard](/screenshots/dashboard.png)
 
-4. **Habit Management:**
+4. **Navbar**
+   - The nav bar is displayed at the top of the screen and clearly displays the navigation links for the user.
+   ![navbar](/screenshots/navbar.png)
+   - The nav bar will collapse into a burger menu when in a mobile screen size.
+   ![burger navbar](/screenshots/mobile-navbar.png)
+
+5. **Habit Management:**
    - Create and customize new habits.
    - Set daily, weekly or monthly goals for each habit.
    - Edit or delete existing habits.
@@ -459,41 +470,44 @@ The Edit Profile Page puts users in control of their personal information. They 
    ![Habit Options](/screenshots/habit-options.png)
    ![Confirm Delete](/screenshots/confirm-delete.png)
 
-5. **Goal Management:**
+6. **Goal Management:**
    - Define specific goals for your habits.
    - Track and update goals.
    - Monitor your progress toward goals.
    ![Completed Habits](/screenshots/goal-progress.png)
 
-6. **Habit Tracking:**
+7. **Habit Tracking:**
    - Easily track your habit's progress.
    - See the habit completion date.
    ![Habit Progress](/screenshots/habit-progress.png)
    ![Complete Habit](/screenshots/completed-habit.png)
 
-7. **Responsive Design:**
+8. **Responsive Design:**
    - Enjoy a responsive and accessible app across various devices.
    ![Responsive Design](/screenshots/responsive.gif)
 
-8. **Sharing and Social Features:**
+9. **Footer and Social Features:**
+   - The footer is simple and easy to understand displaying the links to social media platforms.
    - Share your progress on social media.
    - Connect with others for motivation.
    ![Social Links](/screenshots/social.png)
 
-9. **Help and Support:**
+10. **Help and Support:**
     - Access help and contact support.
     - Help page with app instructions.
     ![Help Page](/screenshots/help-page.gif)
 
-10. **Admin Dashboard:**
+11. **Admin Dashboard:**
     - Admin panel for managing user accounts (for admin users).
     ![Admin Panel](/screenshots/admin.png)
 
-11. **User Feedback Messages**
+12. **User Feedback Messages**
     - Users will receive feedback messages whenever they make any changes or perform actions.
     ![User Feedback Messages](/screenshots/user-feedback.gif)
-    - Users will also receive feedback messages for errors.
-    ![Error Feedback Messages](/screenshots/file-to-large.png)
+    - Users will also receive feedback messages for errors if a username is already taken.
+    ![Error Feedback Messages](/screenshots/username-taken.png)
+    - If a user uploads a profile picture larger than 5mb they will be notified that the file size is to large.
+    ![file size too large](/screenshots/file-to-large.png)
 
 # Future Enhancements
 
