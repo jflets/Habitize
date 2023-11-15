@@ -1,4 +1,5 @@
-{% extends 'user_profile/base.html' %} {% block content %}
+{% extends 'user_profile/base.html' %}
+{% block content %}
 <div class="container">
   <div class="row card2">
     <h2>Edit Profile</h2>
@@ -13,14 +14,13 @@
         <p>{{ form.instance.user.username }}</p>
         {% else %}
         <!-- Display editable username input field -->
-        {{ form.username }} {% endif %}
+        {{ form.username }}
+        {% endif %}
       </div>
 
       <!-- Profile Image Field -->
       <div class="form-group">
-        <label for="{{ form.profile_image.id_for_label }}"
-          >Profile Image:</label
-        >
+        <label for="{{ form.profile_image.id_for_label }}">Profile Image:</label>
         {% if form.instance.profile_image %}
         <!-- Display current profile image if it exists -->
         <img
@@ -55,19 +55,28 @@
               aria-label="Color Theme"
             >
               <!-- Radio button for each color theme choice -->
-              <input type="radio" name="color_theme" id="color-{{ choice.0 }}"
-              value="{{ choice.0 }}" class="radio-btn" {% if choice.0 ==
-              form.color_theme.value %}checked{% endif %} />
+              <input
+                type="radio"
+                name="color_theme"
+                id="color-{{ choice.0 }}"
+                value="{{ choice.0 }}"
+                class="radio-btn"
+                {% if choice.0 == form.color_theme.value %}checked{% endif %}
+              />
               <!-- Label displaying the color theme name -->
-              <label class="btn-color" for="color-{{ choice.0 }}"
-                >{{ choice.1 }}</label
-              >
+              <label
+                class="btn-color"
+                for="color-{{ choice.0 }}"
+              >{{ choice.1 }}</label>
             </div>
           </div>
           <!-- Create a new row after every three color theme choices -->
           {% if forloop.counter|divisibleby:3 %}
         </div>
-        <div class="row justify-content-center">{% endif %} {% endfor %}</div>
+        <div class="row justify-content-center">
+          {% endif %}
+          {% endfor %}
+        </div>
       </div>
       {% if not form.username.widget.attrs.readonly %}
       <!-- Submit and Cancel Buttons (only displayed if username is editable) -->
@@ -80,8 +89,7 @@
     {% if form.errors %}
     <div class="error">
       <p><strong>Error:</strong> There was an issue with your submission.</p>
-      {{ form.non_field_errors }} {{ form.username.errors }} {{
-      form.profile_image.errors }}
+      {{ form.non_field_errors }} {{ form.username.errors }} {{ form.profile_image.errors }}
     </div>
     {% endif %}
   </div>
